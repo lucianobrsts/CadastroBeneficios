@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- Configurações da conexão -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/cadastrobeneficios</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">123456</property>
+
+		<!-- Pool de conexões JDBC -->
+		<property name="hibernate.connection.poo_size">1</property>
+
+		<!-- SQL dialect -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- Gerenciamento de Sessão -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Desabilita Cache -->
+		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+		<!-- EXbie os comandos SQL -->
+		<property name="hibernate.show_sql">true</property>
+
+		<!-- Cria as tabelas -->
+		<property name="hbm2ddl.auto">update</property>
+
+
+		<mapping class="br.com.cadastrobeneficios.domain.Inscrito" />
+
+	</session-factory>
+</hibernate-configuration>
