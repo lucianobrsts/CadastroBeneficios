@@ -1,5 +1,5 @@
 # Cadastro Benefícios
-Esse arquivo descreve características e funcionalidades do Projeto Cadastro de Banefícios de atividades do ano corrente em questão.
+- Esse arquivo descreve características e funcionalidades do Projeto Cadastro de Banefícios de atividades do ano corrente em questão.
 
 ## Descrição:
 
