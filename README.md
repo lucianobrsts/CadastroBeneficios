@@ -1,22 +1,23 @@
-#Cadastro Benefícios
+# Cadastro Benefícios
+Esse arquivo descreve características e funcionalidades do Projeto Cadastro de Banefícios de atividades do ano corrente em questão.
 
-Esse arquivo descreve características e funcionalidades do Projeto Constrol Pharma.
+## Descrição:
 
-##Descrição do Projeto:
-O projeto tem como finalidade constrolar o fluxo de cadastro de usuários, produtos, fabricantes e vendas, restrinção de privilégios dos usuários, vendas de produtos e geração de relatórios.
+- O projeto tem como finalidade constrolar o fluxo de cadastro e restrinção de privilégios dos usuários, cadastro e listagem de atividades e benefícios das crianças previamente cadastradas e geração de relatórios. 
 
-##Tecnologias utilizadas:
-Windows
-Eclispe
-Java
-JSF
-Hibernate
-Hibernate Validation
-JavaScript
-Ajax
-Git
-Junit
-Primefaces
-Jasper Report
-Commons Codec MD5 - Criptografia de senha
-MySQL
+## Tecnologias utilizadas:
+
+- Windows
+- Eclispe
+- Java
+- JSF
+- Hibernate
+- Hibernate Validation
+- JavaScript
+- Ajax
+- Git
+- Junit
+- Primefaces
+- Jasper Report
+- Commons Codec MD5 - Criptografia de senha
+- MySQL
