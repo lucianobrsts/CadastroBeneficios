@@ -2,16 +2,34 @@ package br.com.cadastrobeneficios.domain;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "beneficios")
 public class Beneficio {
 
+	@Id
+	@Column(name = "codigo")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long codigo;
+
+	@NotEmpty(message = "O campo oficiona é obrigatório.")
+	@Column(name = "oficina", length = 50, nullable = false)
 	private String oficina;
+
+	@Column(name = "datacadastro", nullable = false)
+	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date dataCadastro;
+
+	@Column(name = "horario", length = 50, nullable = false)
 	private String horario;
 
 	public Long getCodigo() {

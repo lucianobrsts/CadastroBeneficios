@@ -2,31 +2,96 @@ package br.com.cadastrobeneficios.domain;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "inscrito")
 public class Inscrito {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "codigo")
 	private Long codigo;
+
+	@NotEmpty(message = "O campo nome é obrigatório.")
+	@Size(min = 5, max = 50, message = "Tamanho inválido para o campo nome (5 - 50)")
+	@Column(name = "nome", length = 50, nullable = false)
 	private String nome;
+
+	@Column(name = "nascimento", nullable = false)
+	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date dataNascimento;
+
+	@NotEmpty(message = "O campo sexo é obrigatório.")
+	@Column(name = "sexo", nullable = false)
 	private String sexo;
+
+	@NotNull(message = "O campo Child Number é obrigatório.")
+	@Column(name = "childnumber", nullable = false)
 	private Integer ChildNumber;
+
+	@NotNull(message = "O campo PF é obrigatório.")
+	@Column(name = "pf", nullable = false)
 	private Integer pf;
+
+	@NotNull(message = "O campo CS é obrigatório.")
+	@Column(name = "cs", nullable = false)
 	private Integer cs;
+
+	@NotEmpty(message = "O campo NIS é obrigatório.")
+	@Size(min = 11, max = 11, message = "Tamanho inválido para o campo NIS (11 dígitos).")
+	@Column(name = "nis", length = 11, nullable = false)
 	private String nis;
+
+	@NotEmpty(message = "O campo RG é obrigatório.")
+	@Size(min = 1, max = 11, message = "Tamanho inválido para o campo RG(9 dígitos.")
+	@Column(name = "rg", length = 9, nullable = false)
 	private String rg;
+
+	@NotEmpty(message = "O campo endereço é obrigatório.")
+	@Column(name = "endereco", length = 50, nullable = false)
 	private String endereco;
+
+	@Column(name = "fone", length = 10)
 	private String fone;
+
+	@Column(name = "celular", length = 11, nullable = false)
 	private String celular;
+
+	@Column(name = "escola", length = 50)
 	private String escola;
+
+	@Column(name = "horario", length = 50)
 	private String horario;
+
+	@Column(name = "responsavel", length = 50, nullable = false)
 	private String responsavel;
+
+	@Column(name = "parentesco", length = 50)
 	private String parentesco;
+
+	@Column(name = "docresponsavel", length = 11)
 	private String documentoResponsavel;
+
+	@Column(name = "respreenchimento", length = 50, nullable = false)
 	private String responsavelPreenchimento;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "beneficio_codigo", referencedColumnName = "codigo", nullable = false)
+	private Beneficio beneficio;
 
 	public Long getCodigo() {
 		return codigo;
@@ -170,6 +235,14 @@ public class Inscrito {
 
 	public void setResponsavelPreenchimento(String responsavelPreenchimento) {
 		this.responsavelPreenchimento = responsavelPreenchimento;
+	}
+
+	public Beneficio getBeneficio() {
+		return beneficio;
+	}
+
+	public void setBeneficio(Beneficio beneficio) {
+		this.beneficio = beneficio;
 	}
 
 	@Override
