@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -19,6 +21,8 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "inscrito")
+@NamedQueries({ @NamedQuery(name = "Inscrito.listar", query = "SELECT inscrito FROM Inscrito inscrito"),
+		@NamedQuery(name = "Inscrito.buscarPorCodigo", query = "SELECT inscrito FROM Inscrito inscrito WHERE inscrito.codigo = :codigos") })
 public class Inscrito {
 
 	@Id
