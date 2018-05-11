@@ -11,7 +11,7 @@
 	<ui:define name="metadata">
 		<f:metadata>
 
-			<f:event listener="#{fabricanteBean.carregarPesquisa}"
+			<f:event listener="#{inscritoBean.carregarPesquisa}"
 				type="preRenderView" />
 		</f:metadata>
 	</ui:define>
@@ -27,14 +27,14 @@
 			<p:separator />
 
 			<p:dataTable emptyMessage="Nenhum registro encontrado..."
-				value="#{fabricanteBean.listaFabricantes}"
-				filteredValue="#{fabricanteBean.listaFabricantesFiltrados}"
+				value="#{inscritoBean.listaInscritos}"
+				filteredValue="#{inscritoBean.listaInscritosFiltrados}"
 				var="fabricante" paginator="true" rows="10">
 
 				<f:facet name="footer">
 					<p:button value="Novo"
-						outcome="/pages/fabricanteCadastro.xhtml?faces-redirect=true">
-						<f:param name="fabricanteAcao" value="Novo" />
+						outcome="/pages/inscritoCadastro.xhtml?faces-redirect=true">
+						<f:param name="inscritoAcao" value="Novo" />
 					</p:button>
 				</f:facet>
 
@@ -49,15 +49,15 @@
 
 				<p:column headerText="Opção" style="text-align: center; width: 10%;">
 					<p:button icon="ui-icon-trash"
-						outcome="/pages/fabricanteCadastro.xhtml">
-						<f:param name="fabricanteId" value="#{fabricante.idFabricante}" />
-						<f:param name="fabricanteAcao" value="Excluir" />
+						outcome="/pages/inscritoCadastro.xhtml">
+						<f:param name="inscritoId" value="#{inscrito.codigo}" />
+						<f:param name="inscritoAcao" value="Excluir" />
 					</p:button>
 
 					<p:button icon="ui-icon-pencil"
-						outcome="/pages/fabricanteCadastro.xhtml">
-						<f:param name="fabricanteId" value="#{fabricante.idFabricante}" />
-						<f:param name="fabricanteAcao" value="Editar" />
+						outcome="/pages/inscritoCadastro.xhtml">
+						<f:param name="inscritoId" value="#{inscrito.codigo}" />
+						<f:param name="inscritoAcao" value="Editar" />
 					</p:button>
 				</p:column>
 			</p:dataTable>
