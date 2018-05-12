@@ -83,6 +83,9 @@ public class Inscrito {
 	@Column(name = "escola", length = 50)
 	private String escola;
 
+	@Column(name = "serie", length = 50)
+	private String serie;
+
 	@Column(name = "horario", length = 50)
 	private String horario;
 

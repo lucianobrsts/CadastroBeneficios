@@ -43,11 +43,13 @@
 				</p:column>
 
 				<p:column headerText="Child Number"
+					style="text-align: center; width:12%;"
 					filterBy="#{inscrito.childNumber}">
 					<h:outputText value="#{inscrito.childNumber}" />
 				</p:column>
 
-				<p:column headerText="Nome" filterBy="#{inscrito.nome}"> style="text-align: center;">
+				<p:column headerText="Nome" filterBy="#{inscrito.nome}"
+					style="text-align: center;">
 					<h:outputText value="#{inscrito.nome}" />
 				</p:column>
 
@@ -55,22 +57,29 @@
 					<h:outputText value="#{inscrito.endereco}" />
 				</p:column>
 
-				<p:column headerText="Fone" style="text-align: center;">
+				<p:column headerText="Fone" style="text-align: center; width: 10%;">
 					<h:outputText value="#{inscrito.fone}" />
 				</p:column>
 
-				<p:column headerText="Celular" style="text-align: center;">
+				<p:column headerText="Celular"
+					style="text-align: center; width: 10%;">
 					<h:outputText value="#{inscrito.celular}" />
 				</p:column>
 
 				<p:column headerText="Opção" style="text-align: center; width: 10%;">
-					<p:button icon="ui-icon-trash"
+					<p:button icon="ui-icon-trash" title="Excluir"
 						outcome="/pages/inscritoCadastro.xhtml">
 						<f:param name="inscritoId" value="#{inscrito.codigo}" />
 						<f:param name="inscritoAcao" value="Excluir" />
 					</p:button>
 
-					<p:button icon="ui-icon-pencil"
+					<p:button icon="ui-icon-pencil" title="Editar"
+						outcome="/pages/inscritoCadastro.xhtml">
+						<f:param name="inscritoId" value="#{inscrito.codigo}" />
+						<f:param name="inscritoAcao" value="Editar" />
+					</p:button>
+
+					<p:button icon="ui-icon-search" title="Exibir"
 						outcome="/pages/inscritoCadastro.xhtml">
 						<f:param name="inscritoId" value="#{inscrito.codigo}" />
 						<f:param name="inscritoAcao" value="Editar" />
