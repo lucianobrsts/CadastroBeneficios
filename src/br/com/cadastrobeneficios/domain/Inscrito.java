@@ -30,6 +30,11 @@ public class Inscrito {
 	@Column(name = "codigo")
 	private Long codigo;
 
+	@NotEmpty(message = "Digite o nome de uma crinça que seja inscrita no Projeto.")
+	@Size(min = 5, max = 50, message = "Tamanho inválido para o campo Criança Inscrita.")
+	@Column(name = "crianca_inscrita", length = 50)
+	private String criancaInscrita;
+
 	@NotEmpty(message = "O campo nome é obrigatório.")
 	@Size(min = 5, max = 50, message = "Tamanho inválido para o campo nome (5 - 50)")
 	@Column(name = "nome", length = 50, nullable = false)
@@ -103,6 +108,14 @@ public class Inscrito {
 
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
+	}
+
+	public String getCriancaInscrita() {
+		return criancaInscrita;
+	}
+
+	public void setCriancaInscrita(String criancaInscrita) {
+		this.criancaInscrita = criancaInscrita;
 	}
 
 	public String getNome() {

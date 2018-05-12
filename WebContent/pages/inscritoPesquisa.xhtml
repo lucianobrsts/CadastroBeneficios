@@ -29,7 +29,7 @@
 			<p:dataTable emptyMessage="Nenhum registro encontrado..."
 				value="#{inscritoBean.listaInscritos}"
 				filteredValue="#{inscritoBean.listaInscritosFiltrados}"
-				var="fabricante" paginator="true" rows="10">
+				var="inscrito" paginator="true" rows="10">
 
 				<f:facet name="footer">
 					<p:button value="Novo"
@@ -38,13 +38,29 @@
 					</p:button>
 				</f:facet>
 
-				<p:column headerText="Id" style="text-align: center; width:8%;">
-					<h:outputText value="#{fabricante.idFabricante}" />
+				<p:column headerText="Código" style="text-align: center; width:8%;">
+					<h:outputText value="#{inscrito.codigo}" />
 				</p:column>
 
-				<p:column headerText="Descrição" filterBy="#{fabricante.descricao}"
-					sortBy="#{fabricante.descricao}">
-					<h:outputText value="#{fabricante.descricao}" />
+				<p:column headerText="Child Number"
+					filterBy="#{inscrito.childNumber}">
+					<h:outputText value="#{inscrito.childNumber}" />
+				</p:column>
+
+				<p:column headerText="Nome" filterBy="#{inscrito.nome}"> style="text-align: center;">
+					<h:outputText value="#{inscrito.nome}" />
+				</p:column>
+
+				<p:column headerText="Endereço" style="text-align: center;">
+					<h:outputText value="#{inscrito.endereco}" />
+				</p:column>
+
+				<p:column headerText="Fone" style="text-align: center;">
+					<h:outputText value="#{inscrito.fone}" />
+				</p:column>
+
+				<p:column headerText="Celular" style="text-align: center;">
+					<h:outputText value="#{inscrito.celular}" />
 				</p:column>
 
 				<p:column headerText="Opção" style="text-align: center; width: 10%;">

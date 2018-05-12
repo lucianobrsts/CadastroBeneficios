@@ -9,61 +9,184 @@
 <ui:composition template="/templates/modeloGeral.xhtml">
 	<ui:define name="metadata">
 		<f:metadata>
-			<f:viewParam name="fabricanteId" value="#{fabricanteBean.codigo}" />
-			<f:viewParam name="fabricanteAcao" value="#{fabricanteBean.acao}" />
+			<f:viewParam name="inscritoId" value="#{inscritoBean.codigo}" />
+			<f:viewParam name="inscritoAcao" value="#{inscritoBean.acao}" />
 
-			<f:event listener="#{fabricanteBean.carregarCadastro}"
+			<f:event listener="#{inscritoBean.carregarCadastro}"
 				type="preRenderView"></f:event>
 		</f:metadata>
 	</ui:define>
 
 	<ui:define name="conteudo">
-		<h:form id="formFabricanteCadastro">
+		<h:form id="formInscritoCadastro">
 
 			<p:toolbar>
 				<f:facet name="left">
-					<h:outputText value="Fabricantes" />
+					<h:outputText value="Ficha Cadastral - Atividades 2018" />
 				</f:facet>
 			</p:toolbar>
 
 			<p:separator />
 
-			<h:panelGrid columns="2" id="panelFabricanteCadastro">
-				<p:outputLabel value="Id:" />
-				<p:inputText size="10" readonly="true"
-					value="#{fabricanteBean.fabricanteCadastro.idFabricante}" />
-
-				<p:outputLabel value="Descrição:" />
-				<p:inputText maxlength="50" size="30"
-					value="#{fabricanteBean.fabricanteCadastro.descricao}"
-					readonly="#{fabricanteBean.acao == 'Excluir'}">
-
+			<h:panelGrid columns="2" id="panelInscritoCadastro">
+				<p:outputLabel value="Criança Inscrita:" />
+				<p:inputText maxlength="50" size="40"
+					style="text-transform: uppercase;"
+					value="#{inscritoBean.inscritoCadastro.criancaInscrita}">
 					<f:validateBean />
+				</p:inputText>
 
+				<p:outputLabel value="Nome:" />
+				<p:inputText maxlength="50" size="40"
+					style="text-transform: uppercase;"
+					value="#{inscritoBean.inscritoCadastro.nome}">
+					<f:validateBean />
+				</p:inputText>
+
+				<p:outputLabel value="Data Nascimento:" />
+				<p:inputText maxlength="50" size="15"
+					value="#{inscritoBean.inscritoCadastro.nome}">
+					<f:validateBean />
+				</p:inputText>
+
+				<p:outputLabel for="sexo" value="Sexo:" />
+				<p:selectOneRadio id="sexo" value="#{radioView.console}">
+					<f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+					<f:selectItem itemLabel="Feminino" itemValue="Feminimo" />
+				</p:selectOneRadio>
+
+				<p:outputLabel value="Idade:" />
+				<p:inputText maxlength="50" size="15"
+					value="#{inscritoBean.inscritoCadastro.nome}">
+					<f:validateBean />
+				</p:inputText>
+
+				<p:outputLabel value="Child Number:" />
+				<p:inputText maxlength="50" size="15"
+					value="#{inscritoBean.inscritoCadastro.nome}">
+					<f:validateBean />
+				</p:inputText>
+
+				<p:outputLabel value="PF:" />
+				<p:inputText maxlength="50" size="15"
+					value="#{inscritoBean.inscritoCadastro.nome}">
+					<f:validateBean />
+				</p:inputText>
+
+				<p:outputLabel value="CS:" />
+				<p:inputText maxlength="50" size="15"
+					value="#{inscritoBean.inscritoCadastro.nome}">
+					<f:validateBean />
+				</p:inputText>
+
+
+
+				<p:outputLabel value="NIS:" />
+				<p:inputText maxlength="50" size="15"
+					value="#{inscritoBean.inscritoCadastro.nome}">
+					<f:validateBean />
+				</p:inputText>
+
+				<p:outputLabel value="Endereço:" />
+				<p:inputText maxlength="50" size="40"
+					value="#{inscritoBean.inscritoCadastro.nome}">
+					<f:validateBean />
+				</p:inputText>
+
+				<p:outputLabel value="Telefone Residencial:" />
+				<p:inputText maxlength="50" size="26"
+					value="#{inscritoBean.inscritoCadastro.nome}">
+					<f:validateBean />
+				</p:inputText>
+
+				<p:outputLabel value="Celular:" />
+				<p:inputText maxlength="50" size="26"
+					value="#{inscritoBean.inscritoCadastro.nome}">
+					<f:validateBean />
+				</p:inputText>
+
+				<p:outputLabel value="Escola em que estuda:" />
+				<p:inputText maxlength="50" size="40"
+					value="#{inscritoBean.inscritoCadastro.nome}">
+					<f:validateBean />
+				</p:inputText>
+
+				<p:outputLabel for="horario_estudo" value="Horário que estuda:" />
+				<p:selectOneRadio id="horario_estudo" value="#{radioView.console}">
+					<f:selectItem itemLabel="Manhã" itemValue="Manhaã" />
+					<f:selectItem itemLabel="Tarde" itemValue="Tarde" />
+					<f:selectItem itemLabel="Noite" itemValue="Noite" />
+				</p:selectOneRadio>
+
+				<p:outputLabel for="serie" value="Série:" />
+				<p:selectOneMenu id="serie" value="">
+					<f:selectItem itemLabel="Selecione uma série" itemValue="" />
+					<f:selectItem itemLabel="1º ano" itemValue="1º ano" />
+					<f:selectItem itemLabel="2º ano" itemValue="2º ano" />
+					<f:selectItem itemLabel="3º ano" itemValue="3º ano" />
+					<f:selectItem itemLabel="4º ano" itemValue="4º ano" />
+					<f:selectItem itemLabel="5º ano" itemValue="5º ano" />
+					<f:selectItem itemLabel="6º ano" itemValue="6º ano" />
+					<f:selectItem itemLabel="7º ano" itemValue="7º ano" />
+					<f:selectItem itemLabel="8º ano" itemValue="8º ano" />
+					<f:selectItem itemLabel="9º ano" itemValue="9º ano" />
+					<f:selectItem itemLabel="1º ano ensino médio"
+						itemValue="1º ano ensino médio" />
+					<f:selectItem itemLabel="2º ano ensino médio"
+						itemValue="2º ano ensino médio" />
+					<f:selectItem itemLabel="3º ano ensino médio"
+						itemValue="3º ano ensino médio" />
+					<f:selectItem itemLabel="Ensino Médio incompleto"
+						itemValue="Ensino Médio incompleto" />
+					<f:selectItem itemLabel="Ensino Médio completo"
+						itemValue="Ensino Médio completo" />
+					<f:selectItem itemLabel="Superior incompleto"
+						itemValue="Superior incompleto" />
+					<f:selectItem itemLabel="Superior completo"
+						itemValue="Superior completo" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Responsável:" />
+				<p:inputText maxlength="50" size="30"
+					value="#{inscritoBean.inscritoCadastro.nome}">
+					<f:validateBean />
+				</p:inputText>
+
+				<p:outputLabel for="parentesco" value="Parentesco:" />
+				<p:selectOneMenu id="parentesco" value="">
+					<f:selectItem itemLabel="Selecione um parentesco" itemValue="" />
+					<f:selectItem itemLabel="Pai" itemValue="Pai" />
+					<f:selectItem itemLabel="Mãe" itemValue="Mãe" />
+					<f:selectItem itemLabel="Avó/Avô" itemValue="Avó/Avô" />
+					<f:selectItem itemLabel="Tia/Tio" itemValue="Tia/Tio" />
+					<f:selectItem itemLabel="Prima/Primo" itemValue="Prima/Primo" />
+					<f:selectItem itemLabel="Sobrinha/Sobrinho"
+						itemValue="Sobrinha/Sobrinho" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="RG ou CPF responsável:" />
+				<p:inputText maxlength="50" size="30"
+					value="#{inscritoBean.inscritoCadastro.nome}">
+					<f:validateBean />
 				</p:inputText>
 			</h:panelGrid>
 
 			<h:panelGrid columns="5">
-				<p:commandButton value="Novo"
-					actionListener="#{fabricanteBean.novo}"
-					update=":formFabricanteCadastro:panelFabricanteCadastro"
-					rendered="#{fabricanteBean.acao == 'Novo' and autenticacaoBean.funcionarioLogado.funcao != 'Balconista'}" />
+				<p:commandButton value="Novo" actionListener="#{inscritoBean.novo}"
+					update=":formInscritoCadastro:panelInscritoCadastro" />
 
 				<p:commandButton value="Salvar"
-					actionListener="#{fabricanteBean.salvar}"
-					update=":mensagemGlobal :formFabricanteCadastro:panelFabricanteCadastro"
-					rendered="#{fabricanteBean.acao == 'Novo' and autenticacaoBean.funcionarioLogado.funcao != 'Balconista'}" />
+					actionListener="#{inscritoBean.salvar}"
+					update=":mensagemGlobal :formInscritoCadastro:panelInscritoCadastro" />
 
 				<p:commandButton value="Excluir" icon="ui-icon-trash"
-					actionListener="#{fabricanteBean.excluir}" update=":mensagemGlobal"
-					rendered="#{fabricanteBean.acao == 'Excluir' and autenticacaoBean.funcionarioLogado.funcao != 'Balconista'}" />
+					actionListener="#{inscritoBean.excluir}" update=":mensagemGlobal" />
 
 				<p:commandButton value="Editar" icon="ui-icon-pencil"
-					actionListener="#{fabricanteBean.editar}" update=":mensagemGlobal"
-					rendered="#{fabricanteBean.acao == 'Editar' and autenticacaoBean.funcionarioLogado.funcao != 'Balconista'}" />
+					actionListener="#{inscritoBean.editar}" update=":mensagemGlobal" />
 
 				<p:button value="Voltar"
-					outcome="/pages/fabricantePesquisa.xhtml?faces-redirect=true" />
+					outcome="/pages/inscritoPesquisa.xhtml?faces-redirect=true" />
 			</h:panelGrid>
 		</h:form>
 	</ui:define>
