@@ -56,19 +56,16 @@ public class Inscrito {
 	@Column(name = "pf", nullable = false)
 	private Integer pf;
 
-	@NotNull(message = "O campo CS é obrigatório.")
-	@Column(name = "cs", nullable = false)
+	@Column(name = "cs")
 	private Integer cs;
 
-	@NotEmpty(message = "O campo NIS é obrigatório.")
-	@Size(min = 11, max = 11, message = "Tamanho inválido para o campo NIS (11 dígitos).")
-	@Column(name = "nis", length = 11, nullable = false)
+	@Column(name = "nis")
 	private String nis;
 
-	@NotEmpty(message = "O campo RG é obrigatório.")
-	@Size(min = 1, max = 11, message = "Tamanho inválido para o campo RG(9 dígitos.")
-	@Column(name = "rg", length = 9, nullable = false)
-	private String rg;
+	@NotEmpty(message = "O campo Registro/RG é obrigatório.")
+	@Size(min = 1, max = 10, message = "Tamanho inválido para o campo RG(10 dígitos.")
+	@Column(name = "registrorg", length = 10, nullable = false)
+	private String registroRg;
 
 	@NotEmpty(message = "O campo endereço é obrigatório.")
 	@Column(name = "endereco", length = 50, nullable = false)
@@ -77,7 +74,7 @@ public class Inscrito {
 	@Column(name = "fone", length = 10)
 	private String fone;
 
-	@Column(name = "celular", length = 11, nullable = false)
+	@Column(name = "celular", length = 15, nullable = false)
 	private String celular;
 
 	@Column(name = "escola", length = 50)
@@ -102,7 +99,7 @@ public class Inscrito {
 	private String responsavelPreenchimento;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "beneficio_codigo", referencedColumnName = "codigo", nullable = false)
+	@JoinColumn(name = "beneficio_codigo", referencedColumnName = "codigo")
 	private Beneficio beneficio;
 
 	public Long getCodigo() {
@@ -177,12 +174,20 @@ public class Inscrito {
 		this.nis = nis;
 	}
 
-	public String getRg() {
-		return rg;
+	public String getRegistroRg() {
+		return registroRg;
 	}
 
-	public void setRg(String rg) {
-		this.rg = rg;
+	public void setRegistroRg(String registroRg) {
+		this.registroRg = registroRg;
+	}
+
+	public String getSerie() {
+		return serie;
+	}
+
+	public void setSerie(String serie) {
+		this.serie = serie;
 	}
 
 	public String getEndereco() {

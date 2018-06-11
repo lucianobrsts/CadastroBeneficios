@@ -38,7 +38,7 @@
 					</p:button>
 				</f:facet>
 
-				<p:column headerText="Código" style="text-align: center; width:8%;">
+				<p:column headerText="Código" style="text-align: center; width:6%;">
 					<h:outputText value="#{inscrito.codigo}" />
 				</p:column>
 
@@ -49,11 +49,12 @@
 				</p:column>
 
 				<p:column headerText="Nome" filterBy="#{inscrito.nome}"
-					style="text-align: center;">
+					style="text-align: center; text-transform: uppercase;">
 					<h:outputText value="#{inscrito.nome}" />
 				</p:column>
 
-				<p:column headerText="Endereço" style="text-align: center;">
+				<p:column headerText="Endereço"
+					style="text-align: center; text-transform: uppercase;">
 					<h:outputText value="#{inscrito.endereco}" />
 				</p:column>
 
@@ -62,7 +63,7 @@
 				</p:column>
 
 				<p:column headerText="Celular"
-					style="text-align: center; width: 10%;">
+					style="text-align: center; width: 13%;">
 					<h:outputText value="#{inscrito.celular}" />
 				</p:column>
 

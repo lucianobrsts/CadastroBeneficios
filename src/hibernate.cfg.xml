@@ -5,9 +5,7 @@
 		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-
 	<session-factory>
-
 		<!-- Configurações da conexão -->
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/cadastrobeneficios</property>
@@ -30,11 +28,9 @@
 		<property name="hibernate.show_sql">true</property>
 
 		<!-- Cria as tabelas -->
-		<property name="hbm2ddl.auto">validate</property>
+		<property name="hbm2ddl.auto">create</property>
 
 		<mapping class="br.com.cadastrobeneficios.domain.Inscrito" />
 		<mapping class="br.com.cadastrobeneficios.domain.Beneficio" />
-
-
 	</session-factory>
 </hibernate-configuration>
