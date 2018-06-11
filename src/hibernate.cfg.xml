@@ -28,7 +28,7 @@
 		<property name="hibernate.show_sql">true</property>
 
 		<!-- Cria as tabelas -->
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">validate</property>
 
 		<mapping class="br.com.cadastrobeneficios.domain.Inscrito" />
 		<mapping class="br.com.cadastrobeneficios.domain.Beneficio" />
