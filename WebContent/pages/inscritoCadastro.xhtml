@@ -44,9 +44,14 @@
 					<f:validateBean />
 				</p:inputText>
 
-				<p:outputLabel value="Data Nascimento:" />
-				<p:calendar value="#{inscritoBean.inscritoCadastro.dataNascimento}"
-					size="10" mask="true" pattern="dd/MM/yyyy" />
+					<p:outputLabel value="Data Nascimento:" />
+					<p:calendar value="#{inscritoBean.inscritoCadastro.dataNascimento}"
+						size="10" mask="true" pattern="dd/MM/yyyy" />
+
+					<p:outputLabel value="Idade:" />
+					<p:inputText maxlength="50" size="15">
+						<f:validateBean />
+					</p:inputText>
 
 				<p:outputLabel for="sexo" value="Sexo:" />
 				<p:selectOneRadio id="sexo"
@@ -55,10 +60,6 @@
 					<f:selectItem itemLabel="Feminino" itemValue="FEMININO" />
 				</p:selectOneRadio>
 
-				<p:outputLabel value="Idade:" />
-				<p:inputText maxlength="50" size="15">
-					<f:validateBean />
-				</p:inputText>
 
 				<p:outputLabel value="Registro/RG:" />
 				<p:inputText maxlength="50" size="15"
@@ -174,7 +175,7 @@
 					value="#{inscritoBean.inscritoCadastro.documentoResponsavel}">
 					<f:validateBean />
 				</p:inputText>
-				
+
 				<p:outputLabel value="Responsável Preenchimento:" />
 				<p:inputText maxlength="50" size="30"
 					style="text-transform: uppercase"
