@@ -1,10 +1,5 @@
 package br.com.cadastrobeneficios.bean;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -128,28 +123,4 @@ public class InscritoBean {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar editar o inscrito: " + ex.getMessage());
 		}
 	}
-	
-	public Integer getIdade() {
-		GregorianCalendar hj = new GregorianCalendar();
-		GregorianCalendar nascimento = new GregorianCalendar();
-		if(inscritoCadastro.getDataNascimento() != null) {
-			nascimento.setTime(inscritoCadastro.getDataNascimento());
-		}
-		int anoHj = hj.get(Calendar.YEAR);
-		int anoNascimento = nascimento.get(Calendar.YEAR);
-		return new Integer(anoHj - anoNascimento);
-	}
-	
-	public static java.sql.Date formataData(String data) throws Exception { 
- 		if (data == null || data.equals(""))
- 			return null;
-         java.sql.Date date = null;
-         try {
-             DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-             date = new java.sql.Date( ((java.util.Date)formatter.parse(data)).getTime() );
-         } catch (ParseException e) {            
-             throw e;
-         }
-         return date;
- 	}
 }

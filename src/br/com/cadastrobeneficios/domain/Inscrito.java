@@ -31,12 +31,12 @@ public class Inscrito {
 	private Long codigo;
 
 	@NotEmpty(message = "Digite o nome de uma crinça que seja inscrita no Projeto.")
-	@Size(min = 5, max = 50, message = "Tamanho inválido para o campo Criança Inscrita.")
-	@Column(name = "crianca_inscrita", length = 50)
+	@Size(min = 5, max = 50, message = "Tamanho inválido para o campo Criança Inscrita(5 - 50 dígitos)")
+	@Column(name = "crianca_inscrita", length = 50, nullable = false)
 	private String criancaInscrita;
 
-	@NotEmpty(message = "O campo nome é obrigatório.")
-	@Size(min = 5, max = 50, message = "Tamanho inválido para o campo nome (5 - 50)")
+	@NotEmpty(message = "O campo Nome Completo é obrigatório.")
+	@Size(min = 5, max = 50, message = "Tamanho inválido para o campo nome (5 - 50 dígitos)")
 	@Column(name = "nome", length = 50, nullable = false)
 	private String nome;
 
@@ -44,12 +44,11 @@ public class Inscrito {
 	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date dataNascimento;
 
-	@NotEmpty(message = "O campo sexo é obrigatório.")
+	@NotEmpty(message = "O campo Sexo é obrigatório.")
 	@Column(name = "sexo", nullable = false)
 	private String sexo;
 
-	@NotNull(message = "O campo Child Number é obrigatório.")
-	@Column(name = "childnumber", nullable = false)
+	@Column(name = "childnumber")
 	private Integer ChildNumber;
 
 	@NotNull(message = "O campo PF é obrigatório.")
@@ -63,21 +62,22 @@ public class Inscrito {
 	private String nis;
 
 	@NotEmpty(message = "O campo Registro/RG é obrigatório.")
-	@Size(min = 1, max = 10, message = "Tamanho inválido para o campo RG(10 dígitos.")
-	@Column(name = "registrorg", length = 10, nullable = false)
+	@Size(min = 3, max = 11, message = "Tamanho inválido para o campo Registro/RG (3 - 11 dígitos.")
+	@Column(name = "registrorg", length = 11, nullable = false)
 	private String registroRg;
 
-	@NotEmpty(message = "O campo endereço é obrigatório.")
+	@NotEmpty(message = "O campo Endereço é obrigatório.")
 	@Column(name = "endereco", length = 50, nullable = false)
 	private String endereco;
 
-	@Column(name = "fone", length = 10)
+	@Column(name = "fone", length = 15)
 	private String fone;
 
-	@Column(name = "celular", length = 15, nullable = false)
+	@Column(name = "celular", length = 15)
 	private String celular;
 
-	@Column(name = "escola", length = 50)
+	@NotEmpty(message = "O campo Escola é obrigatório.")
+	@Column(name = "escola", length = 50, nullable = false)
 	private String escola;
 
 	@Column(name = "serie", length = 50)
@@ -86,13 +86,16 @@ public class Inscrito {
 	@Column(name = "horario", length = 50)
 	private String horario;
 
+	@NotEmpty(message = "O campo Responsável é obrigatório.")
 	@Column(name = "responsavel", length = 50, nullable = false)
 	private String responsavel;
 
-	@Column(name = "parentesco", length = 50)
+	@NotEmpty(message = "O campo Parentesco é obrigatório.")
+	@Column(name = "parentesco", length = 50, nullable = false)
 	private String parentesco;
 
-	@Column(name = "docresponsavel", length = 11)
+	@NotEmpty(message = "O campo RG ou CPF Responsável é obrigatório.")
+	@Column(name = "docresponsavel", length = 11, nullable = false)
 	private String documentoResponsavel;
 
 	@Column(name = "respreenchimento", length = 50, nullable = false)

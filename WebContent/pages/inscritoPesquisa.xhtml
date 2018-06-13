@@ -58,8 +58,8 @@
 					<h:outputText value="#{inscrito.endereco}" />
 				</p:column>
 
-				<p:column headerText="Fone" style="text-align: center; width: 10%;">
-					<h:outputText value="#{inscrito.fone}" />
+				<p:column headerText="PF" style="text-align: center; width: 10%;">
+					<h:outputText value="#{inscrito.pf}" />
 				</p:column>
 
 				<p:column headerText="Celular"
@@ -95,83 +95,93 @@
 
 				<h:panelGrid columns="2" id="panelInfoInscritos">
 					<h:outputText value="Criança Inscrita:" />
-					<h:outputText style="text-transform: uppercase;"
+					<h:inputText style="text-transform: uppercase;" size="30"
+						disabled="true"
 						value="#{inscritoBean.inscritoCadastro.criancaInscrita}" />
 
 					<h:outputText value="Nome Completo:" />
-					<h:outputText style="text-transform: uppercase;"
-						value="#{inscritoBean.inscritoCadastro.nome}" />
+					<h:inputText style="text-transform: uppercase;" size="30"
+						disabled="true" value="#{inscritoBean.inscritoCadastro.nome}" />
 
 					<h:outputText value="Data Nascimento:" />
-					<h:outputText
-						value="#{inscritoBean.inscritoCadastro.dataNascimento}" />
+					<h:inputText size="15" disabled="true"
+						value="#{inscritoBean.inscritoCadastro.dataNascimento}">
+						<f:convertDateTime pattern="dd/MM/yyyy"
+							timeZone="America/Sao_Paulo" />
+					</h:inputText>
 
 					<h:outputText value="Sexo:" />
-					<h:outputText style="text-transform: uppercase;"
-						value="#{inscritoBean.inscritoCadastro.sexo}" />
+					<h:inputText style="text-transform: uppercase;" size="15"
+						disabled="true" value="#{inscritoBean.inscritoCadastro.sexo}" />
 
 					<h:outputText value="Idade:" />
-					<h:outputText style="text-transform: uppercase;"
-						value="#{inscritoBean.inscritoCadastro.sexo}" />
+					<h:inputText style="text-transform: uppercase;" size="15"
+						disabled="true" value="" />
 
 					<h:outputText value="Registro/RG:" />
-					<h:outputText style="text-transform: uppercase;"
+					<h:inputText style="text-transform: uppercase;" size="15"
+						disabled="true"
 						value="#{inscritoBean.inscritoCadastro.registroRg}" />
 
 					<h:outputText value="Child Number:" />
-					<h:outputText style="text-transform: uppercase;"
+					<h:inputText style="text-transform: uppercase;" size="15"
+						disabled="true"
 						value="#{inscritoBean.inscritoCadastro.childNumber}" />
 
 					<h:outputText value="PF:" />
-					<h:outputText style="text-transform: uppercase;"
-						value="#{inscritoBean.inscritoCadastro.pf}" />
+					<h:inputText style="text-transform: uppercase;" size="15"
+						disabled="true" value="#{inscritoBean.inscritoCadastro.pf}" />
 
 					<h:outputText value="CS:" />
-					<h:outputText style="text-transform: uppercase;"
-						value="#{inscritoBean.inscritoCadastro.cs}" />
+					<h:inputText style="text-transform: uppercase;" size="15"
+						disabled="true" value="#{inscritoBean.inscritoCadastro.cs}" />
 
 					<h:outputText value="NIS:" />
-					<h:outputText style="text-transform: uppercase;"
-						value="#{inscritoBean.inscritoCadastro.nis}" />
+					<h:inputText style="text-transform: uppercase;" size="20"
+						disabled="true" value="#{inscritoBean.inscritoCadastro.nis}" />
 
 					<h:outputText value="Endereço:" />
-					<h:outputText style="text-transform: uppercase;"
-						value="#{inscritoBean.inscritoCadastro.endereco}" />
+					<h:inputText style="text-transform: uppercase;" size="30"
+						disabled="true" value="#{inscritoBean.inscritoCadastro.endereco}" />
 
 					<h:outputText value="Telefone Residência:" />
-					<h:outputText style="text-transform: uppercase;"
-						value="#{inscritoBean.inscritoCadastro.fone}" />
+					<h:inputText style="text-transform: uppercase;" size="20"
+						disabled="true" value="#{inscritoBean.inscritoCadastro.fone}" />
 
 					<h:outputText value="Celular:" />
-					<h:outputText style="text-transform: uppercase;"
-						value="#{inscritoBean.inscritoCadastro.celular}" />
+					<h:inputText style="text-transform: uppercase;" size="20"
+						disabled="true" value="#{inscritoBean.inscritoCadastro.celular}" />
 
 					<h:outputText value="Escola em que estuda:" />
-					<h:outputText style="text-transform: uppercase;"
-						value="#{inscritoBean.inscritoCadastro.escola}" />
+					<h:inputText style="text-transform: uppercase;" size="30"
+						disabled="true" value="#{inscritoBean.inscritoCadastro.escola}" />
 
 					<h:outputText value="Horário que estuda:" />
-					<h:outputText style="text-transform: uppercase;"
-						value="#{inscritoBean.inscritoCadastro.horario}" />
+					<h:inputText style="text-transform: uppercase;" size="15"
+						disabled="true" value="#{inscritoBean.inscritoCadastro.horario}" />
 
 					<h:outputText value="Série:" />
-					<h:outputText style="text-transform: uppercase;"
-						value="#{inscritoBean.inscritoCadastro.serie}" />
+					<h:inputText style="text-transform: uppercase;" size="20"
+						disabled="true" value="#{inscritoBean.inscritoCadastro.serie}" />
 
 					<h:outputText value="Responável:" />
-					<h:outputText style="text-transform: uppercase;"
+					<h:inputText style="text-transform: uppercase;" size="30"
+						disabled="true"
 						value="#{inscritoBean.inscritoCadastro.responsavel}" />
 
 					<h:outputText value="Parentesco:" />
-					<h:outputText style="text-transform: uppercase;"
+					<h:inputText style="text-transform: uppercase;" size="20"
+						disabled="true"
 						value="#{inscritoBean.inscritoCadastro.parentesco}" />
 
 					<h:outputText value="RG/CPF do Responsável:" />
-					<h:outputText style="text-transform: uppercase;"
+					<h:inputText style="text-transform: uppercase;" size="20"
+						disabled="true"
 						value="#{inscritoBean.inscritoCadastro.documentoResponsavel}" />
 
 					<h:outputText value="Preenchimento:" />
-					<h:outputText style="text-transform: uppercase;"
+					<h:inputText style="text-transform: uppercase;" size="30"
+						disabled="true"
 						value="#{inscritoBean.inscritoCadastro.responsavelPreenchimento}" />
 				</h:panelGrid>
 			</p:dialog>
