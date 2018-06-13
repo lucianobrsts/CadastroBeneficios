@@ -29,8 +29,8 @@
 
 		<!-- Cria as tabelas -->
 		<property name="hbm2ddl.auto">validate</property>
-
 		<mapping class="br.com.cadastrobeneficios.domain.Inscrito" />
 		<mapping class="br.com.cadastrobeneficios.domain.Beneficio" />
+		<mapping class="br.com.cadastrobeneficios.domain.Usuario" />
 	</session-factory>
 </hibernate-configuration>
