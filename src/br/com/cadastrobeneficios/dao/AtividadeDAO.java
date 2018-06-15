@@ -6,18 +6,18 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import br.com.cadastrobeneficios.domain.Usuario;
+import br.com.cadastrobeneficios.domain.Atividade;
 import br.com.cadastrobeneficios.util.HibernateUtil;
 
-public class UsuarioDAO {
+public class AtividadeDAO {
 
-	public void salvar(Usuario usuario) {
+	public void salvar(Atividade atividade) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction transacao = null;
 
 		try {
 			transacao = sessao.beginTransaction();
-			sessao.save(usuario);
+			sessao.save(atividade);
 			transacao.commit();
 		} catch (RuntimeException ex) {
 			if (transacao != null) {
@@ -29,45 +29,45 @@ public class UsuarioDAO {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Usuario> listar() {
+	public List<Atividade> listar() {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
-		List<Usuario> usuarios = null;
+		List<Atividade> atividades = null;
 
 		try {
-			Query consulta = sessao.getNamedQuery("Usuario.listar");
-			usuarios = consulta.list();
+			Query consulta = sessao.getNamedQuery("Atividade.listar");
+			atividades = consulta.list();
 		} catch (RuntimeException ex) {
 			throw ex;
 		} finally {
 			sessao.close();
 		}
-		return usuarios;
+		return atividades;
 	}
 
-	public Usuario buscarPorCodigo(Long codigo) {
+	public Atividade buscarPorCodigo(Long codigo) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
-		Usuario usuario = null;
+		Atividade atividade = null;
 
 		try {
-			Query consulta = sessao.getNamedQuery("Usuario.buscarPorCodigo");
+			Query consulta = sessao.getNamedQuery("Atividade.buscarPorCodigo");
 			consulta.setLong("codigo", codigo);
 
-			usuario = (Usuario) consulta.uniqueResult();
+			atividade = (Atividade) consulta.uniqueResult();
 		} catch (RuntimeException ex) {
 			throw ex;
 		} finally {
 			sessao.close();
 		}
-		return usuario;
+		return atividade;
 	}
 
-	public void excluir(Usuario usuario) {
+	public void excluir(Atividade atividade) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction transacao = null;
 
 		try {
 			transacao = sessao.beginTransaction();
-			sessao.delete(usuario);
+			sessao.delete(atividade);
 			transacao.commit();
 		} catch (RuntimeException ex) {
 			if (transacao != null) {
@@ -78,13 +78,13 @@ public class UsuarioDAO {
 		}
 	}
 
-	public void editar(Usuario usuario) {
+	public void editar(Atividade atividade) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction transacao = null;
 
 		try {
 			transacao = sessao.beginTransaction();
-			sessao.update(usuario);
+			sessao.update(atividade);
 			transacao.commit();
 		} catch (RuntimeException ex) {
 			if (transacao != null) {
@@ -93,25 +93,6 @@ public class UsuarioDAO {
 		} finally {
 			sessao.close();
 		}
-	}
-
-	public Usuario autenticar(String login, String senha) {
-		Session sessao = HibernateUtil.getSessionFactory().openSession();
-		Usuario usuario = null;
-
-		try {
-			Query consulta = sessao.getNamedQuery("Usuario.autenticar");
-			consulta.setString("login", login);
-			consulta.setString("senha", senha);
-
-			usuario = (Usuario) consulta.uniqueResult();
-		} catch (RuntimeException ex) {
-			throw ex;
-		} finally {
-			sessao.close();
-		}
-
-		return usuario;
 	}
 
 }

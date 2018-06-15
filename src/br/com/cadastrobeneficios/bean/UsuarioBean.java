@@ -2,12 +2,15 @@ package br.com.cadastrobeneficios.bean;
 
 import java.util.List;
 
-import br.com.cadastrobeneficios.dao.InscritoDAO;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
 import br.com.cadastrobeneficios.dao.UsuarioDAO;
-import br.com.cadastrobeneficios.domain.Inscrito;
 import br.com.cadastrobeneficios.domain.Usuario;
 import br.com.cadastrobeneficios.util.FacesUtil;
 
+@ManagedBean
+@ViewScoped
 public class UsuarioBean {
 
 	private Usuario usuarioCadastro;
@@ -57,11 +60,11 @@ public class UsuarioBean {
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
-	
+
 	public void novo() {
 		usuarioCadastro = new Usuario();
 	}
-	
+
 	public void salvar() {
 		try {
 			UsuarioDAO usuarioDAO = new UsuarioDAO();
@@ -71,9 +74,54 @@ public class UsuarioBean {
 
 			FacesUtil.adicionarMensagemInfo("Usuário salvo com sucesso!");
 		} catch (RuntimeException ex) {
-			FacesUtil.adiconarMensagemErro("Erro ao tentar incluir um Usuário: " + ex.getMessage());
+			FacesUtil.adiconarMensagemErro("Erro ao tentar salvar um Usuário: " + ex.getMessage());
 		}
 
+	}
+
+	public void carregarPesquisa() {
+		try {
+			UsuarioDAO usuarioDAO = new UsuarioDAO();
+			listaUsuarios = usuarioDAO.listar();
+		} catch (Exception ex) {
+			FacesUtil.adiconarMensagemErro("Erro ao tentar listar os usuários: " + ex.getMessage());
+		}
+	}
+	
+	public void carregarCadastro() {
+		try {
+			if (codigo != null) {
+				UsuarioDAO usuarioDAO = new UsuarioDAO();
+				usuarioCadastro = usuarioDAO.buscarPorCodigo(codigo);
+			} else {
+				usuarioCadastro = new Usuario();
+			}
+		} catch (Exception ex) {
+			FacesUtil.adiconarMensagemErro("Erro ao tentar obter os dados do Usuário: " + ex.getMessage());
+		}
+	}
+	
+	public void excluir() {
+		try {
+			UsuarioDAO usuarioDAO = new UsuarioDAO();
+			usuarioDAO.excluir(usuarioCadastro);
+
+			FacesUtil.adicionarMensagemInfo("Usuário excluído com sucesso!");
+		} catch (RuntimeException ex) {
+			FacesUtil.adiconarMensagemErro("Erro ao tentar excluir o Usuário: " + ex.getMessage());
+		}
+	}
+
+	public void editar() {
+		try {
+			UsuarioDAO usuarioDAO = new UsuarioDAO();
+
+			usuarioDAO.editar(usuarioCadastro);
+
+			FacesUtil.adicionarMensagemInfo("Usuário editado com sucesso!");
+		} catch (RuntimeException ex) {
+			FacesUtil.adiconarMensagemErro("Erro ao tentar editar o Usuário: " + ex.getMessage());
+		}
 	}
 
 }

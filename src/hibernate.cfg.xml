@@ -32,5 +32,6 @@
 		<mapping class="br.com.cadastrobeneficios.domain.Inscrito" />
 		<mapping class="br.com.cadastrobeneficios.domain.Beneficio" />
 		<mapping class="br.com.cadastrobeneficios.domain.Usuario" />
+		<mapping class="br.com.cadastrobeneficios.domain.Atividade" />
 	</session-factory>
 </hibernate-configuration>

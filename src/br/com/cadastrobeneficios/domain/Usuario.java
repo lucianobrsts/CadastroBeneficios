@@ -14,7 +14,8 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "usuario")
 @NamedQueries({ @NamedQuery(name = "Usuario.listar", query = "SELECT usuario FROM Usuario usuario"),
-		@NamedQuery(name = "Usuario.buscarPorCodigo", query = "SELECT usuario FROM Usuario usuario WHERE usuario.codigo = :codigo") })
+		@NamedQuery(name = "Usuario.buscarPorCodigo", query = "SELECT usuario FROM Usuario usuario WHERE usuario.codigo = :codigo"),
+		@NamedQuery(name = "Usuario.autenticar", query = "SELECT usuario FROM Usuario usuario WHERE usuario.login = :login AND usuario.senha = :senha") })
 public class Usuario {
 
 	@Id
@@ -26,6 +27,11 @@ public class Usuario {
 	@Size(min = 5, max = 50, message = "Tamanho inválido para o campo Nome (5 - 50)")
 	@Column(name = "nome", length = 50, nullable = false)
 	private String nome;
+
+	@NotEmpty(message = "O campo Login é obrigatório.")
+	@Size(min = 5, max = 50, message = "Tamanho inválido para o campo Login (5 - 50)")
+	@Column(name = "login", length = 50, nullable = false)
+	private String login;
 
 	@NotEmpty(message = "O campo Tipo é obrigatório.")
 	@Column(name = "tipo", length = 50, nullable = false)
@@ -52,6 +58,14 @@ public class Usuario {
 		this.nome = nome;
 	}
 
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
 	public String getTipo() {
 		return tipo;
 	}
@@ -70,7 +84,8 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [codigo=" + codigo + ", nome=" + nome + ", tipo=" + tipo + "]";
+		return "Usuario [codigo=" + codigo + ", nome=" + nome + ", login=" + login + ", tipo=" + tipo + ", senha="
+				+ senha + "]";
 	}
 
 }
