@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="/templates/modeloGeral.xhtml">
+	<ui:define name="metadata">
+		<f:metadata>
+			<f:viewParam name="atividadeId" value="#{atividadeBean.codigo}" />
+			<f:viewParam name="atividadeAcao" value="#{atividadeBean.acao}" />
+
+			<f:event listener="#{atividadeBean.carregarCadastro}"
+				type="preRenderView"></f:event>
+		</f:metadata>
+	</ui:define>
+
+	<ui:define name="conteudo">
+		<h:form id="formAtividadeCadastro">
+
+			<p:toolbar>
+				<f:facet name="left">
+					<h:outputText value="Ficha Cadastral - Atividades" />
+				</f:facet>
+			</p:toolbar>
+
+			<p:separator />
+
+			<h:panelGrid columns="2" id="panelAtividadeCadastro">
+				<p:outputLabel value="Nome:" />
+				<p:inputText maxlength="50" size="40" style="text-transform: uppercase;"
+					value="#{atividadeBean.atividadeCadastro.nome}">
+					<f:validateBean />
+				</p:inputText>
+			</h:panelGrid>
+
+			<h:panelGrid columns="5">
+				<p:commandButton value="Novo" actionListener="#{atividadeBean.novo}"
+					update=":formAtividadeCadastro:panelAtividadeCadastro" />
+
+				<p:commandButton value="Salvar"
+					actionListener="#{atividadeBean.salvar}"
+					update=":mensagemGlobal :formAtividadeCadastro:panelAtividadeCadastro" />
+
+				<p:commandButton value="Excluir" icon="ui-icon-trash"
+					actionListener="#{atividadeBean.excluir}" update=":mensagemGlobal" />
+
+				<p:commandButton value="Editar" icon="ui-icon-pencil"
+					actionListener="#{atividadeBean.editar}" update=":mensagemGlobal" />
+
+				<p:button value="Voltar"
+					outcome="/pages/atividadePesquisa.xhtml?faces-redirect=true" />
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>

@@ -2,10 +2,15 @@ package br.com.cadastrobeneficios.bean;
 
 import java.util.List;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
 import br.com.cadastrobeneficios.dao.AtividadeDAO;
 import br.com.cadastrobeneficios.domain.Atividade;
 import br.com.cadastrobeneficios.util.FacesUtil;
 
+@ManagedBean
+@ViewScoped
 public class AtividadeBean {
 	private Atividade atividadeCadastro;
 	private List<Atividade> listaAtividades;
