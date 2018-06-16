@@ -9,199 +9,147 @@
 <ui:composition template="/templates/modeloGeral.xhtml">
 	<ui:define name="metadata">
 		<f:metadata>
-			<f:viewParam name="inscritoId" value="#{inscritoBean.codigo}" />
-			<f:viewParam name="inscritoAcao" value="#{inscritoBean.acao}" />
+			<f:viewParam name="beneficioId" value="#{beneficioBean.codigo}" />
+			<f:viewParam name="beneficioAcao" value="#{beneficioBean.acao}" />
 
-			<f:event listener="#{inscritoBean.carregarCadastro}"
+			<f:event listener="#{beneficioBean.carregarCadastro}"
 				type="preRenderView"></f:event>
 		</f:metadata>
 	</ui:define>
 
 	<ui:define name="conteudo">
-		<h:form id="formInscritoCadastro">
+		<h:form id="formBeneficioCadastro">
 
 			<p:toolbar>
 				<f:facet name="left">
-					<h:outputText value="Ficha Cadastral - Atividades" />
+					<h:outputText value="Ficha Cadastral - Benefícios" />
 				</f:facet>
 			</p:toolbar>
 
 			<p:separator />
 
-			<h:panelGrid columns="2" id="panelInscritoCadastro">
-
-				<p:outputLabel value="Criança Inscrita:" />
+			<h:panelGrid columns="2" id="panelBeneficioCadastro">
+				<p:outputLabel value="Nome:" />
 				<p:inputText maxlength="50" size="40"
 					style="text-transform: uppercase;"
-					value="#{inscritoBean.inscritoCadastro.criancaInscrita}">
+					value="#{beneficioBean.beneficioCadastro.inscrito.nome}">
 					<f:validateBean />
 				</p:inputText>
 
-				<p:outputLabel value="Nome Completo:" />
+				<p:outputLabel value="Atividade:" />
 				<p:inputText maxlength="50" size="40"
 					style="text-transform: uppercase;"
-					value="#{inscritoBean.inscritoCadastro.nome}">
+					value="#{beneficioBean.beneficioCadastro.atividade.nome}">
 					<f:validateBean />
 				</p:inputText>
 
-				<p:outputLabel value="Data Nascimento:" />
-				<p:calendar value="#{inscritoBean.inscritoCadastro.dataNascimento}"
+				<p:outputLabel for="diasemana" value="Dia da Semana:" />
+				<p:selectOneMenu id="diasemana"
+					value="#{beneficioBean.beneficioCadastro.diaDaSemana}">
+					<f:selectItem itemLabel="Selecione um dia da semana" itemValue="" />
+					<f:selectItem itemLabel="Segunda" itemValue="Segunda-" />
+					<f:selectItem itemLabel="Terça" itemValue="Terça" />
+					<f:selectItem itemLabel="Quarta" itemValue="Quarta" />
+					<f:selectItem itemLabel="Quinta" itemValue="Quinta" />
+					<f:selectItem itemLabel="Sexta" itemValue="Sexta" />
+					<f:selectItem itemLabel="Segunda a Sexta"
+						itemValue="Segunda a Sexta" />
+					<f:selectItem itemLabel="Segunda a Quinta"
+						itemValue="Segunda a Quinta" />
+					<f:selectItem itemLabel="Segunda/Quinta" itemValue="Segunda/Quinta" />
+					<f:selectItem itemLabel="Segunda/Quarta" itemValue="Segunda/Quarta" />
+					<f:selectItem itemLabel="Terça/Quinta" itemValue="Terça/quinta" />
+				</p:selectOneMenu>
+
+				<p:outputLabel for="horarioInicio" value="Horário Início:" />
+				<p:selectOneMenu id="horarioInicio"
+					value="#{beneficioBean.beneficioCadastro.diaDaSemana}">
+					<f:selectItem itemLabel="Selecione uma hora..." itemValue="" />
+					<f:selectItem itemLabel="08:00" itemValue="08:00" />
+					<f:selectItem itemLabel="08:30" itemValue="08:30" />
+					<f:selectItem itemLabel="09:00" itemValue="09:00" />
+					<f:selectItem itemLabel="09:30" itemValue="09:30" />
+					<f:selectItem itemLabel="10:00" itemValue="10:00" />
+					<f:selectItem itemLabel="10:30" itemValue="10:30" />
+					<f:selectItem itemLabel="11:00" itemValue="11:00" />
+					<f:selectItem itemLabel="11:30" itemValue="11:30" />
+					<f:selectItem itemLabel="12:00" itemValue="12:00" />
+					<f:selectItem itemLabel="13:00" itemValue="13:00" />
+					<f:selectItem itemLabel="13:30" itemValue="13:30" />
+					<f:selectItem itemLabel="14:00" itemValue="14:00" />
+					<f:selectItem itemLabel="14:30" itemValue="14:30" />
+					<f:selectItem itemLabel="15:00" itemValue="15:00" />
+					<f:selectItem itemLabel="15:30" itemValue="15:30" />
+					<f:selectItem itemLabel="16:00" itemValue="16:00" />
+					<f:selectItem itemLabel="16:30" itemValue="16:30" />
+					<f:selectItem itemLabel="17:00" itemValue="17:00" />
+					<f:selectItem itemLabel="17:30" itemValue="17:30" />
+					<f:selectItem itemLabel="18:00" itemValue="18:00" />
+					<f:selectItem itemLabel="18:30" itemValue="18:30" />
+					<f:selectItem itemLabel="19:00" itemValue="19:00" />
+					<f:selectItem itemLabel="19:30" itemValue="19:30" />
+					<f:selectItem itemLabel="20:00" itemValue="20:00" />
+				</p:selectOneMenu>
+
+				<p:outputLabel for="horarioFim" value="Horário Fim:" />
+				<p:selectOneMenu id="horarioFim"
+					value="#{beneficioBean.beneficioCadastro.diaDaSemana}">
+					<f:selectItem itemLabel="Selecione uma hora..." itemValue="" />
+					<f:selectItem itemLabel="08:00" itemValue="08:00" />
+					<f:selectItem itemLabel="08:30" itemValue="08:30" />
+					<f:selectItem itemLabel="09:00" itemValue="09:00" />
+					<f:selectItem itemLabel="09:30" itemValue="09:30" />
+					<f:selectItem itemLabel="10:00" itemValue="10:00" />
+					<f:selectItem itemLabel="10:30" itemValue="10:30" />
+					<f:selectItem itemLabel="11:00" itemValue="11:00" />
+					<f:selectItem itemLabel="11:30" itemValue="11:30" />
+					<f:selectItem itemLabel="12:00" itemValue="12:00" />
+					<f:selectItem itemLabel="13:00" itemValue="13:00" />
+					<f:selectItem itemLabel="13:30" itemValue="13:30" />
+					<f:selectItem itemLabel="14:00" itemValue="14:00" />
+					<f:selectItem itemLabel="14:30" itemValue="14:30" />
+					<f:selectItem itemLabel="15:00" itemValue="15:00" />
+					<f:selectItem itemLabel="15:30" itemValue="15:30" />
+					<f:selectItem itemLabel="16:00" itemValue="16:00" />
+					<f:selectItem itemLabel="16:30" itemValue="16:30" />
+					<f:selectItem itemLabel="17:00" itemValue="17:00" />
+					<f:selectItem itemLabel="17:30" itemValue="17:30" />
+					<f:selectItem itemLabel="18:00" itemValue="18:00" />
+					<f:selectItem itemLabel="18:30" itemValue="18:30" />
+					<f:selectItem itemLabel="19:00" itemValue="19:00" />
+					<f:selectItem itemLabel="19:30" itemValue="19:30" />
+					<f:selectItem itemLabel="20:00" itemValue="20:00" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Data Inicio:" />
+				<p:calendar value="#{beneficioBean.beneficioCadastro.dataInicio}"
 					size="15" mask="true" pattern="dd/MM/yyyy" required="true"
-					requiredMessage="O campo Data de Nascimento é obrigatório." />
+					requiredMessage="O campo Data Início é obrigatório." />
 
-				<p:outputLabel value="Idade:" />
-				<p:inputText maxlength="50" size="15">
-					<f:validateBean />
-				</p:inputText>
-
-				<p:outputLabel for="sexo" value="Sexo:" />
-				<p:selectOneRadio id="sexo"
-					value="#{inscritoBean.inscritoCadastro.sexo}">
-					<f:selectItem itemLabel="Masculino" itemValue="MASCULINO" />
-					<f:selectItem itemLabel="Feminino" itemValue="FEMININO" />
-				</p:selectOneRadio>
-
-
-				<p:outputLabel value="Registro/RG:" />
-				<p:inputText maxlength="11" size="15"
-					value="#{inscritoBean.inscritoCadastro.registroRg}">
-					<f:validateBean />
-				</p:inputText>
-
-				<p:outputLabel value="Child Number:" />
-				<p:inputText maxlength="10" size="15"
-					value="#{inscritoBean.inscritoCadastro.childNumber}">
-					<f:validateBean />
-				</p:inputText>
-
-				<p:outputLabel value="PF:" />
-				<p:inputText maxlength="10" size="15"
-					value="#{inscritoBean.inscritoCadastro.pf}">
-					<f:validateBean />
-				</p:inputText>
-
-				<p:outputLabel value="CS:" />
-				<p:inputText maxlength="10" size="15"
-					value="#{inscritoBean.inscritoCadastro.cs}">
-					<f:validateBean />
-				</p:inputText>
-
-				<p:outputLabel value="NIS:" />
-				<p:inputText maxlength="10" size="15"
-					value="#{inscritoBean.inscritoCadastro.nis}">
-					<f:validateBean />
-				</p:inputText>
-
-				<p:outputLabel value="Endereço:" />
-				<p:inputText maxlength="50" size="40"
-					style="text-transform: uppercase"
-					value="#{inscritoBean.inscritoCadastro.endereco}">
-					<f:validateBean />
-				</p:inputText>
-
-				<p:outputLabel value="Telefone Residencial:" />
-				<p:inputMask value="#{inscritoBean.inscritoCadastro.fone}"
-					mask="(99) 9999-9999" />
-
-				<p:outputLabel value="Celular:" />
-				<p:inputMask value="#{inscritoBean.inscritoCadastro.celular}"
-					mask="(99) 99999-9999" />
-
-				<p:outputLabel value="Escola em que estuda:" />
-				<p:inputText maxlength="50" size="40"
-					style="text-transform: uppercase"
-					value="#{inscritoBean.inscritoCadastro.escola}">
-					<f:validateBean />
-				</p:inputText>
-
-				<p:outputLabel for="horario_estudo" value="Horário que estuda:" />
-				<p:selectOneRadio id="horario_estudo"
-					value="#{inscritoBean.inscritoCadastro.horario}">
-					<f:selectItem itemLabel="Manhã" itemValue="MANHÃ" />
-					<f:selectItem itemLabel="Tarde" itemValue="TARDE" />
-					<f:selectItem itemLabel="Noite" itemValue="NOITE" />
-				</p:selectOneRadio>
-
-				<p:outputLabel for="serie" value="Série:" />
-				<p:selectOneMenu id="serie"
-					value="#{inscritoBean.inscritoCadastro.serie}">
-					<f:selectItem itemLabel="Selecione uma série" itemValue="" />
-					<f:selectItem itemLabel="1º ano" itemValue="1º ano" />
-					<f:selectItem itemLabel="2º ano" itemValue="2º ano" />
-					<f:selectItem itemLabel="3º ano" itemValue="3º ano" />
-					<f:selectItem itemLabel="4º ano" itemValue="4º ano" />
-					<f:selectItem itemLabel="5º ano" itemValue="5º ano" />
-					<f:selectItem itemLabel="6º ano" itemValue="6º ano" />
-					<f:selectItem itemLabel="7º ano" itemValue="7º ano" />
-					<f:selectItem itemLabel="8º ano" itemValue="8º ano" />
-					<f:selectItem itemLabel="9º ano" itemValue="9º ano" />
-					<f:selectItem itemLabel="1º ano ensino médio"
-						itemValue="1º ano ensino médio" />
-					<f:selectItem itemLabel="2º ano ensino médio"
-						itemValue="2º ano ensino médio" />
-					<f:selectItem itemLabel="3º ano ensino médio"
-						itemValue="3º ano ensino médio" />
-					<f:selectItem itemLabel="Ensino Médio incompleto"
-						itemValue="Ensino Médio incompleto" />
-					<f:selectItem itemLabel="Ensino Médio completo"
-						itemValue="Ensino Médio completo" />
-					<f:selectItem itemLabel="Superior incompleto"
-						itemValue="Superior incompleto" />
-					<f:selectItem itemLabel="Superior completo"
-						itemValue="Superior completo" />
-				</p:selectOneMenu>
-
-				<p:outputLabel value="Responsável:" />
-				<p:inputText maxlength="50" size="40"
-					style="text-transform: uppercase"
-					value="#{inscritoBean.inscritoCadastro.responsavel}">
-					<f:validateBean />
-				</p:inputText>
-
-				<p:outputLabel for="parentesco" value="Parentesco:" />
-				<p:selectOneMenu id="parentesco"
-					value="#{inscritoBean.inscritoCadastro.parentesco}">
-					<f:selectItem itemLabel="Selecione um parentesco" itemValue="" />
-					<f:selectItem itemLabel="Pai" itemValue="PAI" />
-					<f:selectItem itemLabel="Mãe" itemValue="MÃE" />
-					<f:selectItem itemLabel="Avó/Avô" itemValue="AVÓ/AVÔ" />
-					<f:selectItem itemLabel="Tia/Tio" itemValue="TIA/TIO" />
-					<f:selectItem itemLabel="Prima/Primo" itemValue="PRIMA/PRIMO" />
-					<f:selectItem itemLabel="Sobrinha/Sobrinho"
-						itemValue="SOBRINHA/SOBRINHO" />
-				</p:selectOneMenu>
-
-				<p:outputLabel value="RG ou CPF responsável:" />
-				<p:inputText maxlength="11" size="30"
-					value="#{inscritoBean.inscritoCadastro.documentoResponsavel}">
-					<f:validateBean />
-				</p:inputText>
-
-				<p:outputLabel value="Responsável Preenchimento:" />
-				<p:inputText maxlength="50" size="40"
-					style="text-transform: uppercase"
-					value="#{inscritoBean.inscritoCadastro.responsavelPreenchimento}">
-					<f:validateBean />
-				</p:inputText>
+				<p:outputLabel value="Data Fim:" />
+				<p:calendar value="#{beneficioBean.beneficioCadastro.dataFim}"
+					size="15" mask="true" pattern="dd/MM/yyyy" required="true"
+					requiredMessage="O campo Data Fim é obrigatório." />
 			</h:panelGrid>
-
+			
 			<h:panelGrid columns="5">
-				<p:commandButton value="Novo" actionListener="#{inscritoBean.novo}"
-					update=":formInscritoCadastro:panelInscritoCadastro" />
+					<p:commandButton value="Novo"
+						actionListener="#{beneficioBean.novo}"
+						update=":formBeneficioCadastro:panelBeneficioCadastro" />
 
-				<p:commandButton value="Salvar"
-					actionListener="#{inscritoBean.salvar}"
-					update=":mensagemGlobal :formInscritoCadastro:panelInscritoCadastro" />
+					<p:commandButton value="Salvar"
+						actionListener="#{beneficioBean.salvar}"
+						update=":mensagemGlobal :formBeneficioCadastro:panelBeneficioCadastro" />
 
-				<p:commandButton value="Excluir" icon="ui-icon-trash"
-					actionListener="#{inscritoBean.excluir}" update=":mensagemGlobal" />
+					<p:commandButton value="Excluir" icon="ui-icon-trash"
+						actionListener="#{beneficioBean.excluir}" update=":mensagemGlobal" />
 
-				<p:commandButton value="Editar" icon="ui-icon-pencil"
-					actionListener="#{inscritoBean.editar}" update=":mensagemGlobal" />
+					<p:commandButton value="Editar" icon="ui-icon-pencil"
+						actionListener="#{beneficioBean.editar}" update=":mensagemGlobal" />
 
-				<p:button value="Voltar"
-					outcome="/pages/inscritoPesquisa.xhtml?faces-redirect=true" />
-			</h:panelGrid>
+					<p:button value="Voltar"
+						outcome="/pages/beneficioPesquisa.xhtml?faces-redirect=true" />
+				</h:panelGrid>
 		</h:form>
 	</ui:define>
 </ui:composition>
