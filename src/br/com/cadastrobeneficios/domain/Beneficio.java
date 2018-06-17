@@ -15,6 +15,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "beneficio")
@@ -48,6 +49,7 @@ public class Beneficio {
 	@JoinColumn(name = "atividade_codigo", referencedColumnName = "codigo", nullable = false)
 	private Atividade atividade;
 
+	@NotNull(message="O campo Nome é obrigatório.")
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "inscrito_codigo", referencedColumnName = "codigo", nullable = false)
 	private Inscrito inscrito;

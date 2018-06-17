@@ -5,7 +5,10 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
+import br.com.cadastrobeneficios.dao.AtividadeDAO;
 import br.com.cadastrobeneficios.dao.BeneficioDAO;
+import br.com.cadastrobeneficios.dao.InscritoDAO;
+import br.com.cadastrobeneficios.domain.Atividade;
 import br.com.cadastrobeneficios.domain.Beneficio;
 import br.com.cadastrobeneficios.domain.Inscrito;
 import br.com.cadastrobeneficios.util.FacesUtil;
@@ -15,7 +18,8 @@ import br.com.cadastrobeneficios.util.FacesUtil;
 public class BeneficioBean {
 	private Beneficio beneficioCadastro;
 	private List<Beneficio> listaBeneficios;
-	private List<Inscrito> listaBeneficiosFiltrados;
+	private List<Inscrito> listaInscritosFiltrados;
+	private List<Atividade> listaAtividadesFiltradas;
 	private String acao;
 	private Long codigo;
 
@@ -35,12 +39,12 @@ public class BeneficioBean {
 		this.listaBeneficios = listaBeneficios;
 	}
 
-	public List<Inscrito> getListaBeneficiosFiltrados() {
-		return listaBeneficiosFiltrados;
+	public List<Inscrito> getListaInscritosFiltrados() {
+		return listaInscritosFiltrados;
 	}
 
-	public void setListaBeneficiosFiltrados(List<Inscrito> listaBeneficiosFiltrados) {
-		this.listaBeneficiosFiltrados = listaBeneficiosFiltrados;
+	public void setListaInscritosFiltrados(List<Inscrito> listaInscritosFiltrados) {
+		this.listaInscritosFiltrados = listaInscritosFiltrados;
 	}
 
 	public String getAcao() {
@@ -57,6 +61,14 @@ public class BeneficioBean {
 
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
+	}
+
+	public List<Atividade> getListaAtividadesFiltradas() {
+		return listaAtividadesFiltradas;
+	}
+
+	public void setListaAtividadesFiltradas(List<Atividade> listaAtividadesFiltradas) {
+		this.listaAtividadesFiltradas = listaAtividadesFiltradas;
 	}
 
 	public void novo() {
@@ -95,6 +107,12 @@ public class BeneficioBean {
 			} else {
 				beneficioCadastro = new Beneficio();
 			}
+
+			InscritoDAO inscritoDAO = new InscritoDAO();
+			listaInscritosFiltrados = inscritoDAO.listar();
+
+			AtividadeDAO atividadeDAO = new AtividadeDAO();
+			listaAtividadesFiltradas = atividadeDAO.listar();
 		} catch (Exception ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar obter os dados do Benefício: " + ex.getMessage());
 		}

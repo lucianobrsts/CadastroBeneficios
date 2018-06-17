@@ -28,7 +28,7 @@
 
 			<p:dataTable emptyMessage="Nenhum registro encontrado..."
 				value="#{beneficioBean.listaBeneficios}"
-				filteredValue="#{beneficioBean.listaBeneficiosFiltrados}"
+				filteredValue="#{beneficioBean.listaInscritosFiltrados}"
 				var="beneficio" paginator="true" rows="10">
 
 				<f:facet name="footer">
@@ -42,7 +42,8 @@
 					<h:outputText value="#{beneficio.codigo}" />
 				</p:column>
 
-				<p:column headerText="Nome" style="text-align: center; width:14%;">
+				<p:column headerText="Nome" style="text-align: center; width:14%;"
+					filterBy="#{beneficio.inscrito.nome}">
 					<h:outputText value="#{beneficio.inscrito.nome}"
 						style="text-transform: uppercase;" />
 				</p:column>
@@ -60,17 +61,19 @@
 				</p:column>
 
 				<p:column headerText="Horário" style="text-align: center; width:6%;">
-					<h:outputText value="#{beneficio.horario}" />
+					<h:outputText value="#{beneficio.horarioInicio}" />
 				</p:column>
 
-				<p:column headerText="Inicio" style="text-align: center; width:6%;">
+				<p:column headerText="Data Início"
+					style="text-align: center; width:6%;">
 					<h:outputText value="#{beneficio.dataInicio}">
 						<f:convertDateTime pattern="dd/MM/yyyy"
 							timeZone="America/Sao_Paulo" />
 					</h:outputText>
 				</p:column>
 
-				<p:column headerText="Fim" style="text-align: center; width:6%;">
+				<p:column headerText="Data Fim"
+					style="text-align: center; width:6%;">
 					<h:outputText value="#{beneficio.dataFim}">
 						<f:convertDateTime pattern="dd/MM/yyyy"
 							timeZone="America/Sao_Paulo" />
@@ -120,9 +123,15 @@
 						disabled="true"
 						value="#{beneficioBean.beneficioCadastro.diaDaSemana}" />
 
-					<h:outputText value="Horário" />
+					<h:outputText value="Horário Início" />
 					<h:inputText style="text-transform: uppercase;" size="30"
-						disabled="true" value="#{beneficioBean.beneficioCadastro.horario}" />
+						disabled="true"
+						value="#{beneficioBean.beneficioCadastro.horarioInicio}" />
+
+					<h:outputText value="Horário Fim" />
+					<h:inputText style="text-transform: uppercase;" size="30"
+						disabled="true"
+						value="#{beneficioBean.beneficioCadastro.horarioFim}" />
 
 					<h:outputText value="Data Início:" />
 					<h:inputText size="15" disabled="true"
