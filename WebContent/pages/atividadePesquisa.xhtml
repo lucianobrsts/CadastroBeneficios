@@ -28,8 +28,8 @@
 
 			<p:dataTable emptyMessage="Nenhum registro encontrado..."
 				value="#{atividadeBean.listaAtividades}"
-				filteredValue="#{atividadeBean.listaAtividadesFiltrados}" var="atividade"
-				paginator="true" rows="10">
+				filteredValue="#{atividadeBean.listaAtividadesFiltrados}"
+				var="atividade" paginator="true" rows="10">
 
 				<f:facet name="footer">
 					<p:button value="Novo"
@@ -42,9 +42,11 @@
 					<h:outputText value="#{atividade.codigo}" />
 				</p:column>
 
-				<p:column headerText="Nome" style="text-align: center; width:20%;"
+				<p:column headerText="Nome"
+					style="text-align: center; width:20%;"
 					filterBy="#{atividade.nome}">
-					<h:outputText value="#{atividade.nome}" style="text-transform: uppercase;"/>
+					<h:outputText value="#{atividade.nome}"
+						style="text-transform: uppercase;" />
 				</p:column>
 
 				<p:column headerText="Opção" style="text-align: center; width: 4%;">
@@ -69,18 +71,20 @@
 				</p:column>
 			</p:dataTable>
 
-			<p:dialog header="Informaçõs de Atividades" widgetVar="dialogAtividade"
-				modal="true" showEffect="fade" hideEffect="fade" resizable="false"
-				visible="false" appendTo="@(body)">
+			<p:dialog header="Informaçõs de Atividades"
+				widgetVar="dialogAtividade" modal="true" showEffect="fade"
+				hideEffect="fade" resizable="false" visible="false"
+				appendTo="@(body)">
 
 				<h:panelGrid columns="2" id="panelInfoAtividades">
 					<h:outputText value="Nome:" />
-					<h:inputText size="40" disabled="true" style="text-transform: uppercase;"
+					<h:inputText size="40" disabled="true"
+						style="text-transform: uppercase;"
 						value="#{atividadeBean.atividadeCadastro.nome}" />
 				</h:panelGrid>
 
 				<p:outputPanel columns="1" style="text-align: center;">
-				<p:separator />
+					<p:separator />
 					<p:commandButton value="Cancelar"
 						oncomplete="PF('dialogAtividade').hide();" />
 				</p:outputPanel>

@@ -114,7 +114,7 @@ public class Inscrito {
 	}
 
 	public String getCriancaInscrita() {
-		return criancaInscrita.toUpperCase();
+		return criancaInscrita;
 	}
 
 	public void setCriancaInscrita(String criancaInscrita) {
@@ -122,7 +122,7 @@ public class Inscrito {
 	}
 
 	public String getNome() {
-		return nome.toUpperCase();
+		return nome;
 	}
 
 	public void setNome(String nome) {
@@ -138,7 +138,7 @@ public class Inscrito {
 	}
 
 	public String getSexo() {
-		return sexo.toUpperCase();
+		return sexo;
 	}
 
 	public void setSexo(String sexo) {
@@ -194,7 +194,7 @@ public class Inscrito {
 	}
 
 	public String getEndereco() {
-		return endereco.toUpperCase();
+		return endereco;
 	}
 
 	public void setEndereco(String endereco) {
@@ -218,7 +218,7 @@ public class Inscrito {
 	}
 
 	public String getEscola() {
-		return escola.toUpperCase();
+		return escola;
 	}
 
 	public void setEscola(String escola) {
@@ -234,7 +234,7 @@ public class Inscrito {
 	}
 
 	public String getResponsavel() {
-		return responsavel.toUpperCase();
+		return responsavel;
 	}
 
 	public void setResponsavel(String responsavel) {
@@ -242,7 +242,7 @@ public class Inscrito {
 	}
 
 	public String getParentesco() {
-		return parentesco.toUpperCase();
+		return parentesco;
 	}
 
 	public void setParentesco(String parentesco) {
@@ -258,7 +258,7 @@ public class Inscrito {
 	}
 
 	public String getResponsavelPreenchimento() {
-		return responsavelPreenchimento.toUpperCase();
+		return responsavelPreenchimento;
 	}
 
 	public void setResponsavelPreenchimento(String responsavelPreenchimento) {

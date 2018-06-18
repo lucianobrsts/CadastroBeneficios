@@ -34,7 +34,7 @@ public class Atividade {
 	}
 
 	public String getNome() {
-		return nome.toUpperCase();
+		return nome;
 	}
 
 	public void setNome(String nome) {

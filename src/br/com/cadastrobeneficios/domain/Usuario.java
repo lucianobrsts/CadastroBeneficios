@@ -51,7 +51,7 @@ public class Usuario {
 	}
 
 	public String getNome() {
-		return nome.toUpperCase();
+		return nome;
 	}
 
 	public void setNome(String nome) {
@@ -59,7 +59,7 @@ public class Usuario {
 	}
 
 	public String getLogin() {
-		return login.toUpperCase();
+		return login;
 	}
 
 	public void setLogin(String login) {
@@ -67,7 +67,7 @@ public class Usuario {
 	}
 
 	public String getTipo() {
-		return tipo.toUpperCase();
+		return tipo;
 	}
 
 	public void setTipo(String tipo) {

@@ -71,16 +71,7 @@
 							timeZone="America/Sao_Paulo" />
 					</h:outputText>
 				</p:column>
-
-				<p:column headerText="Data Fim"
-					style="text-align: center; width:6%;">
-					<h:outputText value="#{beneficio.dataFim}">
-						<f:convertDateTime pattern="dd/MM/yyyy"
-							timeZone="America/Sao_Paulo" />
-					</h:outputText>
-				</p:column>
-
-				<p:column headerText="Opção" style="text-align: center; width: 10%;">
+				<p:column headerText="Opção" style="text-align: center; width: 6%;">
 					<p:button icon="ui-icon-trash" title="Excluir"
 						outcome="/pages/beneficioCadastro.xhtml">
 						<f:param name="beneficioId" value="#{beneficio.codigo}" />
@@ -145,13 +136,13 @@
 						<f:convertDateTime pattern="dd/MM/yyyy"
 							timeZone="America/Sao_Paulo" />
 					</h:inputText>
+				</h:panelGrid>
 
-					<p:outputPanel columns="1" style="text-align: center;">
+				<p:outputPanel columns="1" style="text-align: center;">
 						<p:separator />
 						<p:commandButton value="Cancelar"
 							oncomplete="PF('dialogBeneficio').hide();" />
 					</p:outputPanel>
-				</h:panelGrid>
 			</p:dialog>
 		</h:form>
 	</ui:define>

@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -45,11 +46,12 @@ public class Beneficio {
 	@Column(name = "horario_fim", length = 50, nullable = false)
 	private String horarioFim;
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@NotNull(message = "O campo Atividade é obrigatório.")
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "atividade_codigo", referencedColumnName = "codigo", nullable = false)
 	private Atividade atividade;
 
-	@NotNull(message="O campo Nome é obrigatório.")
+	@NotNull(message = "O campo Nome é obrigatório.")
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "inscrito_codigo", referencedColumnName = "codigo", nullable = false)
 	private Inscrito inscrito;
@@ -79,7 +81,7 @@ public class Beneficio {
 	}
 
 	public String getDiaDaSemana() {
-		return diaDaSemana.toUpperCase();
+		return diaDaSemana;
 	}
 
 	public void setDiaDaSemana(String diaDaSemana) {
