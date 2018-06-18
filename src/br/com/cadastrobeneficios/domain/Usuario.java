@@ -51,27 +51,27 @@ public class Usuario {
 	}
 
 	public String getNome() {
-		return nome;
+		return nome.toUpperCase();
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nome = nome.toUpperCase();
 	}
 
 	public String getLogin() {
-		return login;
+		return login.toUpperCase();
 	}
 
 	public void setLogin(String login) {
-		this.login = login;
+		this.login = login.toUpperCase();
 	}
 
 	public String getTipo() {
-		return tipo;
+		return tipo.toUpperCase();
 	}
 
 	public void setTipo(String tipo) {
-		this.tipo = tipo;
+		this.tipo = tipo.toUpperCase();
 	}
 
 	public String getSenha() {

@@ -114,19 +114,19 @@ public class Inscrito {
 	}
 
 	public String getCriancaInscrita() {
-		return criancaInscrita;
+		return criancaInscrita.toUpperCase();
 	}
 
 	public void setCriancaInscrita(String criancaInscrita) {
-		this.criancaInscrita = criancaInscrita;
+		this.criancaInscrita = criancaInscrita.toUpperCase();
 	}
 
 	public String getNome() {
-		return nome;
+		return nome.toUpperCase();
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nome = nome.toUpperCase();
 	}
 
 	public Date getDataNascimento() {
@@ -138,11 +138,11 @@ public class Inscrito {
 	}
 
 	public String getSexo() {
-		return sexo;
+		return sexo.toUpperCase();
 	}
 
 	public void setSexo(String sexo) {
-		this.sexo = sexo;
+		this.sexo = sexo.toUpperCase();
 	}
 
 	public Integer getChildNumber() {
@@ -194,11 +194,11 @@ public class Inscrito {
 	}
 
 	public String getEndereco() {
-		return endereco;
+		return endereco.toUpperCase();
 	}
 
 	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+		this.endereco = endereco.toUpperCase();
 	}
 
 	public String getFone() {
@@ -218,11 +218,11 @@ public class Inscrito {
 	}
 
 	public String getEscola() {
-		return escola;
+		return escola.toUpperCase();
 	}
 
 	public void setEscola(String escola) {
-		this.escola = escola;
+		this.escola = escola.toUpperCase();
 	}
 
 	public String getHorario() {
@@ -234,19 +234,19 @@ public class Inscrito {
 	}
 
 	public String getResponsavel() {
-		return responsavel;
+		return responsavel.toUpperCase();
 	}
 
 	public void setResponsavel(String responsavel) {
-		this.responsavel = responsavel;
+		this.responsavel = responsavel.toUpperCase();
 	}
 
 	public String getParentesco() {
-		return parentesco;
+		return parentesco.toUpperCase();
 	}
 
 	public void setParentesco(String parentesco) {
-		this.parentesco = parentesco;
+		this.parentesco = parentesco.toUpperCase();
 	}
 
 	public String getDocumentoResponsavel() {
@@ -258,11 +258,11 @@ public class Inscrito {
 	}
 
 	public String getResponsavelPreenchimento() {
-		return responsavelPreenchimento;
+		return responsavelPreenchimento.toUpperCase();
 	}
 
 	public void setResponsavelPreenchimento(String responsavelPreenchimento) {
-		this.responsavelPreenchimento = responsavelPreenchimento;
+		this.responsavelPreenchimento = responsavelPreenchimento.toUpperCase();
 	}
 
 	public Beneficio getBeneficio() {

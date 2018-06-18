@@ -79,11 +79,11 @@ public class Beneficio {
 	}
 
 	public String getDiaDaSemana() {
-		return diaDaSemana;
+		return diaDaSemana.toUpperCase();
 	}
 
 	public void setDiaDaSemana(String diaDaSemana) {
-		this.diaDaSemana = diaDaSemana;
+		this.diaDaSemana = diaDaSemana.toUpperCase();
 	}
 
 	public String getHorarioInicio() {
