@@ -9,6 +9,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "atividade")
@@ -22,6 +23,7 @@ public class Atividade {
 	private Long codigo;
 
 	@NotEmpty(message = "O campo Nome é obrigatório.")
+	@Size(min=3, max=50, message="Tamanho inválido para o campo Nome (3 - 50 dígitos)")
 	@Column(name = "nome", length = 50, nullable = false)
 	private String nome;
 

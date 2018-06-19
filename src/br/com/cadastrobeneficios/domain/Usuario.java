@@ -38,8 +38,8 @@ public class Usuario {
 	private String tipo;
 
 	@NotEmpty(message = "O campo Senha é obrigatório.")
-	@Size(min = 6, max = 8, message = "Tamanho inválido para o campo Senha (6 - 8 dígitos)")
-	@Column(name = "senha", length = 8, nullable = false)
+	@Size(min = 6, max = 10, message = "Tamanho inválido para o campo Senha (6 - 10 dígitos)")
+	@Column(name = "senha", length = 10, nullable = false)
 	private String senha;
 
 	public Long getCodigo() {

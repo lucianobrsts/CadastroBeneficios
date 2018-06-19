@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import br.com.cadastrobeneficios.domain.Beneficio;
-import br.com.cadastrobeneficios.domain.Inscrito;
 import br.com.cadastrobeneficios.util.HibernateUtil;
 
 public class BeneficioDAO {
