@@ -51,12 +51,7 @@
 					style="text-align: center; width: 15%">
 					<h:outputText value="#{usuario.login}" />
 				</p:column>
-
-				<p:column headerText="tipo" style="text-align: center; width: 10%">
-					<h:outputText value="#{usuario.tipo}" />
-				</p:column>
-
-				<p:column headerText="Opção" style="text-align: center; width: 7%;">
+				<p:column headerText="Opção" style="text-align: center; width: 5%;">
 					<p:button icon="ui-icon-trash" title="Excluir"
 						outcome="/pages/usuarioCadastro.xhtml">
 						<f:param name="usuarioCodigo" value="#{usuario.codigo}" />
@@ -90,10 +85,6 @@
 					<h:outputText value="Login:" />
 					<h:inputText size="30" disabled="true"
 						value="#{usuarioBean.usuarioCadastro.login}" />
-
-					<h:outputText value="Tipo:" />
-					<h:inputText size="30" disabled="true"
-						value="#{usuarioBean.usuarioCadastro.tipo}" />
 				</h:panelGrid>
 
 				<p:outputPanel columns="1" style="text-align: center;">

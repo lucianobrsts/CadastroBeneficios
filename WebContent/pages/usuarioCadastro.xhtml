@@ -49,13 +49,6 @@
 					value="#{usuarioBean.usuarioCadastro.senha}" redisplay="true">
 					<f:validateBean />
 				</p:password>
-
-				<p:outputLabel value="Tipo:" />
-				<p:inputText maxlength="50" size="15"
-					readonly="#{usuarioBean.acao == 'Excluir'}"
-					value="#{usuarioBean.usuarioCadastro.tipo}">
-					<f:validateBean />
-				</p:inputText>
 			</h:panelGrid>
 
 			<h:panelGrid columns="5">

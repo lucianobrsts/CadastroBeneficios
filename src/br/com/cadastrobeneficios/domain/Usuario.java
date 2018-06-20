@@ -33,10 +33,6 @@ public class Usuario {
 	@Column(name = "login", length = 50, nullable = false)
 	private String login;
 
-	@NotEmpty(message = "O campo Tipo é obrigatório.")
-	@Column(name = "tipo", length = 50, nullable = false)
-	private String tipo;
-
 	@NotEmpty(message = "O campo Senha é obrigatório.")
 	@Size(min = 6, max = 10, message = "Tamanho inválido para o campo Senha (6 - 10 dígitos)")
 	@Column(name = "senha", length = 10, nullable = false)
@@ -66,14 +62,6 @@ public class Usuario {
 		this.login = login.toUpperCase();
 	}
 
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo.toUpperCase();
-	}
-
 	public String getSenha() {
 		return senha;
 	}
@@ -84,8 +72,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [codigo=" + codigo + ", nome=" + nome + ", login=" + login + ", tipo=" + tipo + ", senha="
-				+ senha + "]";
+		return "Usuario [codigo=" + codigo + ", nome=" + nome + ", login=" + login + ", senha=" + senha + "]";
 	}
 
 	@Override

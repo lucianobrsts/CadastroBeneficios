@@ -13,7 +13,6 @@ public class UsuarioDAOTest {
 	public void salvar() {
 		Usuario usuario = new Usuario();
 		usuario.setNome("Admin");
-		usuario.setTipo("Administrador");
 		usuario.setSenha("123456");
 
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
