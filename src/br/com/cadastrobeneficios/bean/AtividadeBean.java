@@ -57,7 +57,7 @@ public class AtividadeBean {
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
-	
+
 	public void novo() {
 		atividadeCadastro = new Atividade();
 	}
@@ -87,6 +87,7 @@ public class AtividadeBean {
 
 	public void carregarCadastro() {
 		try {
+			acao = FacesUtil.getParam("atividadeAcao");
 
 			if (codigo != null) {
 				AtividadeDAO atividadeDAO = new AtividadeDAO();

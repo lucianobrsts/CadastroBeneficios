@@ -50,7 +50,8 @@
 					requiredMessage="O campo Data de Nascimento é obrigatório." />
 
 				<p:outputLabel value="Idade:" />
-				<p:inputText maxlength="50" size="15">
+				<p:inputText maxlength="50" size="15"
+					value="#{inscritoBean.getIdade()} ANOS">
 					<f:validateBean />
 				</p:inputText>
 

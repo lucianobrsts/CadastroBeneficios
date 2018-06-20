@@ -30,25 +30,31 @@
 
 			<h:panelGrid columns="2" id="panelAtividadeCadastro">
 				<p:outputLabel value="Nome:" />
-				<p:inputText maxlength="50" size="40" style="text-transform: uppercase;"
-					value="#{atividadeBean.atividadeCadastro.nome}">
+				<p:inputText maxlength="50" size="40"
+					style="text-transform: uppercase;"
+					value="#{atividadeBean.atividadeCadastro.nome}"
+					readonly="#{atividadeBean.acao == 'Excluir'}">
 					<f:validateBean />
 				</p:inputText>
 			</h:panelGrid>
 
 			<h:panelGrid columns="5">
 				<p:commandButton value="Novo" actionListener="#{atividadeBean.novo}"
-					update=":formAtividadeCadastro:panelAtividadeCadastro" />
+					update=":formAtividadeCadastro:panelAtividadeCadastro"
+					rendered="#{atividadeBean.acao == 'Novo'}" />
 
 				<p:commandButton value="Salvar"
 					actionListener="#{atividadeBean.salvar}"
-					update=":mensagemGlobal :formAtividadeCadastro:panelAtividadeCadastro" />
+					update=":mensagemGlobal :formAtividadeCadastro:panelAtividadeCadastro"
+					rendered="#{atividadeBean.acao == 'Novo'}" />
 
 				<p:commandButton value="Excluir" icon="ui-icon-trash"
-					actionListener="#{atividadeBean.excluir}" update=":mensagemGlobal" />
+					actionListener="#{atividadeBean.excluir}" update=":mensagemGlobal"
+					rendered="#{atividadeBean.acao == 'Excluir'}" />
 
 				<p:commandButton value="Editar" icon="ui-icon-pencil"
-					actionListener="#{atividadeBean.editar}" update=":mensagemGlobal" />
+					actionListener="#{atividadeBean.editar}" update=":mensagemGlobal"
+					rendered="#{atividadeBean.acao == 'Editar'}" />
 
 				<p:button value="Voltar"
 					outcome="/pages/atividadePesquisa.xhtml?faces-redirect=true" />

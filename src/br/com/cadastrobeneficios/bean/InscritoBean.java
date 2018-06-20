@@ -1,5 +1,7 @@
 package br.com.cadastrobeneficios.bean;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -8,6 +10,7 @@ import javax.faces.bean.ViewScoped;
 import br.com.cadastrobeneficios.dao.InscritoDAO;
 import br.com.cadastrobeneficios.domain.Inscrito;
 import br.com.cadastrobeneficios.util.FacesUtil;
+import sun.security.jca.GetInstance;
 
 @ManagedBean
 @ViewScoped
@@ -122,5 +125,17 @@ public class InscritoBean {
 		} catch (RuntimeException ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar editar o inscrito: " + ex.getMessage());
 		}
+	}
+
+	public Integer getIdade() {
+		GregorianCalendar hj = new GregorianCalendar();
+		GregorianCalendar nascimento = new GregorianCalendar();
+
+		if (inscritoCadastro.getDataNascimento() != null) {
+			nascimento.setTime(inscritoCadastro.getDataNascimento());
+		}
+		int anohj = hj.get(Calendar.YEAR);
+		int anoNascimento = nascimento.get(Calendar.YEAR);
+		return new Integer(anohj - anoNascimento);
 	}
 }
