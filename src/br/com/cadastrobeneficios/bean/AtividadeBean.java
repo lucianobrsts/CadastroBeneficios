@@ -87,8 +87,6 @@ public class AtividadeBean {
 
 	public void carregarCadastro() {
 		try {
-			acao = FacesUtil.getParam("atividadeAcao");
-
 			if (codigo != null) {
 				AtividadeDAO atividadeDAO = new AtividadeDAO();
 				atividadeCadastro = atividadeDAO.buscarPorCodigo(codigo);

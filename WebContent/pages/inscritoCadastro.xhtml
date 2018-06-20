@@ -9,7 +9,7 @@
 <ui:composition template="/templates/modeloGeral.xhtml">
 	<ui:define name="metadata">
 		<f:metadata>
-			<f:viewParam name="inscritoId" value="#{inscritoBean.codigo}" />
+			<f:viewParam name="inscritoCodigo" value="#{inscritoBean.codigo}" />
 			<f:viewParam name="inscritoAcao" value="#{inscritoBean.acao}" />
 
 			<f:event listener="#{inscritoBean.carregarCadastro}"
@@ -32,6 +32,7 @@
 
 				<p:outputLabel value="Criança Inscrita:" />
 				<p:inputText maxlength="50" size="40"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					style="text-transform: uppercase;"
 					value="#{inscritoBean.inscritoCadastro.criancaInscrita}">
 					<f:validateBean />
@@ -39,6 +40,7 @@
 
 				<p:outputLabel value="Nome Completo:" />
 				<p:inputText maxlength="50" size="40"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					style="text-transform: uppercase;"
 					value="#{inscritoBean.inscritoCadastro.nome}">
 					<f:validateBean />
@@ -46,11 +48,13 @@
 
 				<p:outputLabel value="Data Nascimento:" />
 				<p:calendar value="#{inscritoBean.inscritoCadastro.dataNascimento}"
-					size="15" mask="true" pattern="dd/MM/yyyy" required="true"
+					readonly="#{inscritoBean.acao == 'Excluir'}" size="15" mask="true"
+					pattern="dd/MM/yyyy" required="true"
 					requiredMessage="O campo Data de Nascimento é obrigatório." />
 
 				<p:outputLabel value="Idade:" />
 				<p:inputText maxlength="50" size="15"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.getIdade()} ANOS">
 					<f:validateBean />
 				</p:inputText>
@@ -65,36 +69,42 @@
 
 				<p:outputLabel value="Registro/RG:" />
 				<p:inputText maxlength="11" size="15"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.inscritoCadastro.registroRg}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="Child Number:" />
 				<p:inputText maxlength="10" size="15"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.inscritoCadastro.childNumber}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="PF:" />
 				<p:inputText maxlength="10" size="15"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.inscritoCadastro.pf}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="CS:" />
 				<p:inputText maxlength="10" size="15"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.inscritoCadastro.cs}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="NIS:" />
 				<p:inputText maxlength="10" size="15"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.inscritoCadastro.nis}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="Endereço:" />
 				<p:inputText maxlength="50" size="40"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					style="text-transform: uppercase"
 					value="#{inscritoBean.inscritoCadastro.endereco}">
 					<f:validateBean />
@@ -102,14 +112,15 @@
 
 				<p:outputLabel value="Telefone Residencial:" />
 				<p:inputMask value="#{inscritoBean.inscritoCadastro.fone}"
-					mask="(99) 9999-9999" />
+					readonly="#{inscritoBean.acao == 'Excluir'}" mask="(99) 9999-9999" />
 
 				<p:outputLabel value="Celular:" />
 				<p:inputMask value="#{inscritoBean.inscritoCadastro.celular}"
-					mask="(99) 99999-9999" />
+					readonly="#{inscritoBean.acao == 'Excluir'}" mask="(99) 99999-9999" />
 
 				<p:outputLabel value="Escola em que estuda:" />
 				<p:inputText maxlength="50" size="40"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					style="text-transform: uppercase"
 					value="#{inscritoBean.inscritoCadastro.escola}">
 					<f:validateBean />
@@ -154,6 +165,7 @@
 
 				<p:outputLabel value="Responsável:" />
 				<p:inputText maxlength="50" size="40"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					style="text-transform: uppercase"
 					value="#{inscritoBean.inscritoCadastro.responsavel}">
 					<f:validateBean />
@@ -174,12 +186,14 @@
 
 				<p:outputLabel value="RG ou CPF responsável:" />
 				<p:inputText maxlength="11" size="30"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.inscritoCadastro.documentoResponsavel}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="Responsável Preenchimento:" />
 				<p:inputText maxlength="50" size="40"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					style="text-transform: uppercase"
 					value="#{inscritoBean.inscritoCadastro.responsavelPreenchimento}">
 					<f:validateBean />
@@ -188,17 +202,21 @@
 
 			<h:panelGrid columns="5">
 				<p:commandButton value="Novo" actionListener="#{inscritoBean.novo}"
-					update=":formInscritoCadastro:panelInscritoCadastro" />
+					update=":formInscritoCadastro:panelInscritoCadastro"
+					rendered="#{inscritoBean.acao == 'Novo'}" />
 
 				<p:commandButton value="Salvar"
 					actionListener="#{inscritoBean.salvar}"
-					update=":mensagemGlobal :formInscritoCadastro:panelInscritoCadastro" />
+					update=":mensagemGlobal :formInscritoCadastro:panelInscritoCadastro"
+					rendered="#{inscritoBean.acao == 'Novo'}" />
 
 				<p:commandButton value="Excluir" icon="ui-icon-trash"
-					actionListener="#{inscritoBean.excluir}" update=":mensagemGlobal" />
+					actionListener="#{inscritoBean.excluir}" update=":mensagemGlobal"
+					rendered="#{inscritoBean.acao == 'Excluir'}" />
 
 				<p:commandButton value="Editar" icon="ui-icon-pencil"
-					actionListener="#{inscritoBean.editar}" update=":mensagemGlobal" />
+					actionListener="#{inscritoBean.editar}" update=":mensagemGlobal"
+					rendered="#{inscritoBean.acao == 'Editar'}" />
 
 				<p:button value="Voltar"
 					outcome="/pages/inscritoPesquisa.xhtml?faces-redirect=true" />

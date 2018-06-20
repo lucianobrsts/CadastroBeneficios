@@ -10,7 +10,6 @@ import javax.faces.bean.ViewScoped;
 import br.com.cadastrobeneficios.dao.InscritoDAO;
 import br.com.cadastrobeneficios.domain.Inscrito;
 import br.com.cadastrobeneficios.util.FacesUtil;
-import sun.security.jca.GetInstance;
 
 @ManagedBean
 @ViewScoped
@@ -92,7 +91,6 @@ public class InscritoBean {
 
 	public void carregarCadastro() {
 		try {
-
 			if (codigo != null) {
 				InscritoDAO inscritoDAO = new InscritoDAO();
 				inscritoCadastro = inscritoDAO.buscarPorCodigo(codigo);

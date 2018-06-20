@@ -100,7 +100,6 @@ public class BeneficioBean {
 
 	public void carregarCadastro() {
 		try {
-
 			if (codigo != null) {
 				BeneficioDAO beneficioDAO = new BeneficioDAO();
 				beneficioCadastro = beneficioDAO.buscarPorCodigo(codigo);

@@ -87,7 +87,7 @@ public class UsuarioBean {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar listar os usuários: " + ex.getMessage());
 		}
 	}
-	
+
 	public void carregarCadastro() {
 		try {
 			if (codigo != null) {
@@ -100,7 +100,7 @@ public class UsuarioBean {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar obter os dados do Usuário: " + ex.getMessage());
 		}
 	}
-	
+
 	public void excluir() {
 		try {
 			UsuarioDAO usuarioDAO = new UsuarioDAO();

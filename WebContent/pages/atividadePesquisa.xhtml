@@ -42,8 +42,7 @@
 					<h:outputText value="#{atividade.codigo}" />
 				</p:column>
 
-				<p:column headerText="Nome"
-					style="text-align: center; width:20%;"
+				<p:column headerText="Nome" style="text-align: center; width:20%;"
 					filterBy="#{atividade.nome}">
 					<h:outputText value="#{atividade.nome}"
 						style="text-transform: uppercase;" />
@@ -52,13 +51,13 @@
 				<p:column headerText="Opção" style="text-align: center; width: 4%;">
 					<p:button icon="ui-icon-trash" title="Excluir"
 						outcome="/pages/atividadeCadastro.xhtml">
-						<f:param name="atividadeId" value="#{atividade.codigo}" />
+						<f:param name="atividadeCodigo" value="#{atividade.codigo}" />
 						<f:param name="atividadeAcao" value="Excluir" />
 					</p:button>
 
 					<p:button icon="ui-icon-pencil" title="Editar"
 						outcome="/pages/atividadeCadastro.xhtml">
-						<f:param name="atividadeId" value="#{atividade.codigo}" />
+						<f:param name="atividadeCodigo" value="#{atividade.codigo}" />
 						<f:param name="atividadeAcao" value="Editar" />
 					</p:button>
 

@@ -9,8 +9,8 @@
 <ui:composition template="/templates/modeloGeral.xhtml">
 	<ui:define name="metadata">
 		<f:metadata>
-			<f:viewParam name="atividadeId" value="#{atividadeBean.codigo}" />
 			<f:viewParam name="atividadeAcao" value="#{atividadeBean.acao}" />
+			<f:viewParam name="atividadeCodigo" value="#{atividadeBean.codigo}" />
 
 			<f:event listener="#{atividadeBean.carregarCadastro}"
 				type="preRenderView"></f:event>

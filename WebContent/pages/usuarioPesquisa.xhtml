@@ -59,13 +59,13 @@
 				<p:column headerText="Opção" style="text-align: center; width: 10%;">
 					<p:button icon="ui-icon-trash" title="Excluir"
 						outcome="/pages/usuarioCadastro.xhtml">
-						<f:param name="usuarioId" value="#{usuario.codigo}" />
+						<f:param name="usuarioCodigo" value="#{usuario.codigo}" />
 						<f:param name="usuarioAcao" value="Excluir" />
 					</p:button>
 
 					<p:button icon="ui-icon-pencil" title="Editar"
 						outcome="/pages/usuarioCadastro.xhtml">
-						<f:param name="usuarioId" value="#{usuario.codigo}" />
+						<f:param name="usuarioCodigo" value="#{usuario.codigo}" />
 						<f:param name="usuarioAcao" value="Editar" />
 					</p:button>
 
@@ -90,14 +90,14 @@
 					<h:outputText value="Login:" />
 					<h:inputText size="30" disabled="true"
 						value="#{usuarioBean.usuarioCadastro.login}" />
-						
+
 					<h:outputText value="Tipo:" />
 					<h:inputText size="30" disabled="true"
 						value="#{usuarioBean.usuarioCadastro.tipo}" />
 				</h:panelGrid>
 
 				<p:outputPanel columns="1" style="text-align: center;">
-				<p:separator />
+					<p:separator />
 					<p:commandButton value="Cancelar"
 						oncomplete="PF('dialogUsuario').hide();" />
 				</p:outputPanel>

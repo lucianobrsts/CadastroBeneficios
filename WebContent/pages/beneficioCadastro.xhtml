@@ -9,7 +9,7 @@
 <ui:composition template="/templates/modeloGeral.xhtml">
 	<ui:define name="metadata">
 		<f:metadata>
-			<f:viewParam name="beneficioId" value="#{beneficioBean.codigo}" />
+			<f:viewParam name="beneficioCodigo" value="#{beneficioBean.codigo}" />
 			<f:viewParam name="beneficioAcao" value="#{beneficioBean.acao}" />
 
 			<f:event listener="#{beneficioBean.carregarCadastro}"
@@ -133,28 +133,34 @@
 
 				<p:outputLabel value="Data Inicio:" />
 				<p:calendar value="#{beneficioBean.beneficioCadastro.dataInicio}"
-					size="15" mask="true" pattern="dd/MM/yyyy" required="true"
+					readonly="#{beneficioBean.acao == 'Excluir'}" size="15" mask="true"
+					pattern="dd/MM/yyyy" required="true"
 					requiredMessage="O campo Data Início é obrigatório." />
 
 				<p:outputLabel value="Data Fim:" />
 				<p:calendar value="#{beneficioBean.beneficioCadastro.dataFim}"
-					size="15" mask="true" pattern="dd/MM/yyyy" required="true"
+					readonly="#{beneficioBean.acao == 'Excluir'}" size="15" mask="true"
+					pattern="dd/MM/yyyy" required="true"
 					requiredMessage="O campo Data Fim é obrigatório." />
 			</h:panelGrid>
 
 			<h:panelGrid columns="5">
 				<p:commandButton value="Novo" actionListener="#{beneficioBean.novo}"
-					update=":formBeneficioCadastro:panelBeneficioCadastro" />
+					update=":formBeneficioCadastro:panelBeneficioCadastro"
+					rendered="#{beneficioBean.acao == 'Novo'}" />
 
 				<p:commandButton value="Salvar"
 					actionListener="#{beneficioBean.salvar}"
-					update=":mensagemGlobal :formBeneficioCadastro:panelBeneficioCadastro" />
+					update=":mensagemGlobal :formBeneficioCadastro:panelBeneficioCadastro"
+					rendered="#{beneficioBean.acao == 'Novo'}" />
 
 				<p:commandButton value="Excluir" icon="ui-icon-trash"
-					actionListener="#{beneficioBean.excluir}" update=":mensagemGlobal" />
+					actionListener="#{beneficioBean.excluir}" update=":mensagemGlobal"
+					rendered="#{beneficioBean.acao == 'Excluir'}" />
 
 				<p:commandButton value="Editar" icon="ui-icon-pencil"
-					actionListener="#{beneficioBean.editar}" update=":mensagemGlobal" />
+					actionListener="#{beneficioBean.editar}" update=":mensagemGlobal"
+					rendered="#{beneficioBean.acao == 'Editar'}" />
 
 				<p:button value="Voltar"
 					outcome="/pages/beneficioPesquisa.xhtml?faces-redirect=true" />

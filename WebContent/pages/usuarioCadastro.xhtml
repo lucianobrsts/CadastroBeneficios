@@ -9,7 +9,7 @@
 <ui:composition template="/templates/modeloGeral.xhtml">
 	<ui:define name="metadata">
 		<f:metadata>
-			<f:viewParam name="usuarioId" value="#{usuarioBean.codigo}" />
+			<f:viewParam name="usuarioCodigo" value="#{usuarioBean.codigo}" />
 			<f:viewParam name="usuarioAcao" value="#{usuarioBean.acao}" />
 
 			<f:event listener="#{usuarioBean.carregarCadastro}"
@@ -31,24 +31,28 @@
 			<h:panelGrid columns="2" id="panelUsuarioCadastro">
 				<p:outputLabel value="Nome:" />
 				<p:inputText maxlength="50" size="40"
+					readonly="#{usuarioBean.acao == 'Excluir'}"
 					value="#{usuarioBean.usuarioCadastro.nome}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="Login:" />
 				<p:inputText maxlength="50" size="40"
+					readonly="#{usuarioBean.acao == 'Excluir'}"
 					value="#{usuarioBean.usuarioCadastro.login}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="Senha:" />
 				<p:password maxlength="10" size="15"
+					readonly="#{usuarioBean.acao == 'Excluir'}"
 					value="#{usuarioBean.usuarioCadastro.senha}" redisplay="true">
 					<f:validateBean />
 				</p:password>
 
 				<p:outputLabel value="Tipo:" />
 				<p:inputText maxlength="50" size="15"
+					readonly="#{usuarioBean.acao == 'Excluir'}"
 					value="#{usuarioBean.usuarioCadastro.tipo}">
 					<f:validateBean />
 				</p:inputText>
@@ -56,17 +60,21 @@
 
 			<h:panelGrid columns="5">
 				<p:commandButton value="Novo" actionListener="#{usuarioBean.novo}"
-					update=":formUsuarioCadastro:panelUsuarioCadastro" />
+					update=":formUsuarioCadastro:panelUsuarioCadastro"
+					rendered="#{usuarioBean.acao == 'Novo'}" />
 
 				<p:commandButton value="Salvar"
 					actionListener="#{usuarioBean.salvar}"
-					update=":mensagemGlobal :formUsuarioCadastro:panelUsuarioCadastro" />
+					update=":mensagemGlobal :formUsuarioCadastro:panelUsuarioCadastro"
+					rendered="#{usuarioBean.acao == 'Novo'}" />
 
 				<p:commandButton value="Excluir" icon="ui-icon-trash"
-					actionListener="#{usuarioBean.excluir}" update=":mensagemGlobal" />
+					actionListener="#{usuarioBean.excluir}" update=":mensagemGlobal"
+					rendered="#{usuarioBean.acao == 'Excluir'}" />
 
 				<p:commandButton value="Editar" icon="ui-icon-pencil"
-					actionListener="#{usuarioBean.editar}" update=":mensagemGlobal" />
+					actionListener="#{usuarioBean.editar}" update=":mensagemGlobal"
+					rendered="#{usuarioBean.acao == 'Editar'}" />
 
 				<p:button value="Voltar"
 					outcome="/pages/usuarioPesquisa.xhtml?faces-redirect=true" />

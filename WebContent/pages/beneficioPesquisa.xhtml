@@ -74,13 +74,13 @@
 				<p:column headerText="Opção" style="text-align: center; width: 6%;">
 					<p:button icon="ui-icon-trash" title="Excluir"
 						outcome="/pages/beneficioCadastro.xhtml">
-						<f:param name="beneficioId" value="#{beneficio.codigo}" />
+						<f:param name="beneficioCodigo" value="#{beneficio.codigo}" />
 						<f:param name="beneficioAcao" value="Excluir" />
 					</p:button>
 
 					<p:button icon="ui-icon-pencil" title="Editar"
 						outcome="/pages/beneficioCadastro.xhtml">
-						<f:param name="beneficioId" value="#{beneficio.codigo}" />
+						<f:param name="beneficioCodigo" value="#{beneficio.codigo}" />
 						<f:param name="beneficioAcao" value="Editar" />
 					</p:button>
 
@@ -139,10 +139,10 @@
 				</h:panelGrid>
 
 				<p:outputPanel columns="1" style="text-align: center;">
-						<p:separator />
-						<p:commandButton value="Cancelar"
-							oncomplete="PF('dialogBeneficio').hide();" />
-					</p:outputPanel>
+					<p:separator />
+					<p:commandButton value="Cancelar"
+						oncomplete="PF('dialogBeneficio').hide();" />
+				</p:outputPanel>
 			</p:dialog>
 		</h:form>
 	</ui:define>
