@@ -32,6 +32,7 @@
 
 				<p:outputLabel for="nome" value="Nome:" />
 				<p:selectOneMenu id="nome" converter="inscritoConverter"
+					filterMatchMode="startsWith" filter="true"
 					value="#{beneficioBean.beneficioCadastro.inscrito}" required="true"
 					requiredMessage="O campo nome é obrigatório.">
 					<f:selectItem itemLabel="SELECIONE UMA PESSOA..." itemValue="" />
@@ -43,8 +44,9 @@
 
 				<p:outputLabel for="atividade" value="Atividade:" />
 				<p:selectOneMenu id="atividade" converter="atividadeConverter"
-					value="#{beneficioBean.beneficioCadastro.atividade}"
-					required="true" requiredMessage="O campo atividade é obrigatório.">
+					value="#{beneficioBean.beneficioCadastro.atividade}" filter="true"
+					filterMatchMode="startsWith" required="true"
+					requiredMessage="O campo atividade é obrigatório.">
 					<f:selectItem itemLabel="SELECIONE UMA ATIVIDADE..." itemValue="" />
 					<f:selectItems value="#{beneficioBean.listaAtividadesFiltradas}"
 						var="atividade" itemValue="#{atividade}"
