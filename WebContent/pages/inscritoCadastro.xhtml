@@ -54,16 +54,15 @@
 
 				<p:outputLabel value="Idade:" />
 				<p:inputText maxlength="50" size="15"
-					readonly="#{inscritoBean.acao == 'Excluir'}"
-					value="#{inscritoBean.getIdade()} ANOS">
+					readonly="#{inscritoBean.acao == 'Excluir'}" value="">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel for="sexo" value="Sexo:" />
 				<p:selectOneRadio id="sexo"
 					value="#{inscritoBean.inscritoCadastro.sexo}">
-					<f:selectItem itemLabel="Masculino" itemValue="MASCULINO" />
-					<f:selectItem itemLabel="Feminino" itemValue="FEMININO" />
+					<f:selectItem itemLabel="MASCULINO" itemValue="MASCULINO" />
+					<f:selectItem itemLabel="FEMININO" itemValue="FEMININO" />
 				</p:selectOneRadio>
 
 
@@ -129,38 +128,38 @@
 				<p:outputLabel for="horario_estudo" value="Horário que estuda:" />
 				<p:selectOneRadio id="horario_estudo"
 					value="#{inscritoBean.inscritoCadastro.horario}">
-					<f:selectItem itemLabel="Manhã" itemValue="MANHÃ" />
-					<f:selectItem itemLabel="Tarde" itemValue="TARDE" />
-					<f:selectItem itemLabel="Noite" itemValue="NOITE" />
+					<f:selectItem itemLabel="MANHÃ" itemValue="MANHÃ" />
+					<f:selectItem itemLabel="TARDE" itemValue="TARDE" />
+					<f:selectItem itemLabel="NOITE" itemValue="NOITE" />
 				</p:selectOneRadio>
 
 				<p:outputLabel for="serie" value="Série:" />
 				<p:selectOneMenu id="serie"
 					value="#{inscritoBean.inscritoCadastro.serie}">
 					<f:selectItem itemLabel="Selecione uma série" itemValue="" />
-					<f:selectItem itemLabel="1º ano" itemValue="1º ano" />
-					<f:selectItem itemLabel="2º ano" itemValue="2º ano" />
-					<f:selectItem itemLabel="3º ano" itemValue="3º ano" />
-					<f:selectItem itemLabel="4º ano" itemValue="4º ano" />
-					<f:selectItem itemLabel="5º ano" itemValue="5º ano" />
-					<f:selectItem itemLabel="6º ano" itemValue="6º ano" />
-					<f:selectItem itemLabel="7º ano" itemValue="7º ano" />
-					<f:selectItem itemLabel="8º ano" itemValue="8º ano" />
-					<f:selectItem itemLabel="9º ano" itemValue="9º ano" />
-					<f:selectItem itemLabel="1º ano ensino médio"
-						itemValue="1º ano ensino médio" />
-					<f:selectItem itemLabel="2º ano ensino médio"
-						itemValue="2º ano ensino médio" />
-					<f:selectItem itemLabel="3º ano ensino médio"
-						itemValue="3º ano ensino médio" />
-					<f:selectItem itemLabel="Ensino Médio incompleto"
-						itemValue="Ensino Médio incompleto" />
-					<f:selectItem itemLabel="Ensino Médio completo"
-						itemValue="Ensino Médio completo" />
-					<f:selectItem itemLabel="Superior incompleto"
-						itemValue="Superior incompleto" />
-					<f:selectItem itemLabel="Superior completo"
-						itemValue="Superior completo" />
+					<f:selectItem itemLabel="1º ANO" itemValue="1º ANO" />
+					<f:selectItem itemLabel="2º ANO" itemValue="2º ANO" />
+					<f:selectItem itemLabel="3º ANO" itemValue="3º ANO" />
+					<f:selectItem itemLabel="4º ANO" itemValue="4º ANO" />
+					<f:selectItem itemLabel="5º ANO" itemValue="5º ANO" />
+					<f:selectItem itemLabel="6º ANO" itemValue="6º ANO" />
+					<f:selectItem itemLabel="7º ANO" itemValue="7º ANO" />
+					<f:selectItem itemLabel="8º ANO" itemValue="8º ANO" />
+					<f:selectItem itemLabel="9º ANO" itemValue="9º ANO" />
+					<f:selectItem itemLabel="1º ANO ENSINO MÉDIO"
+						itemValue="1º ANO ENSINO MÉDIO" />
+					<f:selectItem itemLabel="2º ANO ENSINO MÉDIO"
+						itemValue="2º ANO ENSINO MÉDIO" />
+					<f:selectItem itemLabel="3º ANO ENSINO MÉDIO"
+						itemValue="3º ANO ENSINO MÉDIO" />
+					<f:selectItem itemLabel="ENSINO MÉDIO INCOMPLETO"
+						itemValue="ENSINO MÉDIO INCOMPLETO" />
+					<f:selectItem itemLabel="ENSINO MÉDIO COMPLETO"
+						itemValue="ENSINO MÉDIO COMPLETO" />
+					<f:selectItem itemLabel="SUPERIOR INCOMPLETO"
+						itemValue="SUPERIOR INCOMPLETO" />
+					<f:selectItem itemLabel="SUPERIOR COMPLETO"
+						itemValue="SUPERIOR COMPLETO" />
 				</p:selectOneMenu>
 
 				<p:outputLabel value="Responsável:" />
@@ -175,13 +174,18 @@
 				<p:selectOneMenu id="parentesco"
 					value="#{inscritoBean.inscritoCadastro.parentesco}">
 					<f:selectItem itemLabel="Selecione um parentesco" itemValue="" />
-					<f:selectItem itemLabel="Pai" itemValue="PAI" />
-					<f:selectItem itemLabel="Mãe" itemValue="MÃE" />
-					<f:selectItem itemLabel="Avó/Avô" itemValue="AVÓ/AVÔ" />
-					<f:selectItem itemLabel="Tia/Tio" itemValue="TIA/TIO" />
-					<f:selectItem itemLabel="Prima/Primo" itemValue="PRIMA/PRIMO" />
-					<f:selectItem itemLabel="Sobrinha/Sobrinho"
+					<f:selectItem itemLabel="O(A) PRÓPRIO(A)"
+						itemValue="O(A) PRÓPRIO(A)" />
+					<f:selectItem itemLabel="PAI" itemValue="PAI" />
+					<f:selectItem itemLabel="MÃE" itemValue="MÃE" />
+					<f:selectItem itemLabel="AVÓ/AVô" itemValue="AVÓ/AVÔ" />
+					<f:selectItem itemLabel="TIA/TIO" itemValue="TIA/TIO" />
+					<f:selectItem itemLabel="PRIMA/PRIMO" itemValue="PRIMA/PRIMO" />
+					<f:selectItem itemLabel="SOBRINHA/SOBRINHO"
 						itemValue="SOBRINHA/SOBRINHO" />
+					<f:selectItem itemLabel="AFILHADO/AFILHADA"
+						itemValue="AFILHADO/AFILHADA" />
+					<f:selectItem itemLabel="NETO/NETA" itemValue="NETO/NETA" />
 				</p:selectOneMenu>
 
 				<p:outputLabel value="RG ou CPF responsável:" />

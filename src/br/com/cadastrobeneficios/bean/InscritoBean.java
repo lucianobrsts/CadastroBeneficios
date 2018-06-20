@@ -132,6 +132,7 @@ public class InscritoBean {
 		if (inscritoCadastro.getDataNascimento() != null) {
 			nascimento.setTime(inscritoCadastro.getDataNascimento());
 		}
+
 		int anohj = hj.get(Calendar.YEAR);
 		int anoNascimento = nascimento.get(Calendar.YEAR);
 		return new Integer(anohj - anoNascimento);

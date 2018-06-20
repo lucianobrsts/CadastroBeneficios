@@ -34,7 +34,7 @@
 				<p:selectOneMenu id="nome" converter="inscritoConverter"
 					value="#{beneficioBean.beneficioCadastro.inscrito}" required="true"
 					requiredMessage="O campo nome é obrigatório.">
-					<f:selectItem itemLabel="Selecione uma pessoa..." itemValue="" />
+					<f:selectItem itemLabel="SELECIONE UMA PESSOA..." itemValue="" />
 					<f:selectItems value="#{beneficioBean.listaInscritosFiltrados}"
 						var="inscrito" itemValue="#{inscrito}"
 						itemLabel="#{inscrito.nome}" />
@@ -45,7 +45,7 @@
 				<p:selectOneMenu id="atividade" converter="atividadeConverter"
 					value="#{beneficioBean.beneficioCadastro.atividade}"
 					required="true" requiredMessage="O campo atividade é obrigatório.">
-					<f:selectItem itemLabel="Selecione uma atividade..." itemValue="" />
+					<f:selectItem itemLabel="SELECIONE UMA ATIVIDADE..." itemValue="" />
 					<f:selectItems value="#{beneficioBean.listaAtividadesFiltradas}"
 						var="atividade" itemValue="#{atividade}"
 						itemLabel="#{atividade.nome}" />
@@ -55,7 +55,7 @@
 				<p:outputLabel for="diaSemana" value="Dia da Semana:" />
 				<p:selectOneMenu id="diaSemana"
 					value="#{beneficioBean.beneficioCadastro.diaDaSemana}">
-					<f:selectItem itemLabel="Selecione um dia da semana..."
+					<f:selectItem itemLabel="SELECIONE UM DIA DA SEMANA..."
 						itemValue="" />
 					<f:selectItem itemLabel="SEGUNDA" itemValue="SEGUNDA" />
 					<f:selectItem itemLabel="TERÇA" itemValue="TERÇA" />
@@ -74,7 +74,7 @@
 				<p:outputLabel for="horarioInicio" value="Horário Início:" />
 				<p:selectOneMenu id="horarioInicio"
 					value="#{beneficioBean.beneficioCadastro.horarioInicio}">
-					<f:selectItem itemLabel="Selecione uma hora..." itemValue="" />
+					<f:selectItem itemLabel="SELECIONE UM HORÁRIO..." itemValue="" />
 					<f:selectItem itemLabel="08:00" itemValue="08:00" />
 					<f:selectItem itemLabel="08:30" itemValue="08:30" />
 					<f:selectItem itemLabel="09:00" itemValue="09:00" />
@@ -104,7 +104,7 @@
 				<p:outputLabel for="horarioFim" value="Horário Fim:" />
 				<p:selectOneMenu id="horarioFim"
 					value="#{beneficioBean.beneficioCadastro.horarioFim}">
-					<f:selectItem itemLabel="Selecione uma hora..." itemValue="" />
+					<f:selectItem itemLabel="SELECIONE UM HORÁRIO..." itemValue="" />
 					<f:selectItem itemLabel="08:00" itemValue="08:00" />
 					<f:selectItem itemLabel="08:30" itemValue="08:30" />
 					<f:selectItem itemLabel="09:00" itemValue="09:00" />
