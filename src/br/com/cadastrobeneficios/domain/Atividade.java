@@ -23,7 +23,7 @@ public class Atividade {
 	private Long codigo;
 
 	@NotEmpty(message = "O campo Nome é obrigatório.")
-	@Size(min=3, max=50, message="Tamanho inválido para o campo Nome (3 - 50 dígitos)")
+	@Size(min = 3, max = 50, message = "Tamanho inválido para o campo Nome (3 - 50 dígitos)")
 	@Column(name = "nome", length = 50, nullable = false)
 	private String nome;
 

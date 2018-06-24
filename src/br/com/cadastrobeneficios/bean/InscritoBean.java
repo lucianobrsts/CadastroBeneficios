@@ -125,7 +125,7 @@ public class InscritoBean {
 		}
 	}
 
-	public Integer getIdade() {
+	public Integer calculaIdade() {
 		GregorianCalendar hj = new GregorianCalendar();
 		GregorianCalendar nascimento = new GregorianCalendar();
 

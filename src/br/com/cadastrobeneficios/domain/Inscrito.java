@@ -76,8 +76,7 @@ public class Inscrito {
 	@Column(name = "celular", length = 15)
 	private String celular;
 
-	@NotEmpty(message = "O campo Escola é obrigatório.")
-	@Column(name = "escola", length = 50, nullable = false)
+	@Column(name = "escola", length = 50)
 	private String escola;
 
 	@Column(name = "serie", length = 50)

@@ -30,7 +30,7 @@
 
 			<h:panelGrid columns="2" id="panelUsuarioCadastro">
 				<p:outputLabel value="Nome:" />
-				<p:inputText maxlength="50" size="40"
+				<p:inputText maxlength="50" size="40" id="nome"
 					readonly="#{usuarioBean.acao == 'Excluir'}"
 					value="#{usuarioBean.usuarioCadastro.nome}">
 					<f:validateBean />
@@ -73,6 +73,12 @@
 					outcome="/pages/usuarioPesquisa.xhtml?faces-redirect=true" />
 			</h:panelGrid>
 		</h:form>
+
+		<script type="text/javascript">
+			document.getElementById('nome').focus();
+		</script>
+
+
 	</ui:define>
 </ui:composition>
 

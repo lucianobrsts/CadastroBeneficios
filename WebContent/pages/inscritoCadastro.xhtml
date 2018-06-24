@@ -18,7 +18,7 @@
 	</ui:define>
 
 	<ui:define name="conteudo">
-		<h:form id="formInscritoCadastro">
+		<h:form id="formInscritoCadastro" prependId="false">
 
 			<p:toolbar>
 				<f:facet name="left">
@@ -31,7 +31,7 @@
 			<h:panelGrid columns="2" id="panelInscritoCadastro">
 
 				<p:outputLabel value="Criança Inscrita:" />
-				<p:inputText maxlength="50" size="40"
+				<p:inputText maxlength="50" size="40" id="criancaInscrita"
 					readonly="#{inscritoBean.acao == 'Excluir'}"
 					style="text-transform: uppercase;"
 					value="#{inscritoBean.inscritoCadastro.criancaInscrita}">
@@ -39,7 +39,8 @@
 				</p:inputText>
 
 				<p:outputLabel value="Nome Completo:" />
-				<p:inputText maxlength="50" size="40"
+				<p:inputText maxlength="50" size="40" id="fullName"
+					onblur="calculaIdade()"
 					readonly="#{inscritoBean.acao == 'Excluir'}"
 					style="text-transform: uppercase;"
 					value="#{inscritoBean.inscritoCadastro.nome}">
@@ -48,15 +49,9 @@
 
 				<p:outputLabel value="Data Nascimento:" />
 				<p:calendar value="#{inscritoBean.inscritoCadastro.dataNascimento}"
-					readonly="#{inscritoBean.acao == 'Excluir'}" size="15" mask="true"
-					pattern="dd/MM/yyyy" required="true"
+					id="dataNascimento" readonly="#{inscritoBean.acao == 'Excluir'}"
+					size="15" mask="true" pattern="dd/MM/yyyy" required="true"
 					requiredMessage="O campo Data de Nascimento é obrigatório." />
-
-				<p:outputLabel value="Idade:" />
-				<p:inputText maxlength="50" size="15"
-					readonly="#{inscritoBean.acao == 'Excluir'}">
-					<f:validateBean />
-				</p:inputText>
 
 				<p:outputLabel for="sexo" value="Sexo:" />
 				<p:selectOneRadio id="sexo"
@@ -64,7 +59,6 @@
 					<f:selectItem itemLabel="MASCULINO" itemValue="MASCULINO" />
 					<f:selectItem itemLabel="FEMININO" itemValue="FEMININO" />
 				</p:selectOneRadio>
-
 
 				<p:outputLabel value="Registro/RG:" />
 				<p:inputText maxlength="11" size="15"
@@ -137,6 +131,9 @@
 				<p:selectOneMenu id="serie"
 					value="#{inscritoBean.inscritoCadastro.serie}">
 					<f:selectItem itemLabel="Selecione uma série" itemValue="" />
+					<f:selectItem itemLabel="INFANTIL I" itemValue="INFANTIL I" />
+					<f:selectItem itemLabel="INFANTIL II" itemValue="INFANTIL II" />
+					<f:selectItem itemLabel="INFANTIL III" itemValue="INFANTIL III" />
 					<f:selectItem itemLabel="1º ANO" itemValue="1º ANO" />
 					<f:selectItem itemLabel="2º ANO" itemValue="2º ANO" />
 					<f:selectItem itemLabel="3º ANO" itemValue="3º ANO" />
@@ -160,6 +157,7 @@
 						itemValue="SUPERIOR INCOMPLETO" />
 					<f:selectItem itemLabel="SUPERIOR COMPLETO"
 						itemValue="SUPERIOR COMPLETO" />
+					<f:selectItem itemLabel="NÃO ESTUDA" itemValue="NÃO ESTUDA" />
 				</p:selectOneMenu>
 
 				<p:outputLabel value="Responsável:" />
@@ -176,16 +174,19 @@
 					<f:selectItem itemLabel="Selecione um parentesco" itemValue="" />
 					<f:selectItem itemLabel="O(A) PRÓPRIO(A)"
 						itemValue="O(A) PRÓPRIO(A)" />
-					<f:selectItem itemLabel="PAI" itemValue="PAI" />
-					<f:selectItem itemLabel="MÃE" itemValue="MÃE" />
-					<f:selectItem itemLabel="AVÓ/AVô" itemValue="AVÓ/AVÔ" />
+					<f:selectItem itemLabel="MÃE/PAI" itemValue="MÃE/PAI" />
+					<f:selectItem itemLabel="MADRASTA/PADRASTO"
+						itemValue="MADRASTA/PADRASTO" />
+					<f:selectItem itemLabel="IRMÃ/IRMÃO" itemValue="IRMÃ/IRMÃO" />
+					<f:selectItem itemLabel="AVÓ/AVÔ" itemValue="AVÓ/AVÔ" />
 					<f:selectItem itemLabel="TIA/TIO" itemValue="TIA/TIO" />
 					<f:selectItem itemLabel="PRIMA/PRIMO" itemValue="PRIMA/PRIMO" />
 					<f:selectItem itemLabel="SOBRINHA/SOBRINHO"
 						itemValue="SOBRINHA/SOBRINHO" />
-					<f:selectItem itemLabel="AFILHADO/AFILHADA"
-						itemValue="AFILHADO/AFILHADA" />
+					<f:selectItem itemLabel="AFILHADA/AFILHADO"
+						itemValue="AFILHADA/AFILHADO" />
 					<f:selectItem itemLabel="NETO/NETA" itemValue="NETO/NETA" />
+					<f:selectItem itemLabel="TUTORA/TUTOR" itemValue="TUTORA/TUTOR" />
 				</p:selectOneMenu>
 
 				<p:outputLabel value="RG ou CPF responsável:" />
@@ -226,7 +227,12 @@
 					outcome="/pages/inscritoPesquisa.xhtml?faces-redirect=true" />
 			</h:panelGrid>
 		</h:form>
+
+		<script type="text/javascript">
+			document.getElementById('criancaInscrita').focus();
+		</script>
+
+
 	</ui:define>
 </ui:composition>
-
 </html>

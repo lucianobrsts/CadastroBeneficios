@@ -33,7 +33,7 @@ public class Beneficio {
 	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date dataInicio;
 
-	@Column(name = "data_fim", nullable = false)
+	@Column(name = "data_fim")
 	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date dataFim;
 

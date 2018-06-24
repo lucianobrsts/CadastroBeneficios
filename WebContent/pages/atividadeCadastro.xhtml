@@ -30,7 +30,7 @@
 
 			<h:panelGrid columns="2" id="panelAtividadeCadastro">
 				<p:outputLabel value="Nome:" />
-				<p:inputText maxlength="50" size="40"
+				<p:inputText maxlength="50" size="40" id="nome"
 					style="text-transform: uppercase;"
 					value="#{atividadeBean.atividadeCadastro.nome}"
 					readonly="#{atividadeBean.acao == 'Excluir'}">
@@ -60,6 +60,12 @@
 					outcome="/pages/atividadePesquisa.xhtml?faces-redirect=true" />
 			</h:panelGrid>
 		</h:form>
+
+		<script type="text/javascript">
+			document.getElementById('nome').focus();
+		</script>
+
+
 	</ui:define>
 </ui:composition>
 
