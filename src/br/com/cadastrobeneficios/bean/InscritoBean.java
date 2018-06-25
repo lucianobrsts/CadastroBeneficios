@@ -125,16 +125,32 @@ public class InscritoBean {
 		}
 	}
 
-	public Integer calculaIdade() {
-		GregorianCalendar hj = new GregorianCalendar();
-		GregorianCalendar nascimento = new GregorianCalendar();
+	public String calculaIdade() {
+		String dtNasc = null;
 
+		// Data atual
+		GregorianCalendar atual = new GregorianCalendar();
+		int diaAtual = atual.get(Calendar.DAY_OF_MONTH);
+		int mesAtual = atual.get(Calendar.MONTH);
+		int anoAtual = atual.get(Calendar.YEAR);
+
+		// Data nascimento
 		if (inscritoCadastro.getDataNascimento() != null) {
-			nascimento.setTime(inscritoCadastro.getDataNascimento());
+			dtNasc = inscritoCadastro.getDataNascimento();
+		}
+		int diaNasc = Integer.valueOf(dtNasc.substring(0, 2));
+		int mesNasc = Integer.valueOf(dtNasc.substring(3, 5));
+		int anoNasc = Integer.valueOf(dtNasc.substring(6, 10));
+
+		// Idade
+		int idade;
+
+		if (mesNasc < mesAtual || (mesNasc == mesAtual && diaNasc <= diaAtual)) {
+			idade = anoAtual - anoNasc;
+		} else {
+			idade = (anoAtual - anoNasc) - 1;
 		}
 
-		int anohj = hj.get(Calendar.YEAR);
-		int anoNascimento = nascimento.get(Calendar.YEAR);
-		return new Integer(anohj - anoNascimento);
+		return String.valueOf(idade);
 	}
 }

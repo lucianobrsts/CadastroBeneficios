@@ -1,7 +1,5 @@
 package br.com.cadastrobeneficios.domain;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,8 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -40,9 +36,10 @@ public class Inscrito {
 	@Column(name = "nome", length = 50, nullable = false)
 	private String nome;
 
+	@NotEmpty(message = "O campo Data de Nascimento é Obrigatório.")
+	@Size(min = 10, max = 10, message = "Tamanh inválido para o campo data de nascimento (10 dígitos)")
 	@Column(name = "nascimento", nullable = false)
-	@Temporal(value = TemporalType.TIMESTAMP)
-	private Date dataNascimento;
+	private String dataNascimento;
 
 	@NotEmpty(message = "O campo Sexo é obrigatório.")
 	@Column(name = "sexo", nullable = false)
@@ -128,11 +125,11 @@ public class Inscrito {
 		this.nome = nome.toUpperCase();
 	}
 
-	public Date getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 

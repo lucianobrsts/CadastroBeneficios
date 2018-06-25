@@ -48,9 +48,9 @@
 				</p:inputText>
 
 				<p:outputLabel value="Data Nascimento:" />
-				<p:calendar value="#{inscritoBean.inscritoCadastro.dataNascimento}"
+				<p:inputMask value="#{inscritoBean.inscritoCadastro.dataNascimento}"
 					id="dataNascimento" readonly="#{inscritoBean.acao == 'Excluir'}"
-					size="15" mask="true" pattern="dd/MM/yyyy" required="true"
+					size="15" mask="99/99/9999" required="true"
 					requiredMessage="O campo Data de Nascimento é obrigatório." />
 
 				<p:outputLabel for="sexo" value="Sexo:" />
