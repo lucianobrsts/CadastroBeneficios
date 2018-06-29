@@ -126,31 +126,43 @@ public class InscritoBean {
 	}
 
 	public String calculaIdade() {
-		String dtNasc = null;
+		String dtNasc = "";
+		int idade = 0;
 
-		// Data atual
-		GregorianCalendar atual = new GregorianCalendar();
-		int diaAtual = atual.get(Calendar.DAY_OF_MONTH);
-		int mesAtual = atual.get(Calendar.MONTH);
-		int anoAtual = atual.get(Calendar.YEAR);
+		try {
+			if (codigo != null) {
+				// Data nascimento
+				InscritoDAO inscritoDAO = new InscritoDAO();
+				dtNasc = inscritoDAO.buscarPorDataNascimento(codigo);
 
-		// Data nascimento
-		if (inscritoCadastro.getDataNascimento() != null) {
-			dtNasc = inscritoCadastro.getDataNascimento();
+				// Data atual
+				GregorianCalendar atual = new GregorianCalendar();
+				int diaAtual = atual.get(Calendar.DAY_OF_MONTH);
+				int mesAtual = atual.get(Calendar.MONTH);
+				int anoAtual = atual.get(Calendar.YEAR);
+
+				// if (inscritoCadastro.getDataNascimento() != null) {
+				// dtNasc = inscritoCadastro.getDataNascimento();
+				// }
+
+				// Idade
+				int diaNasc = Integer.valueOf(dtNasc.substring(0, 2));
+				int mesNasc = Integer.valueOf(dtNasc.substring(3, 5));
+				int anoNasc = Integer.valueOf(dtNasc.substring(6, 10));
+
+				if (mesNasc < mesAtual || (mesNasc == mesAtual && diaNasc <= diaAtual)) {
+					idade = anoAtual - anoNasc;
+				} else {
+					idade = (anoAtual - anoNasc) - 1;
+				}
+			}
+
+		} catch (
+
+		Exception ex) {
+			FacesUtil.adiconarMensagemErro("Erro ao tentar obter a data de nascimento do inscrito: " + ex.getMessage());
 		}
-		int diaNasc = Integer.valueOf(dtNasc.substring(0, 2));
-		int mesNasc = Integer.valueOf(dtNasc.substring(3, 5));
-		int anoNasc = Integer.valueOf(dtNasc.substring(6, 10));
-
-		// Idade
-		int idade;
-
-		if (mesNasc < mesAtual || (mesNasc == mesAtual && diaNasc <= diaAtual)) {
-			idade = anoAtual - anoNasc;
-		} else {
-			idade = (anoAtual - anoNasc) - 1;
-		}
-
 		return String.valueOf(idade);
 	}
+
 }

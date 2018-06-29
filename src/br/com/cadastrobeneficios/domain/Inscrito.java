@@ -2,12 +2,9 @@ package br.com.cadastrobeneficios.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -96,10 +93,6 @@ public class Inscrito {
 
 	@Column(name = "respreenchimento", length = 50, nullable = false)
 	private String responsavelPreenchimento;
-
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "beneficio_codigo", referencedColumnName = "codigo")
-	private Beneficio beneficio;
 
 	public Long getCodigo() {
 		return codigo;
@@ -259,14 +252,6 @@ public class Inscrito {
 
 	public void setResponsavelPreenchimento(String responsavelPreenchimento) {
 		this.responsavelPreenchimento = responsavelPreenchimento.toUpperCase();
-	}
-
-	public Beneficio getBeneficio() {
-		return beneficio;
-	}
-
-	public void setBeneficio(Beneficio beneficio) {
-		this.beneficio = beneficio;
 	}
 
 	@Override

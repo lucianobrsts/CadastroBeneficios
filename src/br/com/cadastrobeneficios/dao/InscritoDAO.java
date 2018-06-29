@@ -61,6 +61,23 @@ public class InscritoDAO {
 		return inscrito;
 	}
 
+	public String buscarPorDataNascimento(Long codigo) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Inscrito inscrito = null;
+
+		try {
+			Query consulta = sessao.getNamedQuery("Inscrito.buscarPorCodigo");
+			consulta.setLong("codigo", codigo);
+
+			inscrito = (Inscrito) consulta.uniqueResult();
+		} catch (RuntimeException ex) {
+			throw ex;
+		} finally {
+			sessao.close();
+		}
+		return inscrito.getDataNascimento();
+	}
+
 	public void excluir(Inscrito inscrito) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction transacao = null;
