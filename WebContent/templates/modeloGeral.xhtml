@@ -20,8 +20,8 @@
 
 	<p:layout fullPage="true">
 		<p:layoutUnit position="north"
-			header="Sistema para Gerenciamento de Benefícios" resizable="falses"
-			closable="false" collapsed="false">
+			header="Sistema para Gerenciamento de Inscrições e Atividades"
+			resizable="falses" closable="false" collapsed="false">
 		</p:layoutUnit>
 
 		<p:layoutUnit position="south"
@@ -32,8 +32,6 @@
 			<h:form id="formMenu">
 				<p:panelMenu id="panelMenu">
 					<p:submenu label="Arquivo">
-						<p:menuitem value="Autenticação" />
-
 						<p:menuitem value="Principal" outcome="/pages/principal.xhtml" />
 
 						<p:menuitem value="Sair" />
@@ -54,11 +52,15 @@
 					</p:submenu>
 
 					<p:submenu label="Relatórios">
-						<p:menuitem value="Beneficios" />
+						<p:menuitem value="Atividades por inscrito"
+							outcome="/pages/relatorioBeneficio.xhtml" />
+
+						<p:menuitem value="Aniversariantes do mês"
+							outcome="/pages/relatorioAniversariantes.xhtml" />
 					</p:submenu>
 
 					<p:submenu label="Backup">
-						<p:menuitem value="Backup" />
+						<p:menuitem value="Backup" outcome="/pages/gerarBackup.xhtml" />
 					</p:submenu>
 
 					<p:submenu label="Informações">
