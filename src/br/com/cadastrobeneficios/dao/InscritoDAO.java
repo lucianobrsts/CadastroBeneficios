@@ -75,7 +75,7 @@ public class InscritoDAO {
 		} finally {
 			sessao.close();
 		}
-		return inscrito.getDataNascimento();
+		return inscrito.getNascimento();
 	}
 
 	public void excluir(Inscrito inscrito) {

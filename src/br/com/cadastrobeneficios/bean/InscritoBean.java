@@ -1,5 +1,6 @@
 package br.com.cadastrobeneficios.bean;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -9,16 +10,16 @@ import javax.faces.bean.ViewScoped;
 
 import br.com.cadastrobeneficios.dao.InscritoDAO;
 import br.com.cadastrobeneficios.domain.Inscrito;
+import br.com.cadastrobeneficios.relatorio.Relatorio;
 import br.com.cadastrobeneficios.util.FacesUtil;
 
 @ManagedBean
 @ViewScoped
 public class InscritoBean {
 	private Inscrito inscritoCadastro;
-
 	private List<Inscrito> listaInscritos;
 	private List<Inscrito> listaInscritosFiltrados;
-
+	private List<Inscrito> lista = new ArrayList<Inscrito>();
 	private String acao;
 	private Long codigo;
 
@@ -60,6 +61,14 @@ public class InscritoBean {
 
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
+	}
+
+	public List<Inscrito> getLista() {
+		return lista;
+	}
+
+	public void setLista(List<Inscrito> lista) {
+		this.lista = lista;
 	}
 
 	public void novo() {
@@ -165,4 +174,11 @@ public class InscritoBean {
 		return String.valueOf(idade);
 	}
 
+	public void geraRelatorio() {
+		Relatorio relatorio = new Relatorio();
+		InscritoDAO inscritoDao = new InscritoDAO();
+		lista = inscritoDao.listar();
+
+		relatorio.getRelatorio(lista);
+	}
 }
