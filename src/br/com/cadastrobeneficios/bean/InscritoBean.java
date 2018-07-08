@@ -166,9 +166,7 @@ public class InscritoBean {
 				}
 			}
 
-		} catch (
-
-		Exception ex) {
+		} catch (Exception ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar obter a data de nascimento do inscrito: " + ex.getMessage());
 		}
 		return String.valueOf(idade);

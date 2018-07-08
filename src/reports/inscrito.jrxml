@@ -46,23 +46,28 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 				<reportElement x="0" y="59" width="550" height="1" backcolor="#000000" uuid="432d5b56-1b9f-43a0-a1d2-2c15d5408435"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="1" y="0" width="549" height="30" uuid="00b9e67e-05fc-4199-bfad-e8fe77851757"/>
+				<reportElement x="80" y="0" width="470" height="30" uuid="00b9e67e-05fc-4199-bfad-e8fe77851757"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="16"/>
 				</textElement>
 				<text><![CDATA[Frente Beneficente para Criança - 1458]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="26" width="548" height="30" uuid="a31049fd-2c6f-4bde-83d1-a32554dbb505"/>
-				<textElement textAlignment="Center">
+				<reportElement x="80" y="26" width="468" height="30" uuid="a31049fd-2c6f-4bde-83d1-a32554dbb505"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="16"/>
 				</textElement>
 				<text><![CDATA[Listagem de Inscritos]]></text>
 			</staticText>
 			<textField pattern="dd/MMMMM/yyyy">
 				<reportElement x="444" y="30" width="100" height="30" uuid="cec0c4d8-43e1-4963-a874-d546c8888630"/>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement x="12" y="0" width="58" height="55" uuid="bd51a002-baf7-4151-9200-ba7c44c8dcae"/>
+				<imageExpression><![CDATA["D:/Softwares Instalations/git/CadastroBeneficios/src/reports/logo.png"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<columnHeader>
@@ -182,20 +187,24 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="42" splitType="Stretch">
+		<band height="53" splitType="Stretch">
 			<rectangle>
 				<reportElement x="2" y="10" width="550" height="1" backcolor="#000000" uuid="10fe231a-1705-410f-943d-d826a66a4651"/>
 			</rectangle>
 			<textField>
-				<reportElement x="408" y="12" width="100" height="30" uuid="a4b1b71e-23aa-4cbd-b24c-9e72798e0b38"/>
+				<reportElement x="464" y="12" width="64" height="18" uuid="a4b1b71e-23aa-4cbd-b24c-9e72798e0b38"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement x="510" y="12" width="42" height="30" uuid="6e2cb134-5b7a-4ade-916b-d5ecbd4d4c56"/>
+				<reportElement x="510" y="12" width="34" height="18" uuid="6e2cb134-5b7a-4ade-916b-d5ecbd4d4c56"/>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="2" y="12" width="379" height="18" uuid="eccd3553-838a-4aa1-8c91-59a22fd72cc4"/>
+				<text><![CDATA[Rua Capitão Uruguai, 393 - Aerolândia]]></text>
+			</staticText>
 		</band>
 	</pageFooter>
 </jasperReport>
