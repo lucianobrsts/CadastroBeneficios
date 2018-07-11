@@ -18,7 +18,7 @@
 	</ui:define>
 
 	<ui:define name="conteudo">
-		<h:form id="formBeneficioCadastro">
+		<h:form id="formBeneficioRelatorio">
 
 			<p:toolbar>
 				<f:facet name="left">
@@ -30,8 +30,8 @@
 
 			<h:panelGrid columns="3" id="panelBeneficioCadastro">
 
-				<p:outputLabel for="nome" value="Nome:" />
-				<p:selectOneMenu id="nome" converter="inscritoConverter"
+				<p:outputLabel for="som_nome" value="Nome:" />
+				<p:selectOneMenu id="som_nome" converter="inscritoConverter"
 					filterMatchMode="startsWith" filter="true"
 					value="#{beneficioBean.beneficioCadastro.inscrito}" required="true"
 					requiredMessage="O campo nome é obrigatório.">
@@ -42,7 +42,9 @@
 					<f:validateBean />
 				</p:selectOneMenu>
 
-				<p:commandButton value="Gerar Relatório" />
+				<p:commandButton value="Gerar Relatório"
+					action="#{inscritoBean.geraRelatorioAtividade()}" ajax="false"
+					onclick="this.form.target='_blank'" />
 			</h:panelGrid>
 			<br />
 			<h:panelGrid columns="5">

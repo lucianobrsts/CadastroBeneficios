@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import br.com.cadastrobeneficios.dao.InscritoDAO;
 import br.com.cadastrobeneficios.domain.Inscrito;
@@ -22,6 +24,8 @@ public class InscritoBean {
 	private List<Inscrito> lista = new ArrayList<Inscrito>();
 	private String acao;
 	private Long codigo;
+	// private String dtNasc;
+	private String nome = "";
 
 	public Inscrito getInscritoCadastro() {
 		return inscritoCadastro;
@@ -71,6 +75,14 @@ public class InscritoBean {
 		this.lista = lista;
 	}
 
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public void novo() {
 		inscritoCadastro = new Inscrito();
 	}
@@ -103,6 +115,8 @@ public class InscritoBean {
 			if (codigo != null) {
 				InscritoDAO inscritoDAO = new InscritoDAO();
 				inscritoCadastro = inscritoDAO.buscarPorCodigo(codigo);
+				String data = inscritoCadastro.getNascimento();
+				System.out.println("Data de Nascimento: " + data);
 			} else {
 				inscritoCadastro = new Inscrito();
 			}
@@ -135,24 +149,19 @@ public class InscritoBean {
 	}
 
 	public String calculaIdade() {
-		String dtNasc = "";
 		int idade = 0;
 
 		try {
 			if (codigo != null) {
-				// Data nascimento
 				InscritoDAO inscritoDAO = new InscritoDAO();
-				dtNasc = inscritoDAO.buscarPorDataNascimento(codigo);
+				inscritoCadastro = inscritoDAO.buscarPorCodigo(codigo);
+				String dtNasc = inscritoCadastro.getNascimento();
 
 				// Data atual
 				GregorianCalendar atual = new GregorianCalendar();
 				int diaAtual = atual.get(Calendar.DAY_OF_MONTH);
 				int mesAtual = atual.get(Calendar.MONTH);
 				int anoAtual = atual.get(Calendar.YEAR);
-
-				// if (inscritoCadastro.getDataNascimento() != null) {
-				// dtNasc = inscritoCadastro.getDataNascimento();
-				// }
 
 				// Idade
 				int diaNasc = Integer.valueOf(dtNasc.substring(0, 2));
@@ -165,18 +174,28 @@ public class InscritoBean {
 					idade = (anoAtual - anoNasc) - 1;
 				}
 			}
-
 		} catch (Exception ex) {
-			FacesUtil.adiconarMensagemErro("Erro ao tentar obter a data de nascimento do inscrito: " + ex.getMessage());
+			FacesUtil.adiconarMensagemErro("Erro ao tentar obter a Data de Nascimento do inscrito: " + ex.getMessage());
 		}
 		return String.valueOf(idade);
 	}
 
-	public void geraRelatorio() {
+	public void geraRelatorioInscrito() {
 		Relatorio relatorio = new Relatorio();
 		InscritoDAO inscritoDao = new InscritoDAO();
 		lista = inscritoDao.listar();
 
 		relatorio.getRelatorio(lista);
+	}
+
+	public void geraRelatorioAtividade() {
+		Relatorio relatorio = new Relatorio();
+		HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext()
+				.getRequest();
+		nome = request.getParameter("som_nome");
+
+		System.out.println("Nome: " + nome);
+
+		relatorio.getRelatorioComParam(nome);
 	}
 }

@@ -60,7 +60,7 @@ public class InscritoDAO {
 		}
 		return inscrito;
 	}
-
+	
 	public String buscarPorDataNascimento(Long codigo) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Inscrito inscrito = null;
