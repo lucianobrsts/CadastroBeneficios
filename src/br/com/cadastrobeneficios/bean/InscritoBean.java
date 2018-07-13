@@ -7,8 +7,6 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpServletRequest;
 
 import br.com.cadastrobeneficios.dao.InscritoDAO;
 import br.com.cadastrobeneficios.domain.Inscrito;
@@ -115,8 +113,6 @@ public class InscritoBean {
 			if (codigo != null) {
 				InscritoDAO inscritoDAO = new InscritoDAO();
 				inscritoCadastro = inscritoDAO.buscarPorCodigo(codigo);
-				String data = inscritoCadastro.getNascimento();
-				System.out.println("Data de Nascimento: " + data);
 			} else {
 				inscritoCadastro = new Inscrito();
 			}
@@ -186,16 +182,5 @@ public class InscritoBean {
 		lista = inscritoDao.listar();
 
 		relatorio.getRelatorio(lista);
-	}
-
-	public void geraRelatorioAtividade() {
-		Relatorio relatorio = new Relatorio();
-		HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext()
-				.getRequest();
-		nome = request.getParameter("som_nome");
-
-		System.out.println("Nome: " + nome);
-
-		relatorio.getRelatorioComParam(nome);
 	}
 }

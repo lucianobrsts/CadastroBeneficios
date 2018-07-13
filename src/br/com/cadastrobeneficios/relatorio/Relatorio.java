@@ -10,6 +10,7 @@ import java.util.Map;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.cadastrobeneficios.domain.Beneficio;
 import br.com.cadastrobeneficios.domain.Inscrito;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -57,15 +58,14 @@ public class Relatorio {
 		}
 	}
 
-	public void getRelatorioComParam(String nome) {
+	public void getRelatorioComParam(List<Beneficio> lista) {
 		stream = this.getClass().getResourceAsStream("/reports/beneficio.jasper");
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("nome", nome);
 		baos = new ByteArrayOutputStream();
 
 		try {
 			JasperReport report = (JasperReport) JRLoader.loadObject(stream);
-			JasperPrint print = JasperFillManager.fillReport(report, params);
+			JasperPrint print = JasperFillManager.fillReport(report, params, new JRBeanCollectionDataSource(lista));
 			JasperExportManager.exportReportToPdfStream(print, baos);
 
 			response.reset();
@@ -83,5 +83,4 @@ public class Relatorio {
 			e.printStackTrace();
 		}
 	}
-
 }

@@ -40,40 +40,40 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 		<property name="com.jaspersoft.studio.field.label" value="pf"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="inscrito"/>
 	</field>
-	<title>
-		<band height="79" splitType="Stretch">
-			<rectangle>
-				<reportElement x="0" y="57" width="550" height="1" backcolor="#000000" uuid="432d5b56-1b9f-43a0-a1d2-2c15d5408435"/>
-			</rectangle>
+	<pageHeader>
+		<band height="65">
+			<image>
+				<reportElement x="16" y="4" width="58" height="55" uuid="bd51a002-baf7-4151-9200-ba7c44c8dcae"/>
+				<imageExpression><![CDATA["D:/Softwares Instalations/git/CadastroBeneficios/src/reports/logo.png"]]></imageExpression>
+			</image>
 			<staticText>
-				<reportElement x="80" y="0" width="470" height="30" uuid="00b9e67e-05fc-4199-bfad-e8fe77851757"/>
+				<reportElement x="76" y="4" width="470" height="30" uuid="00b9e67e-05fc-4199-bfad-e8fe77851757"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="16"/>
 				</textElement>
 				<text><![CDATA[Frente Beneficente para Criança - 1458]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="80" y="26" width="468" height="30" uuid="a31049fd-2c6f-4bde-83d1-a32554dbb505"/>
+				<reportElement x="76" y="30" width="468" height="30" uuid="a31049fd-2c6f-4bde-83d1-a32554dbb505"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="16"/>
 				</textElement>
 				<text><![CDATA[Listagem de Inscritos]]></text>
 			</staticText>
 			<textField pattern="dd/MMMMM/yyyy">
-				<reportElement x="444" y="30" width="100" height="30" uuid="cec0c4d8-43e1-4963-a874-d546c8888630"/>
+				<reportElement x="440" y="34" width="100" height="24" uuid="cec0c4d8-43e1-4963-a874-d546c8888630"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="20" y="0" width="58" height="55" uuid="bd51a002-baf7-4151-9200-ba7c44c8dcae"/>
-				<imageExpression><![CDATA["D:/Softwares Instalations/git/CadastroBeneficios/src/reports/logo.png"]]></imageExpression>
-			</image>
+			<rectangle radius="14">
+				<reportElement mode="Transparent" x="1" y="2" width="549" height="59" uuid="9e63e49a-c64e-4136-a815-30c0412a60bc"/>
+			</rectangle>
 		</band>
-	</title>
+	</pageHeader>
 	<columnHeader>
-		<band height="24" splitType="Stretch">
+		<band height="31" splitType="Stretch">
 			<staticText>
-				<reportElement x="1" y="0" width="49" height="20" uuid="2d1890d7-2824-411c-9526-e5ab4adb54ee">
+				<reportElement x="1" y="9" width="49" height="20" uuid="2d1890d7-2824-411c-9526-e5ab4adb54ee">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d8d6555e-e855-43d3-b2e2-a3c98e97e901"/>
 				</reportElement>
 				<textElement>
@@ -82,7 +82,7 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 				<text><![CDATA[Código]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="51" y="0" width="160" height="20" uuid="5fafcef5-040e-4cc6-997d-f33738a5e08b">
+				<reportElement x="51" y="9" width="160" height="20" uuid="5fafcef5-040e-4cc6-997d-f33738a5e08b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="23523af6-1e42-44f5-84ec-13376b6f3c9b"/>
 				</reportElement>
 				<textElement>
@@ -91,7 +91,7 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 				<text><![CDATA[Nome]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="294" y="0" width="45" height="18" uuid="8548473d-df55-449e-998a-b67edd40240e">
+				<reportElement x="294" y="9" width="45" height="18" uuid="8548473d-df55-449e-998a-b67edd40240e">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9df9ded-cfc7-424f-b18e-10cb576b9a7c"/>
 				</reportElement>
 				<textElement>
@@ -100,7 +100,7 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 				<text><![CDATA[PF]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="343" y="0" width="39" height="18" uuid="8e62bdf4-cb9d-4ed8-bcaf-dcde7b3eef97">
+				<reportElement x="343" y="9" width="39" height="18" uuid="8e62bdf4-cb9d-4ed8-bcaf-dcde7b3eef97">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3da98d5d-5c0a-44f6-ae32-aba540accb18"/>
 				</reportElement>
 				<textElement>
@@ -109,16 +109,16 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 				<text><![CDATA[cs]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="384" y="0" width="168" height="20" uuid="74cceff2-3bca-47d7-ba92-6db43586ade5">
+				<reportElement x="384" y="9" width="168" height="20" uuid="74cceff2-3bca-47d7-ba92-6db43586ade5">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b96f0fd4-4aa7-4e54-af51-634d3d38739a"/>
 				</reportElement>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[endereco]]></text>
+				<text><![CDATA[Endereço]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="212" y="0" width="80" height="20" uuid="5b4fc2a0-ff4d-4d49-9806-751ac8c25e73">
+				<reportElement x="212" y="9" width="80" height="20" uuid="5b4fc2a0-ff4d-4d49-9806-751ac8c25e73">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3e2c323d-13ea-4fd7-816a-535a9d7ce621"/>
 				</reportElement>
 				<textElement>
@@ -129,7 +129,7 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="32" splitType="Stretch">
+		<band height="28" splitType="Stretch">
 			<textField>
 				<reportElement x="13" y="0" width="34" height="20" uuid="160558a4-6393-48d7-b0be-283f87cdbbc0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d8d6555e-e855-43d3-b2e2-a3c98e97e901"/>
@@ -149,10 +149,10 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="212" y="0" width="80" height="20" uuid="48491757-6829-4364-a98a-71b0b88c18ec">
+				<reportElement x="212" y="0" width="68" height="20" uuid="48491757-6829-4364-a98a-71b0b88c18ec">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3e2c323d-13ea-4fd7-816a-535a9d7ce621"/>
 				</reportElement>
-				<textElement>
+				<textElement textAlignment="Center">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nascimento}]]></textFieldExpression>
@@ -187,24 +187,24 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="53" splitType="Stretch">
-			<rectangle>
-				<reportElement x="2" y="10" width="550" height="1" backcolor="#000000" uuid="10fe231a-1705-410f-943d-d826a66a4651"/>
-			</rectangle>
+		<band height="35" splitType="Stretch">
 			<textField>
-				<reportElement x="464" y="12" width="64" height="18" uuid="a4b1b71e-23aa-4cbd-b24c-9e72798e0b38"/>
+				<reportElement x="420" y="0" width="70" height="20" uuid="a4b1b71e-23aa-4cbd-b24c-9e72798e0b38"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement x="510" y="12" width="34" height="18" uuid="6e2cb134-5b7a-4ade-916b-d5ecbd4d4c56"/>
+				<reportElement x="490" y="0" width="58" height="20" uuid="6e2cb134-5b7a-4ade-916b-d5ecbd4d4c56"/>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="2" y="12" width="379" height="18" uuid="eccd3553-838a-4aa1-8c91-59a22fd72cc4"/>
+				<reportElement x="0" y="0" width="200" height="20" uuid="eccd3553-838a-4aa1-8c91-59a22fd72cc4"/>
 				<text><![CDATA[Rua Capitão Uruguai, 393 - Aerolândia]]></text>
 			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="551" height="1" uuid="dd188325-c0f8-4a03-ac4e-49f6063af16b"/>
+			</line>
 		</band>
 	</pageFooter>
 </jasperReport>

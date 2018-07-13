@@ -25,7 +25,7 @@ public class Atividade {
 	@NotEmpty(message = "O campo Nome é obrigatório.")
 	@Size(min = 3, max = 50, message = "Tamanho inválido para o campo Nome (3 - 50 dígitos)")
 	@Column(name = "nome", length = 50, nullable = false)
-	private String nome;
+	private String atividade;
 
 	public Long getCodigo() {
 		return codigo;
@@ -35,17 +35,17 @@ public class Atividade {
 		this.codigo = codigo;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getAtividade() {
+		return atividade;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome.toUpperCase();
+	public void setAtividade(String atividade) {
+		this.atividade = atividade.toUpperCase();
 	}
 
 	@Override
 	public String toString() {
-		return "Atividade [codigo=" + codigo + ", nome=" + nome + "]";
+		return "Atividade [codigo=" + codigo + ", nome=" + atividade + "]";
 	}
 
 	@Override

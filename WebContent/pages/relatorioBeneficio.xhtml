@@ -38,12 +38,12 @@
 					<f:selectItem itemLabel="SELECIONE UMA PESSOA..." itemValue="" />
 					<f:selectItems value="#{beneficioBean.listaInscritosFiltrados}"
 						var="inscrito" itemValue="#{inscrito}"
-						itemLabel="#{inscrito.nome}" />
+						itemLabel="#{inscrito.inscrito}" />
 					<f:validateBean />
 				</p:selectOneMenu>
 
 				<p:commandButton value="Gerar Relatório"
-					action="#{inscritoBean.geraRelatorioAtividade()}" ajax="false"
+					action="#{beneficioBean.geraRelatorioAtividade()}" ajax="false"
 					onclick="this.form.target='_blank'" />
 			</h:panelGrid>
 			<br />

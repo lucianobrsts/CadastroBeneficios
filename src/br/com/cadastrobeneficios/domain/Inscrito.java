@@ -31,7 +31,7 @@ public class Inscrito {
 	@NotEmpty(message = "O campo Nome Completo é obrigatório.")
 	@Size(min = 5, max = 50, message = "Tamanho inválido para o campo nome (5 - 50 dígitos)")
 	@Column(name = "nome", length = 50, nullable = false)
-	private String nome;
+	private String inscrito;
 
 	@NotEmpty(message = "O campo Data de Nascimento é Obrigatório.")
 	@Size(min = 10, max = 10, message = "Tamanh inválido para o campo data de nascimento (10 dígitos)")
@@ -110,12 +110,12 @@ public class Inscrito {
 		this.criancaInscrita = criancaInscrita.toUpperCase();
 	}
 
-	public String getNome() {
-		return nome;
+	public String getInscrito() {
+		return inscrito;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome.toUpperCase();
+	public void setInscrito(String inscrito) {
+		this.inscrito = inscrito.toUpperCase();
 	}
 
 	public String getNascimento() {
@@ -256,7 +256,7 @@ public class Inscrito {
 
 	@Override
 	public String toString() {
-		return "Inscrito [codigo=" + codigo + ", nome=" + nome + ", nascimento=" + nascimento + ", sexo=" + sexo
+		return "Inscrito [codigo=" + codigo + ", nome=" + inscrito + ", nascimento=" + nascimento + ", sexo=" + sexo
 				+ ", ChildNumber=" + ChildNumber + ", celular=" + celular + ", responsavelPreenchimento="
 				+ responsavelPreenchimento + "]";
 	}
