@@ -32,21 +32,19 @@
 			<h:form id="formMenu">
 				<p:panelMenu id="panelMenu">
 					<p:submenu label="Arquivo">
+						<p:menuitem value="Autenticação"
+							outcome="/pages/autenticacao.xhtml" />
 						<p:menuitem value="Principal" outcome="/pages/principal.xhtml" />
-
-						<p:menuitem value="Sair" />
+						<p:menuitem value="Sair" action="#{autenticacaoBean.sair}"/>
 					</p:submenu>
 
 					<p:submenu label="Cadastros">
 						<p:menuitem value="Atividades"
 							outcome="/pages/atividadePesquisa.xhtml" />
-
 						<p:menuitem value="Beneficios"
 							outcome="/pages/beneficioPesquisa.xhtml" />
-
 						<p:menuitem value="Inscritos"
 							outcome="/pages/inscritoPesquisa.xhtml" />
-
 						<p:menuitem value="Usuários"
 							outcome="/pages/usuarioPesquisa.xhtml" />
 					</p:submenu>
@@ -54,10 +52,8 @@
 					<p:submenu label="Relatórios">
 						<p:menuitem value="Atividades por inscrito"
 							outcome="/pages/relatorioBeneficio.xhtml" />
-
 						<p:menuitem value="Aniversariantes do mês"
 							outcome="/pages/relatorioAniversariantes.xhtml" />
-
 						<p:menuitem value="Inscritos"
 							outcome="/pages/relatorioInscrito.xhtml" />
 					</p:submenu>

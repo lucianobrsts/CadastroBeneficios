@@ -1,5 +1,6 @@
 package br.com.cadastrobeneficios.test;
 
+import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -17,6 +18,15 @@ public class UsuarioDAOTest {
 
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		usuarioDAO.salvar(usuario);
+	}
+
+	@Test
+	@Ignore
+	public void autenticar() {
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		Usuario usuario = usuarioDAO.autenticar("teste", "testes");
+
+		Assert.assertNotNull(usuario);
 	}
 
 }
