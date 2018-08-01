@@ -23,7 +23,7 @@ public class InscritoBean {
 	private String acao;
 	private Long codigo;
 	// private String dtNasc;
-	private String nome = "";
+	private String data = "";
 
 	public Inscrito getInscritoCadastro() {
 		return inscritoCadastro;
@@ -73,12 +73,12 @@ public class InscritoBean {
 		this.lista = lista;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getData() {
+		return data;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public void novo() {
@@ -182,5 +182,13 @@ public class InscritoBean {
 		lista = inscritoDao.listar();
 
 		relatorio.getRelatorio(lista);
+	}
+
+	public void geraRelatorioAniversario() throws NoSuchFieldException {
+		Relatorio relatorio = new Relatorio();
+		InscritoDAO inscritoDao = new InscritoDAO();
+		lista = inscritoDao.listar();
+
+		relatorio.getRelatorioAniversariantes(lista, data);
 	}
 }

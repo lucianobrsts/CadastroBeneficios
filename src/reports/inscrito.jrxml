@@ -41,87 +41,86 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 		<property name="com.jaspersoft.studio.field.tree.path" value="inscrito"/>
 	</field>
 	<pageHeader>
-		<band height="65">
+		<band height="69">
+			<rectangle radius="14">
+				<reportElement mode="Transparent" x="1" y="2" width="549" height="59" uuid="fc6ad9c1-4b94-4f46-8b25-0e6797460f3e"/>
+			</rectangle>
 			<image>
-				<reportElement x="16" y="4" width="58" height="55" uuid="bd51a002-baf7-4151-9200-ba7c44c8dcae"/>
+				<reportElement x="16" y="4" width="58" height="55" uuid="f219e666-899b-4402-93d1-a1815505ff6c"/>
 				<imageExpression><![CDATA["D:/Softwares Instalations/git/CadastroBeneficios/src/reports/logo.png"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="76" y="4" width="470" height="30" uuid="00b9e67e-05fc-4199-bfad-e8fe77851757"/>
+				<reportElement x="76" y="4" width="470" height="26" uuid="e73a1804-b07a-4889-9e8c-89f0d7c283c3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="SansSerif" size="16"/>
+					<font size="16"/>
 				</textElement>
 				<text><![CDATA[Frente Beneficente para Criança - 1458]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="76" y="30" width="468" height="30" uuid="a31049fd-2c6f-4bde-83d1-a32554dbb505"/>
+				<reportElement x="76" y="30" width="468" height="30" uuid="fefa8000-44ab-4a24-a873-89ee81c8fb29"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="SansSerif" size="16"/>
+					<font size="16"/>
 				</textElement>
 				<text><![CDATA[Listagem de Inscritos]]></text>
 			</staticText>
-			<textField pattern="dd/MMMMM/yyyy">
-				<reportElement x="440" y="34" width="100" height="24" uuid="cec0c4d8-43e1-4963-a874-d546c8888630"/>
-				<textElement verticalAlignment="Middle"/>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="446" y="30" width="100" height="20" uuid="a61f63ac-cfd1-4485-a8ff-5a4dd0a1e094"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
-			<rectangle radius="14">
-				<reportElement mode="Transparent" x="1" y="2" width="549" height="59" uuid="9e63e49a-c64e-4136-a815-30c0412a60bc"/>
-			</rectangle>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="31" splitType="Stretch">
+		<band height="26" splitType="Stretch">
 			<staticText>
-				<reportElement x="1" y="9" width="49" height="20" uuid="2d1890d7-2824-411c-9526-e5ab4adb54ee">
+				<reportElement mode="Opaque" x="1" y="1" width="49" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="2d1890d7-2824-411c-9526-e5ab4adb54ee">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d8d6555e-e855-43d3-b2e2-a3c98e97e901"/>
 				</reportElement>
-				<textElement>
+				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Código]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="51" y="9" width="160" height="20" uuid="5fafcef5-040e-4cc6-997d-f33738a5e08b">
+				<reportElement mode="Opaque" x="50" y="1" width="160" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="5fafcef5-040e-4cc6-997d-f33738a5e08b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="23523af6-1e42-44f5-84ec-13376b6f3c9b"/>
 				</reportElement>
-				<textElement>
+				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nome]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="294" y="9" width="45" height="18" uuid="8548473d-df55-449e-998a-b67edd40240e">
+				<reportElement mode="Opaque" x="292" y="1" width="47" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="8548473d-df55-449e-998a-b67edd40240e">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9df9ded-cfc7-424f-b18e-10cb576b9a7c"/>
 				</reportElement>
-				<textElement>
+				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PF]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="343" y="9" width="39" height="18" uuid="8e62bdf4-cb9d-4ed8-bcaf-dcde7b3eef97">
+				<reportElement mode="Opaque" x="339" y="1" width="43" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="8e62bdf4-cb9d-4ed8-bcaf-dcde7b3eef97">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3da98d5d-5c0a-44f6-ae32-aba540accb18"/>
 				</reportElement>
-				<textElement>
+				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[cs]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="384" y="9" width="168" height="20" uuid="74cceff2-3bca-47d7-ba92-6db43586ade5">
+				<reportElement mode="Opaque" x="382" y="1" width="170" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="74cceff2-3bca-47d7-ba92-6db43586ade5">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b96f0fd4-4aa7-4e54-af51-634d3d38739a"/>
 				</reportElement>
-				<textElement>
+				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Endereço]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="212" y="9" width="80" height="20" uuid="5b4fc2a0-ff4d-4d49-9806-751ac8c25e73">
+				<reportElement mode="Opaque" x="210" y="1" width="82" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="5b4fc2a0-ff4d-4d49-9806-751ac8c25e73">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3e2c323d-13ea-4fd7-816a-535a9d7ce621"/>
 				</reportElement>
-				<textElement>
+				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nascimento]]></text>
@@ -149,7 +148,7 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="212" y="0" width="68" height="20" uuid="48491757-6829-4364-a98a-71b0b88c18ec">
+				<reportElement x="212" y="0" width="80" height="20" uuid="48491757-6829-4364-a98a-71b0b88c18ec">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3e2c323d-13ea-4fd7-816a-535a9d7ce621"/>
 				</reportElement>
 				<textElement textAlignment="Center">
@@ -161,7 +160,7 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 				<reportElement x="294" y="0" width="45" height="18" uuid="144a6eb1-6585-4122-a96b-950b2e057e2a">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9df9ded-cfc7-424f-b18e-10cb576b9a7c"/>
 				</reportElement>
-				<textElement>
+				<textElement textAlignment="Center">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{pf}]]></textFieldExpression>
@@ -170,7 +169,7 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 				<reportElement x="343" y="0" width="39" height="18" uuid="3cc11d81-81c9-456b-a4f9-2d398ff57ff4">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3da98d5d-5c0a-44f6-ae32-aba540accb18"/>
 				</reportElement>
-				<textElement>
+				<textElement textAlignment="Center">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{cs}]]></textFieldExpression>

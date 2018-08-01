@@ -18,7 +18,7 @@
 	</ui:define>
 
 	<ui:define name="conteudo">
-		<h:form id="formBeneficioCadastro">
+		<h:form id="formAniversariantes">
 
 			<p:toolbar>
 				<f:facet name="left">
@@ -28,11 +28,13 @@
 
 			<p:separator />
 
-			<h:panelGrid columns="3" id="panelBeneficioCadastro">
-				<p:outputLabel value="Mês da pesquisa:" />
-				<p:inputText size="10" value="" />
+			<h:panelGrid columns="3" id="panelAniversariantes">
+				<p:outputLabel value="Mês da pesquisa:" id="mesAniversario" />
+				<p:inputText size="10" value="#{inscritoBean.data}" />
 
-				<p:commandButton value="Gerar Relatório" />
+				<p:commandButton value="Gerar Relatório" icon="ui-icon-document"
+					action="#{inscritoBean.geraRelatorioAniversario()}" ajax="false"
+					onclick="this.form.target='_blank'" />
 			</h:panelGrid>
 			<h:panelGrid columns="5">
 				<br />

@@ -11,16 +11,14 @@
 	cadastrobeneficios.beneficio.dia_semana AS diaDaSemana,
 	cadastrobeneficios.beneficio.horario_inicio AS horarioInicio,
 	cadastrobeneficios.atividade.nome AS atividade,
-	cadastrobeneficios.inscrito.nome AS inscrito,
-	cadastrobeneficios.inscrito.cs,
-	cadastrobeneficios.inscrito.pf
+	cadastrobeneficios.inscrito.nome AS inscrito
 FROM cadastrobeneficios.beneficio
 	INNER JOIN cadastrobeneficios.atividade ON 
 	 cadastrobeneficios.beneficio.atividade_codigo = cadastrobeneficios.atividade.codigo 
 	INNER JOIN cadastrobeneficios.inscrito ON 
-	 cadastrobeneficios.beneficio.inscrito_codigo = cadastrobeneficios.inscrito.codigo
-	 WHERE cadastrobeneficios.inscrito.nome = $P{nomeInscrito}
-ORDER BY cadastrobeneficios.atividade.nome ASC]]>
+	 cadastrobeneficios.beneficio.inscrito_codigo = cadastrobeneficios.inscrito.codigo 
+WHERE 
+	 cadastrobeneficios.inscrito.nome = $P{nomeInscrito}]]>
 	</queryString>
 	<field name="dataInicio" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="dataInicio"/>
@@ -40,14 +38,6 @@ ORDER BY cadastrobeneficios.atividade.nome ASC]]>
 	</field>
 	<field name="inscrito" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="inscrito"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="inscrito"/>
-	</field>
-	<field name="cs" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="cs"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="inscrito"/>
-	</field>
-	<field name="pf" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="pf"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="inscrito"/>
 	</field>
 	<pageHeader>
@@ -137,7 +127,7 @@ ORDER BY cadastrobeneficios.atividade.nome ASC]]>
 				<text><![CDATA[  Nome:]]></text>
 			</staticText>
 			<textField>
-				<reportElement mode="Opaque" x="40" y="0" width="290" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="ed92ce90-9385-4a56-9745-87e3a1d676b9">
+				<reportElement mode="Opaque" x="40" y="0" width="508" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="ed92ce90-9385-4a56-9745-87e3a1d676b9">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6920374f-bc6e-48e3-9d2a-43829aaa33da"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle"/>
@@ -158,34 +148,6 @@ ORDER BY cadastrobeneficios.atividade.nome ASC]]>
 				</textElement>
 				<text><![CDATA[Atividade]]></text>
 			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="330" y="0" width="20" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="3b825ccf-5b0a-4261-8f2b-eb484dc9ff57">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17556a55-852c-41fa-a0af-0678d8c81749"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[PF:]]></text>
-			</staticText>
-			<textField>
-				<reportElement mode="Opaque" x="350" y="0" width="50" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="f3cbc351-8ef0-4bee-86a5-8d081e7e9607">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17556a55-852c-41fa-a0af-0678d8c81749"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{pf}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement mode="Opaque" x="400" y="0" width="30" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="9c686281-8875-43d1-9d48-4a76f8aa3a84">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a40dd0a7-279c-4f94-b01a-a2e64e588597"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[CS:]]></text>
-			</staticText>
-			<textField>
-				<reportElement mode="Opaque" x="430" y="0" width="120" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="96a6a4ce-bb8d-46b8-ac4c-c66ec939a36f">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a40dd0a7-279c-4f94-b01a-a2e64e588597"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{cs}]]></textFieldExpression>
-			</textField>
 		</band>
 	</columnHeader>
 	<detail>

@@ -10,7 +10,6 @@ import java.util.Map;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.cadastrobeneficios.domain.Beneficio;
 import br.com.cadastrobeneficios.domain.Inscrito;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -58,14 +57,42 @@ public class Relatorio {
 		}
 	}
 
-	public void getRelatorioComParam(List<Beneficio> lista) {
+	public void getRelatorioAniversariantes(List<Inscrito> lista, String data) {
+		try {
+			stream = this.getClass().getResourceAsStream("/reports/aniversariantes.jasper");
+			baos = new ByteArrayOutputStream();
+			Map<String, Object> params = new HashMap<String, Object>();
+			params.put("dataNiver", data);
+			System.out.println(data);
+			JasperReport report = (JasperReport) JRLoader.loadObject(stream);
+			JasperPrint print = JasperFillManager.fillReport(report, params, new JRBeanCollectionDataSource(lista));
+			JasperExportManager.exportReportToPdfStream(print, baos);
+
+			response.reset();
+			response.setContentType("application/pdf");
+			response.setContentLengthLong(baos.size());
+			response.setHeader("Content-disposition", "inline: filename=relatorio.pdf");
+			response.getOutputStream().write(baos.toByteArray());
+			response.getOutputStream().flush();
+			response.getOutputStream().close();
+
+			context.responseComplete();
+		} catch (JRException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void getRelatorioComParametro(String nome) {
 		stream = this.getClass().getResourceAsStream("/reports/beneficio.jasper");
 		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("nomeInscrito", nome);
 		baos = new ByteArrayOutputStream();
 
 		try {
 			JasperReport report = (JasperReport) JRLoader.loadObject(stream);
-			JasperPrint print = JasperFillManager.fillReport(report, params, new JRBeanCollectionDataSource(lista));
+			JasperPrint print = JasperFillManager.fillReport(report, params);
 			JasperExportManager.exportReportToPdfStream(print, baos);
 
 			response.reset();

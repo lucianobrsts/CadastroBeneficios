@@ -14,7 +14,7 @@ public class AtividadeDAOTest {
 	@Ignore
 	public void salvar() {
 		Atividade atividade = new Atividade();
-		atividade.setAtividade("INCLUSÃO DIGITAL");
+		atividade.setNome("INCLUSÃO DIGITAL");
 
 		AtividadeDAO atividadeDAO = new AtividadeDAO();
 		atividadeDAO.salvar(atividade);
@@ -53,7 +53,7 @@ public class AtividadeDAOTest {
 		AtividadeDAO atividadeDAO = new AtividadeDAO();
 		Atividade atividade = atividadeDAO.buscarPorCodigo(7L);
 		
-		atividade.setAtividade("INCLUSÃO DIGITAL");
+		atividade.setNome("INCLUSÃO DIGITAL");
 
 		atividadeDAO.editar(atividade);
 	}

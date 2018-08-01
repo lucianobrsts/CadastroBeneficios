@@ -33,16 +33,16 @@
 				<p:outputLabel for="som_nome" value="Nome:" />
 				<p:selectOneMenu id="som_nome" converter="inscritoConverter"
 					filterMatchMode="startsWith" filter="true"
-					value="#{beneficioBean.beneficioCadastro.inscrito}" required="true"
+					value="#{beneficioBean.nome}" required="true"
 					requiredMessage="O campo nome é obrigatório.">
 					<f:selectItem itemLabel="SELECIONE UMA PESSOA..." itemValue="" />
 					<f:selectItems value="#{beneficioBean.listaInscritosFiltrados}"
 						var="inscrito" itemValue="#{inscrito}"
-						itemLabel="#{inscrito.inscrito}" />
+						itemLabel="#{inscrito.nome}" />
 					<f:validateBean />
 				</p:selectOneMenu>
 
-				<p:commandButton value="Gerar Relatório"
+				<p:commandButton value="Gerar Relatório" icon="ui-icon-document"
 					action="#{beneficioBean.geraRelatorioAtividade()}" ajax="false"
 					onclick="this.form.target='_blank'" />
 			</h:panelGrid>
