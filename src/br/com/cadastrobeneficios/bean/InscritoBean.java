@@ -22,8 +22,7 @@ public class InscritoBean {
 	private List<Inscrito> lista = new ArrayList<Inscrito>();
 	private String acao;
 	private Long codigo;
-	// private String dtNasc;
-	private String data = "";
+	private String dataNiver;
 
 	public Inscrito getInscritoCadastro() {
 		return inscritoCadastro;
@@ -73,12 +72,12 @@ public class InscritoBean {
 		this.lista = lista;
 	}
 
-	public String getData() {
-		return data;
+	public String getDataNiver() {
+		return dataNiver;
 	}
 
-	public void setData(String data) {
-		this.data = data;
+	public void setDataNiver(String dataNiver) {
+		this.dataNiver = dataNiver;
 	}
 
 	public void novo() {
@@ -187,8 +186,7 @@ public class InscritoBean {
 	public void geraRelatorioAniversario() throws NoSuchFieldException {
 		Relatorio relatorio = new Relatorio();
 		InscritoDAO inscritoDao = new InscritoDAO();
-		lista = inscritoDao.listar();
-
-		relatorio.getRelatorioAniversariantes(lista, data);
+		lista = inscritoDao.listarPorDataNiver(getDataNiver());
+		relatorio.getRelatorioAniversariantes(lista);
 	}
 }

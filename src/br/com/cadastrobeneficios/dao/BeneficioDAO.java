@@ -43,6 +43,23 @@ public class BeneficioDAO {
 		}
 		return beneficios;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Beneficio> listarPorNome(String nome) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		List<Beneficio> beneficios = null;
+
+		try {
+			Query consulta = sessao.getNamedQuery("Beneficio.listarPorNome");
+			consulta.setString(0, nome);
+			beneficios = consulta.list();
+		} catch (RuntimeException ex) {
+			throw ex;
+		} finally {
+			sessao.close();
+		}
+		return beneficios;
+	}
 
 	public Beneficio buscarPorCodigo(Long codigo) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();

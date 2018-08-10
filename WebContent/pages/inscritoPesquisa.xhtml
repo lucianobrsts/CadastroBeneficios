@@ -80,124 +80,14 @@
 						<f:param name="inscritoCodigo" value="#{inscrito.codigo}" />
 						<f:param name="inscritoAcao" value="Editar" />
 					</p:button>
-					
+
 					<p:button icon="ui-icon-search" title="Exibir"
 						outcome="/pages/inscritoCadastro2.xhtml">
 						<f:param name="inscritoCodigo" value="#{inscrito.codigo}" />
 						<f:param name="inscritoAcao" value="Exibir" />
 					</p:button>
-
-					<!-- <p:commandButton update=":formInscrito" -->
-					<!-- oncomplete="PF('dialogInscrito').show()" icon="ui-icon-search" -->
-					<!-- title="Exibir"> -->
-					<!-- <f:setPropertyActionListener value="#{inscrito}" -->
-					<!-- target="#{inscritoBean.inscritoCadastro}" /> -->
-					<!-- </p:commandButton> -->
 				</p:column>
 			</p:dataTable>
-
-			<!-- 			<p:dialog header="Informaçõs de Cadastro" widgetVar="dialogInscrito" -->
-			<!-- 				modal="true" showEffect="fade" hideEffect="fade" resizable="false" -->
-			<!-- 				visible="false" appendTo="@(body)"> -->
-
-			<!-- 				<h:panelGrid columns="2" id="panelInfoInscritos"> -->
-			<!-- 					<h:outputText value="Criança Inscrita:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="30" -->
-			<!-- 						disabled="true" -->
-			<!-- 						value="#{inscritoBean.inscritoCadastro.criancaInscrita}" /> -->
-
-			<!-- 					<h:outputText value="Nome Completo:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="30" -->
-			<!-- 						disabled="true" value="#{inscritoBean.inscritoCadastro.nome}" /> -->
-
-			<!-- 					<h:outputText value="Data Nascimento:" /> -->
-			<!-- 					<h:inputText size="15" disabled="true" id="dataNascimento" -->
-			<!-- 						value="#{inscritoBean.inscritoCadastro.nascimento}"> -->
-			<!-- 						<f:convertDateTime pattern="dd/MM/yyyy" -->
-			<!-- 							timeZone="America/Sao_Paulo" /> -->
-			<!-- 					</h:inputText> -->
-
-			<!-- 					<h:outputText value="Sexo:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="15" -->
-			<!-- 						disabled="true" value="#{inscritoBean.inscritoCadastro.sexo}" /> -->
-
-			<!-- 					<h:outputText value="Idade:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="15" -->
-			<!-- 						disabled="true" value="#{inscritoBean.calculaIdade()} ANOS" /> -->
-
-			<!-- 					<h:outputText value="Registro/RG:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="15" -->
-			<!-- 						disabled="true" -->
-			<!-- 						value="#{inscritoBean.inscritoCadastro.registroRg}" /> -->
-
-			<!-- 					<h:outputText value="Child Number:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="15" -->
-			<!-- 						disabled="true" -->
-			<!-- 						value="#{inscritoBean.inscritoCadastro.childNumber}" /> -->
-
-			<!-- 					<h:outputText value="PF:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="15" -->
-			<!-- 						disabled="true" value="#{inscritoBean.inscritoCadastro.pf}" /> -->
-
-			<!-- 					<h:outputText value="CS:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="15" -->
-			<!-- 						disabled="true" value="#{inscritoBean.inscritoCadastro.cs}" /> -->
-
-			<!-- 					<h:outputText value="NIS:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="20" -->
-			<!-- 						disabled="true" value="#{inscritoBean.inscritoCadastro.nis}" /> -->
-
-			<!-- 					<h:outputText value="Endereço:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="30" -->
-			<!-- 						disabled="true" value="#{inscritoBean.inscritoCadastro.endereco}" /> -->
-
-			<!-- 					<h:outputText value="Telefone Residência:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="20" -->
-			<!-- 						disabled="true" value="#{inscritoBean.inscritoCadastro.fone}" /> -->
-
-			<!-- 					<h:outputText value="Celular:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="20" -->
-			<!-- 						disabled="true" value="#{inscritoBean.inscritoCadastro.celular}" /> -->
-
-			<!-- 					<h:outputText value="Escola em que estuda:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="30" -->
-			<!-- 						disabled="true" value="#{inscritoBean.inscritoCadastro.escola}" /> -->
-
-			<!-- 					<h:outputText value="Horário que estuda:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="15" -->
-			<!-- 						disabled="true" value="#{inscritoBean.inscritoCadastro.horario}" /> -->
-
-			<!-- 					<h:outputText value="Série:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="20" -->
-			<!-- 						disabled="true" value="#{inscritoBean.inscritoCadastro.serie}" /> -->
-
-			<!-- 					<h:outputText value="Responável:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="30" -->
-			<!-- 						disabled="true" -->
-			<!-- 						value="#{inscritoBean.inscritoCadastro.responsavel}" /> -->
-
-			<!-- 					<h:outputText value="Parentesco:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="20" -->
-			<!-- 						disabled="true" -->
-			<!-- 						value="#{inscritoBean.inscritoCadastro.parentesco}" /> -->
-
-			<!-- 					<h:outputText value="RG/CPF do Responsável:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="20" -->
-			<!-- 						disabled="true" -->
-			<!-- 						value="#{inscritoBean.inscritoCadastro.documentoResponsavel}" /> -->
-
-			<!-- 					<h:outputText value="Preenchimento:" /> -->
-			<!-- 					<h:inputText style="text-transform: uppercase;" size="30" -->
-			<!-- 						disabled="true" -->
-			<!-- 						value="#{inscritoBean.inscritoCadastro.responsavelPreenchimento}" /> -->
-			<!-- 				</h:panelGrid> -->
-
-			<!-- 				<p:outputPanel columns="1" style="text-align: center;"> -->
-			<!-- 					<p:separator /> -->
-			<!-- 					<p:commandButton value="Cancelar" -->
-			<!-- 						oncomplete="PF('dialogInscrito').hide();" /> -->
-			<!-- 				</p:outputPanel> -->
-			<!-- 			</p:dialog> -->
 		</h:form>
 	</ui:define>
 </ui:composition>

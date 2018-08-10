@@ -15,6 +15,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "inscrito")
 @NamedQueries({ @NamedQuery(name = "Inscrito.listar", query = "SELECT inscrito FROM Inscrito inscrito"),
+		@NamedQuery(name = "Inscrito.listarPorDataNiver", query = "SELECT inscrito FROM Inscrito inscrito WHERE inscrito.nascimento LIKE ?"),
 		@NamedQuery(name = "Inscrito.buscarPorCodigo", query = "SELECT inscrito FROM Inscrito inscrito WHERE inscrito.codigo = :codigo") })
 public class Inscrito {
 

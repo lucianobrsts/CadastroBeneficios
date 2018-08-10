@@ -1,5 +1,6 @@
 package br.com.cadastrobeneficios.bean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -21,6 +22,7 @@ public class BeneficioBean {
 	private List<Beneficio> listaBeneficios;
 	private List<Inscrito> listaInscritosFiltrados;
 	private List<Atividade> listaAtividadesFiltradas;
+	private List<Beneficio> lista = new ArrayList<Beneficio>();
 	private String acao;
 	private Long codigo;
 	private String nome;
@@ -79,6 +81,14 @@ public class BeneficioBean {
 
 	public void setListaAtividadesFiltradas(List<Atividade> listaAtividadesFiltradas) {
 		this.listaAtividadesFiltradas = listaAtividadesFiltradas;
+	}
+
+	public List<Beneficio> getLista() {
+		return lista;
+	}
+
+	public void setLista(List<Beneficio> lista) {
+		this.lista = lista;
 	}
 
 	public void novo() {
@@ -152,11 +162,10 @@ public class BeneficioBean {
 
 	public void geraRelatorioAtividade() {
 		Relatorio relatorio = new Relatorio();
+		BeneficioDAO beneficioDAO = new BeneficioDAO();
+		lista = beneficioDAO.listarPorNome(getNome());
 
-		String inscritoBeneficio = getNome();
-		System.out.println("Teste de nomes: " + inscritoBeneficio);
-
-		relatorio.getRelatorioComParametro(inscritoBeneficio);
+		relatorio.getRelatorioAtividade(lista);
 	}
 
 }

@@ -21,6 +21,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "beneficio")
 @NamedQueries({ @NamedQuery(name = "Beneficio.listar", query = "SELECT beneficio FROM Beneficio beneficio"),
+		@NamedQuery(name = "Beneficio.listarPorNome", query = "SELECT beneficio FROM Beneficio beneficio WHERE beneficio.inscrito.nome = ?"),
 		@NamedQuery(name = "Beneficio.buscarPorCodigo", query = "SELECT beneficio FROM Beneficio beneficio WHERE beneficio.codigo = :codigo") })
 public class Beneficio {
 

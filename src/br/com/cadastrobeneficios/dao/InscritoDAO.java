@@ -44,6 +44,23 @@ public class InscritoDAO {
 		return inscritos;
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<Inscrito> listarPorDataNiver(String dataNiver) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		List<Inscrito> inscritos = null;
+
+		try {
+			Query consulta = sessao.getNamedQuery("Inscrito.listarPorDataNiver");
+			consulta.setString(0, "%"+dataNiver+"%");
+			inscritos = consulta.list();
+		} catch (RuntimeException ex) {
+			throw ex;
+		} finally {
+			sessao.close();
+		}
+		return inscritos;
+	}
+
 	public Inscrito buscarPorCodigo(Long codigo) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Inscrito inscrito = null;
@@ -60,7 +77,7 @@ public class InscritoDAO {
 		}
 		return inscrito;
 	}
-	
+
 	public String buscarPorDataNascimento(Long codigo) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Inscrito inscrito = null;

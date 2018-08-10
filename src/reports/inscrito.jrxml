@@ -50,85 +50,85 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 				<imageExpression><![CDATA["D:/Softwares Instalations/git/CadastroBeneficios/src/reports/logo.png"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="76" y="4" width="470" height="26" uuid="e73a1804-b07a-4889-9e8c-89f0d7c283c3"/>
+				<reportElement x="127" y="4" width="306" height="26" uuid="e73a1804-b07a-4889-9e8c-89f0d7c283c3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="16"/>
 				</textElement>
 				<text><![CDATA[Frente Beneficente para Criança - 1458]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="76" y="30" width="468" height="30" uuid="fefa8000-44ab-4a24-a873-89ee81c8fb29"/>
+				<reportElement x="173" y="30" width="214" height="30" uuid="fefa8000-44ab-4a24-a873-89ee81c8fb29"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="16"/>
 				</textElement>
 				<text><![CDATA[Listagem de Inscritos]]></text>
 			</staticText>
-			<textField pattern="MMMMM dd, yyyy">
+			<textField pattern="dd/MMMM/yyyy">
 				<reportElement x="446" y="30" width="100" height="20" uuid="a61f63ac-cfd1-4485-a8ff-5a4dd0a1e094"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="26" splitType="Stretch">
+		<band height="32" splitType="Stretch">
 			<staticText>
-				<reportElement mode="Opaque" x="1" y="1" width="49" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="2d1890d7-2824-411c-9526-e5ab4adb54ee">
+				<reportElement positionType="Float" mode="Opaque" x="1" y="1" width="49" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="2d1890d7-2824-411c-9526-e5ab4adb54ee">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d8d6555e-e855-43d3-b2e2-a3c98e97e901"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="12" isBold="true"/>
+					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Código]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="50" y="1" width="160" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="5fafcef5-040e-4cc6-997d-f33738a5e08b">
+				<reportElement positionType="Float" mode="Opaque" x="50" y="1" width="160" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="5fafcef5-040e-4cc6-997d-f33738a5e08b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="23523af6-1e42-44f5-84ec-13376b6f3c9b"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="12" isBold="true"/>
+					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Nome]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="292" y="1" width="47" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="8548473d-df55-449e-998a-b67edd40240e">
+				<reportElement positionType="Float" mode="Opaque" x="292" y="1" width="47" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="8548473d-df55-449e-998a-b67edd40240e">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9df9ded-cfc7-424f-b18e-10cb576b9a7c"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="12" isBold="true"/>
+					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[PF]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="339" y="1" width="43" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="8e62bdf4-cb9d-4ed8-bcaf-dcde7b3eef97">
+				<reportElement positionType="Float" mode="Opaque" x="339" y="1" width="43" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="8e62bdf4-cb9d-4ed8-bcaf-dcde7b3eef97">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3da98d5d-5c0a-44f6-ae32-aba540accb18"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="12" isBold="true"/>
+					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[cs]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="382" y="1" width="170" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="74cceff2-3bca-47d7-ba92-6db43586ade5">
+				<reportElement positionType="Float" mode="Opaque" x="382" y="1" width="170" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="74cceff2-3bca-47d7-ba92-6db43586ade5">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b96f0fd4-4aa7-4e54-af51-634d3d38739a"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="12" isBold="true"/>
+					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Endereço]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="210" y="1" width="82" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="5b4fc2a0-ff4d-4d49-9806-751ac8c25e73">
+				<reportElement positionType="Float" mode="Opaque" x="210" y="1" width="82" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="5b4fc2a0-ff4d-4d49-9806-751ac8c25e73">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3e2c323d-13ea-4fd7-816a-535a9d7ce621"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="12" isBold="true"/>
+					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Nascimento]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="28" splitType="Stretch">
+		<band height="27" splitType="Stretch">
 			<textField>
 				<reportElement x="13" y="0" width="34" height="20" uuid="160558a4-6393-48d7-b0be-283f87cdbbc0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d8d6555e-e855-43d3-b2e2-a3c98e97e901"/>
@@ -188,12 +188,12 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 	<pageFooter>
 		<band height="35" splitType="Stretch">
 			<textField>
-				<reportElement x="420" y="0" width="70" height="20" uuid="a4b1b71e-23aa-4cbd-b24c-9e72798e0b38"/>
+				<reportElement x="480" y="0" width="40" height="20" uuid="a4b1b71e-23aa-4cbd-b24c-9e72798e0b38"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement x="490" y="0" width="58" height="20" uuid="6e2cb134-5b7a-4ade-916b-d5ecbd4d4c56"/>
+				<reportElement x="520" y="0" width="32" height="20" uuid="6e2cb134-5b7a-4ade-916b-d5ecbd4d4c56"/>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>

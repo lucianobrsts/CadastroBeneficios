@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="beneficio" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2cb74aa4-20f5-49db-ae53-36c40c856bce">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="beneficio" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2cb74aa4-20f5-49db-ae53-36c40c856bce">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="259"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="736"/>
@@ -45,20 +45,20 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 		<property name="com.jaspersoft.studio.field.tree.path" value="inscrito"/>
 	</field>
 	<pageHeader>
-		<band height="66">
+		<band height="68">
 			<staticText>
-				<reportElement x="156" y="4" width="304" height="30" uuid="be706616-c8a7-417f-8945-7f9e97adee63"/>
+				<reportElement x="150" y="4" width="304" height="30" uuid="be706616-c8a7-417f-8945-7f9e97adee63"/>
 				<textElement textAlignment="Center">
 					<font size="16"/>
 				</textElement>
 				<text><![CDATA[Frente Beneficente para Criança - 1458]]></text>
 			</staticText>
 			<image>
-				<reportElement x="16" y="6" width="58" height="55" uuid="696c6ead-e3fd-4795-81dc-a37255d190d8"/>
+				<reportElement x="16" y="4" width="58" height="55" uuid="696c6ead-e3fd-4795-81dc-a37255d190d8"/>
 				<imageExpression><![CDATA["D:/Softwares Instalations/git/CadastroBeneficios/src/reports/logo.png"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="202" y="30" width="214" height="30" uuid="e61c39ef-893b-4479-a8f7-0416299a436e"/>
+				<reportElement x="194" y="30" width="214" height="30" uuid="e61c39ef-893b-4479-a8f7-0416299a436e"/>
 				<textElement textAlignment="Center">
 					<font size="16"/>
 				</textElement>
@@ -69,7 +69,7 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<rectangle radius="14">
-				<reportElement mode="Transparent" x="1" y="2" width="549" height="59" uuid="af5d7aa4-e77c-49f2-b6f5-8f90cb60469f"/>
+				<reportElement mode="Transparent" x="0" y="1" width="549" height="59" uuid="af5d7aa4-e77c-49f2-b6f5-8f90cb60469f"/>
 				<graphicElement>
 					<pen lineStyle="Solid"/>
 				</graphicElement>
@@ -79,7 +79,7 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 	<columnHeader>
 		<band height="33" splitType="Stretch">
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="1" width="40" height="18" forecolor="#000000" backcolor="#9EDE9B" uuid="a3012a5f-9ad2-4c1d-90e9-eb67aee1166f">
+				<reportElement mode="Opaque" x="0" y="1" width="40" height="18" forecolor="#FFFFFF" backcolor="#000000" uuid="a3012a5f-9ad2-4c1d-90e9-eb67aee1166f">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="68f46e5e-ff0b-42fc-ad06-c559c18a6ecd"/>
 				</reportElement>
 				<box>
@@ -89,12 +89,12 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 					<rightPen lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Verdana" isBold="true"/>
+					<font fontName="Verdana" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Código]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="40" y="1" width="202" height="18" forecolor="#000000" backcolor="#9EDE9B" uuid="193ae6ea-cf7f-4ff7-bc1f-f500b06cc325">
+				<reportElement mode="Opaque" x="40" y="1" width="202" height="18" forecolor="#FFFFFF" backcolor="#000000" uuid="193ae6ea-cf7f-4ff7-bc1f-f500b06cc325">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ad28e78e-bde3-43d3-9c0e-a32dfb9b7916"/>
 				</reportElement>
 				<box>
@@ -104,12 +104,12 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 					<rightPen lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-					<font fontName="Verdana" isBold="true"/>
+					<font fontName="Verdana" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Nome]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="242" y="1" width="178" height="18" forecolor="#000000" backcolor="#9EDE9B" uuid="e9be3cb4-04db-4062-a92b-d024cd938ded">
+				<reportElement mode="Opaque" x="242" y="1" width="178" height="18" forecolor="#FFFFFF" backcolor="#000000" uuid="e9be3cb4-04db-4062-a92b-d024cd938ded">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f9e80032-9a3e-4b7f-99eb-b0a4e370ada4"/>
 				</reportElement>
 				<box>
@@ -119,12 +119,12 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 					<rightPen lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Verdana" isBold="true"/>
+					<font fontName="Verdana" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Endereço]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="416" y="1" width="68" height="18" forecolor="#000000" backcolor="#9EDE9B" uuid="90af70a4-e2cf-4e54-8132-2cf553d464d0">
+				<reportElement mode="Opaque" x="416" y="1" width="68" height="18" forecolor="#FFFFFF" backcolor="#000000" uuid="90af70a4-e2cf-4e54-8132-2cf553d464d0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="79de05f7-83bb-4eae-878a-cf9d4eb50224"/>
 				</reportElement>
 				<box>
@@ -134,12 +134,12 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 					<rightPen lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Verdana" isBold="true"/>
+					<font fontName="Verdana" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Nascimento]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="484" y="1" width="34" height="18" forecolor="#000000" backcolor="#9EDE9B" uuid="a282345e-a1ed-4eb2-98e1-c5ded4876eeb">
+				<reportElement mode="Opaque" x="484" y="1" width="34" height="18" forecolor="#FFFFFF" backcolor="#000000" uuid="a282345e-a1ed-4eb2-98e1-c5ded4876eeb">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9fc802b8-2dc7-4318-9270-ed9bae8017a6"/>
 				</reportElement>
 				<box>
@@ -149,12 +149,12 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 					<rightPen lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Verdana" isBold="true"/>
+					<font fontName="Verdana" isBold="false"/>
 				</textElement>
 				<text><![CDATA[PF]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="518" y="1" width="32" height="18" forecolor="#000000" backcolor="#9EDE9B" uuid="1396ac62-3f3f-4e21-be25-2b04c1347dcd">
+				<reportElement mode="Opaque" x="518" y="1" width="32" height="18" forecolor="#FFFFFF" backcolor="#000000" uuid="1396ac62-3f3f-4e21-be25-2b04c1347dcd">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="41bb8766-9da8-4fd5-8d67-f5de6d60df1f"/>
 				</reportElement>
 				<box>
@@ -164,7 +164,7 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Verdana" isBold="true"/>
+					<font fontName="Verdana" isBold="false"/>
 				</textElement>
 				<text><![CDATA[CS]]></text>
 			</staticText>
@@ -221,12 +221,12 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 				<text><![CDATA[Rua Capitão Uruguai, 393 - Aerolândia]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="420" y="0" width="70" height="20" uuid="25c0bc60-4da6-46a8-a8e7-c8c032ebbf6f"/>
+				<reportElement x="474" y="0" width="48" height="20" uuid="25c0bc60-4da6-46a8-a8e7-c8c032ebbf6f"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement x="490" y="0" width="58" height="20" uuid="b617aca6-6ebe-407d-804e-48b47f19c162"/>
+				<reportElement x="519" y="0" width="32" height="20" uuid="b617aca6-6ebe-407d-804e-48b47f19c162"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>

@@ -6,40 +6,43 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-<ui:composition template="/templates/modeloGeral.xhtml">
+<ui:composition template="/templates/modeloGeralLogin.xhtml">
 	<ui:define name="metadata"></ui:define>
 
 	<ui:define name="conteudo">
+		<p:toolbar>
+			<f:facet name="left">
+				<h:outputText value="Autenticação - Usuário" />
+			</f:facet>
+		</p:toolbar>
 
-		<h:form>
-			<p:toolbar>
-				<f:facet name="left">
-					<h:outputText value="Autenticação - Usuário" />
-				</f:facet>
-			</p:toolbar>
+		<p:separator />
 
-			<p:separator />
+		<p:fieldset legend="Login"
+			style="width: 300px; position: absolute; top: 35%; left: 35%;">
+			<h:form>
 
-			<h:panelGrid columns="2">
-				<p:outputLabel value="Login:" />
-				<p:inputText size="20"
-					value="#{autenticacaoBean.usuarioLogado.login}">
-					<f:validateBean />
-				</p:inputText>
+				<h:panelGrid columns="2">
+					<p:outputLabel value="Login:" />
+					<p:inputText size="20"
+						value="#{autenticacaoBean.usuarioLogado.login}">
+						<f:validateBean />
+					</p:inputText>
 
-				<p:outputLabel value="Senha:" />
-				<p:password maxlength="10" size="20"
-					value="#{autenticacaoBean.usuarioLogado.senha}">
-					<f:validateBean />
-				</p:password>
-			</h:panelGrid>
+					<p:outputLabel value="Senha:" />
+					<p:password maxlength="10" size="20"
+						value="#{autenticacaoBean.usuarioLogado.senha}">
+						<f:validateBean />
+					</p:password>
+				</h:panelGrid>
 
-			<h:panelGrid columns="1">
-				<p:commandButton value="Entrar"
-					update=":mensagemGlobal"
-					action="#{autenticacaoBean.autenticar}" />
-			</h:panelGrid>
-		</h:form>
+				<h:panelGrid columns="1" style="float:right;">
+					<p:commandButton value="Entrar" update=":mensagemGlobal"
+						action="#{autenticacaoBean.autenticar}" />
+				</h:panelGrid>
+			</h:form>
+		</p:fieldset>
+
 	</ui:define>
 </ui:composition>
 

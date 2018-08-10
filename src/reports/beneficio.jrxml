@@ -5,7 +5,7 @@
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="259"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="736"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Beneficio adapter"/>
-	<parameter name="nomeInscrito" class="java.lang.String"/>
+	<parameter name="nome" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT cadastrobeneficios.beneficio.data_inicio AS dataInicio,
 	cadastrobeneficios.beneficio.dia_semana AS diaDaSemana,
@@ -18,7 +18,7 @@ FROM cadastrobeneficios.beneficio
 	INNER JOIN cadastrobeneficios.inscrito ON 
 	 cadastrobeneficios.beneficio.inscrito_codigo = cadastrobeneficios.inscrito.codigo 
 WHERE 
-	 cadastrobeneficios.inscrito.nome = $P{nomeInscrito}]]>
+	 cadastrobeneficios.inscrito.nome = $P!{nome}]]>
 	</queryString>
 	<field name="dataInicio" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="dataInicio"/>
