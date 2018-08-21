@@ -1,3 +1,4 @@
+
 package br.com.cadastrobeneficios.domain;
 
 import java.util.Date;
@@ -21,10 +22,10 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "beneficio")
 @NamedQueries({ @NamedQuery(name = "Beneficio.listar", query = "SELECT beneficio FROM Beneficio beneficio"),
-		@NamedQuery(name = "Beneficio.listarPorNome", query = "SELECT beneficio FROM Beneficio beneficio WHERE beneficio.inscrito.nome = ?"),
-		@NamedQuery(name = "Beneficio.buscarPorCodigo", query = "SELECT beneficio FROM Beneficio beneficio WHERE beneficio.codigo = :codigo") })
+		@NamedQuery(name = "Beneficio.buscarPorCodigo", query = "SELECT beneficio FROM Beneficio beneficio WHERE beneficio.codigo = :codigo"),
+		@NamedQuery(name = "Beneficio.listarPorNome", query = "SELECT b.dataInicio, b.diaDaSemana, b.horarioInicio, a.nome, i.nome "
+				+ "FROM Beneficio b join b.atividade a join b.inscrito i " + "WHERE i.nome = ?") })
 public class Beneficio {
-
 	@Id
 	@Column(name = "codigo")
 	@GeneratedValue(strategy = GenerationType.AUTO)

@@ -43,7 +43,7 @@ public class BeneficioDAO {
 		}
 		return beneficios;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Beneficio> listarPorNome(String nome) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();

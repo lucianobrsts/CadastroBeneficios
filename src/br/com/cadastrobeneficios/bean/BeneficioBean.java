@@ -165,7 +165,7 @@ public class BeneficioBean {
 		BeneficioDAO beneficioDAO = new BeneficioDAO();
 		lista = beneficioDAO.listarPorNome(getNome());
 
-		relatorio.getRelatorioAtividade(lista);
+		relatorio.getRelatorioInscrito(lista);
 	}
 
 }

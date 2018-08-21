@@ -84,7 +84,7 @@ public class Relatorio {
 		}
 	}
 
-	public void getRelatorioAtividade(List<Beneficio> lista) {
+	public void getRelatorioInscrito(List<Beneficio> lista) {
 		stream = this.getClass().getResourceAsStream("/reports/beneficio.jasper");
 
 		Map<String, Object> params = new HashMap<String, Object>();
@@ -92,7 +92,8 @@ public class Relatorio {
 		baos = new ByteArrayOutputStream();
 		try {
 			JasperReport report = (JasperReport) JRLoader.loadObject(stream);
-			JasperPrint print = JasperFillManager.fillReport(report, params, new JRBeanCollectionDataSource(lista));
+			JasperPrint print = JasperFillManager.fillReport(report, params,
+					new JRBeanCollectionDataSource(lista, false));
 			JasperExportManager.exportReportToPdfStream(print, baos);
 
 			response.reset();
