@@ -20,25 +20,30 @@ FROM cadastrobeneficios.beneficio
 WHERE 
 	 cadastrobeneficios.inscrito.nome = '$P!{nome}']]>
 	</queryString>
-	<field name="dataInicio" class="java.sql.Timestamp">
+	<field name="dataInicio" class="java.sql.Date">
 		<property name="com.jaspersoft.studio.field.label" value="dataInicio"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="beneficio"/>
+		<fieldDescription><![CDATA[dataInicio]]></fieldDescription>
 	</field>
 	<field name="diaDaSemana" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="diaDaSemana"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="beneficio"/>
+		<fieldDescription><![CDATA[diaDaSemana]]></fieldDescription>
 	</field>
 	<field name="horarioInicio" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="horarioInicio"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="beneficio"/>
+		<fieldDescription><![CDATA[horarioInicio]]></fieldDescription>
 	</field>
 	<field name="atividade" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="atividade"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="atividade"/>
+		<fieldDescription><![CDATA[atividade]]></fieldDescription>
 	</field>
 	<field name="inscrito" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="inscrito"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="inscrito"/>
+		<fieldDescription><![CDATA[inscrito]]></fieldDescription>
 	</field>
 	<pageHeader>
 		<band height="66">

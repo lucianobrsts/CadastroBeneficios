@@ -58,6 +58,20 @@ public class Beneficio {
 	@JoinColumn(name = "inscrito_codigo", referencedColumnName = "codigo", nullable = false)
 	private Inscrito inscrito;
 
+	public Beneficio() {
+
+	}
+
+	public Beneficio(Date dataInicio, String diaDaSemana, String horarioInicio, Atividade atividade,
+			Inscrito inscrito) {
+		super();
+		this.dataInicio = dataInicio;
+		this.diaDaSemana = diaDaSemana;
+		this.horarioInicio = horarioInicio;
+		this.atividade = atividade;
+		this.inscrito = inscrito;
+	}
+
 	public Long getCodigo() {
 		return codigo;
 	}

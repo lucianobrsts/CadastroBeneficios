@@ -27,6 +27,15 @@ public class Atividade {
 	@Column(name = "nome", length = 50, nullable = false)
 	private String nome;
 
+	public Atividade() {
+
+	}
+
+	public Atividade(String nome) {
+		super();
+		this.nome = nome;
+	}
+
 	public Long getCodigo() {
 		return codigo;
 	}

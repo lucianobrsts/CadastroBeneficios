@@ -95,6 +95,15 @@ public class Inscrito {
 	@Column(name = "respreenchimento", length = 50, nullable = false)
 	private String responsavelPreenchimento;
 
+	public Inscrito() {
+
+	}
+
+	public Inscrito(String nome) {
+		super();
+		this.nome = nome;
+	}
+
 	public Long getCodigo() {
 		return codigo;
 	}
