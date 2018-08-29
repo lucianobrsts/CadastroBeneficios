@@ -15,6 +15,7 @@ import br.com.cadastrobeneficios.domain.Inscrito;
 import br.com.cadastrobeneficios.relatorio.Relatorio;
 import br.com.cadastrobeneficios.util.FacesUtil;
 
+@SuppressWarnings("deprecation")
 @ManagedBean
 @ViewScoped
 public class BeneficioBean {

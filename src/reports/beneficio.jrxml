@@ -5,6 +5,8 @@
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="259"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="736"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Beneficio adapter"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="702"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="288"/>
 	<parameter name="nome" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT cadastrobeneficios.beneficio.data_inicio AS dataInicio,
@@ -20,7 +22,7 @@ FROM cadastrobeneficios.beneficio
 WHERE 
 	 cadastrobeneficios.inscrito.nome = '$P!{nome}']]>
 	</queryString>
-	<field name="dataInicio" class="java.sql.Date">
+	<field name="dataInicio" class="java.util.Date">
 		<property name="com.jaspersoft.studio.field.label" value="dataInicio"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="beneficio"/>
 		<fieldDescription><![CDATA[dataInicio]]></fieldDescription>

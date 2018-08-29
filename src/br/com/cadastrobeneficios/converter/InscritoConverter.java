@@ -8,6 +8,7 @@ import javax.faces.convert.FacesConverter;
 import br.com.cadastrobeneficios.dao.InscritoDAO;
 import br.com.cadastrobeneficios.domain.Inscrito;
 
+@SuppressWarnings("rawtypes")
 @FacesConverter("inscritoConverter")
 public class InscritoConverter implements Converter {
 

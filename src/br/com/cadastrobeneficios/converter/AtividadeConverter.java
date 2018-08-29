@@ -8,6 +8,7 @@ import javax.faces.convert.FacesConverter;
 import br.com.cadastrobeneficios.dao.AtividadeDAO;
 import br.com.cadastrobeneficios.domain.Atividade;
 
+@SuppressWarnings("rawtypes")
 @FacesConverter("atividadeConverter")
 public class AtividadeConverter implements Converter {
 

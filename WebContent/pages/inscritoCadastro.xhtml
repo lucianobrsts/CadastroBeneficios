@@ -107,8 +107,12 @@
 				<p:inputMask value="#{inscritoBean.inscritoCadastro.fone}"
 					readonly="#{inscritoBean.acao == 'Excluir'}" mask="(99) 9999-9999" />
 
-				<p:outputLabel value="Celular:" />
+				<p:outputLabel value="Celular 1:" />
 				<p:inputMask value="#{inscritoBean.inscritoCadastro.celular}"
+					readonly="#{inscritoBean.acao == 'Excluir'}" mask="(99) 99999-9999" />
+
+				<p:outputLabel value="Celular 2:" />
+				<p:inputMask value="#{inscritoBean.inscritoCadastro.celular2}"
 					readonly="#{inscritoBean.acao == 'Excluir'}" mask="(99) 99999-9999" />
 
 				<p:outputLabel value="Escola em que estuda:" />
@@ -125,7 +129,8 @@
 					<f:selectItem itemLabel="MANHÃ" itemValue="MANHÃ" />
 					<f:selectItem itemLabel="TARDE" itemValue="TARDE" />
 					<f:selectItem itemLabel="NOITE" itemValue="NOITE" />
-					<f:selectItem itemLabel="PERÍODO INTEGRAL" itemValue="PERÍODO INTEGRAL" />
+					<f:selectItem itemLabel="PERÍODO INTEGRAL"
+						itemValue="PERÍODO INTEGRAL" />
 				</p:selectOneRadio>
 
 				<p:outputLabel for="serie" value="Série:" />

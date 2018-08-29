@@ -113,8 +113,13 @@
 					 readonly="#{inscritoBean.acao == 'Exibir'}"
 					mask="(99) 9999-9999" />
 
-				<p:outputLabel value="Celular:" />
+				<p:outputLabel value="Celular 1:" />
 				<p:inputMask value="#{inscritoBean.inscritoCadastro.celular}"
+					 readonly="#{inscritoBean.acao == 'Exibir'}"
+					mask="(99) 99999-9999" />
+					
+					<p:outputLabel value="Celular 2:" />
+				<p:inputMask value="#{inscritoBean.inscritoCadastro.celular2}"
 					 readonly="#{inscritoBean.acao == 'Exibir'}"
 					mask="(99) 99999-9999" />
 

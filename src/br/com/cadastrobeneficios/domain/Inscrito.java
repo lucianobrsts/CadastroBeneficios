@@ -9,7 +9,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -46,8 +45,7 @@ public class Inscrito {
 	@Column(name = "childnumber")
 	private Integer ChildNumber;
 
-	@NotNull(message = "O campo PF é obrigatório.")
-	@Column(name = "pf", nullable = false)
+	@Column(name = "pf")
 	private Integer pf;
 
 	@Column(name = "cs")
@@ -57,7 +55,7 @@ public class Inscrito {
 	private String nis;
 
 	@NotEmpty(message = "O campo Registro/RG é obrigatório.")
-	@Size(min = 3, max = 11, message = "Tamanho inválido para o campo Registro/RG (3 - 11 dígitos.")
+	@Size(min = 3, max = 13, message = "Tamanho inválido para o campo Registro/RG (3 - 13 dígitos.")
 	@Column(name = "registrorg", length = 11, nullable = false)
 	private String registroRg;
 
@@ -71,6 +69,9 @@ public class Inscrito {
 	@Column(name = "celular", length = 15)
 	private String celular;
 
+	@Column(name = "celular2", length = 15)
+	private String celular2;
+
 	@Column(name = "escola", length = 50)
 	private String escola;
 
@@ -80,7 +81,6 @@ public class Inscrito {
 	@Column(name = "horario", length = 50)
 	private String horario;
 
-	@NotEmpty(message = "O campo Responsável é obrigatório.")
 	@Column(name = "responsavel", length = 50, nullable = false)
 	private String responsavel;
 
@@ -88,8 +88,7 @@ public class Inscrito {
 	@Column(name = "parentesco", length = 50, nullable = false)
 	private String parentesco;
 
-	@NotEmpty(message = "O campo RG ou CPF Responsável é obrigatório.")
-	@Column(name = "docresponsavel", length = 11, nullable = false)
+	@Column(name = "docresponsavel", length = 13, nullable = false)
 	private String documentoResponsavel;
 
 	@Column(name = "respreenchimento", length = 50, nullable = false)
@@ -262,6 +261,14 @@ public class Inscrito {
 
 	public void setResponsavelPreenchimento(String responsavelPreenchimento) {
 		this.responsavelPreenchimento = responsavelPreenchimento.toUpperCase();
+	}
+
+	public String getCelular2() {
+		return celular2;
+	}
+
+	public void setCelular2(String celular2) {
+		this.celular2 = celular2;
 	}
 
 	@Override

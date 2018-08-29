@@ -9,6 +9,7 @@ import br.com.cadastrobeneficios.dao.AtividadeDAO;
 import br.com.cadastrobeneficios.domain.Atividade;
 import br.com.cadastrobeneficios.util.FacesUtil;
 
+@SuppressWarnings("deprecation")
 @ManagedBean
 @ViewScoped
 public class AtividadeBean {

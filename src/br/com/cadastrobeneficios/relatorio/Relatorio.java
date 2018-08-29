@@ -59,10 +59,9 @@ public class Relatorio {
 
 	public void getRelatorioAniversariantes(List<Inscrito> lista) {
 		stream = this.getClass().getResourceAsStream("/reports/aniversariantes.jasper");
-
 		Map<String, Object> params = new HashMap<String, Object>();
-
 		baos = new ByteArrayOutputStream();
+		
 		try {
 			JasperReport report = (JasperReport) JRLoader.loadObject(stream);
 			JasperPrint print = JasperFillManager.fillReport(report, params, new JRBeanCollectionDataSource(lista));

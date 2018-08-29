@@ -1,11 +1,8 @@
 package br.com.cadastrobeneficios.util;
 
-import java.util.Map;
-
 import javax.faces.application.Application;
 import javax.faces.application.NavigationHandler;
 import javax.faces.component.UIViewRoot;
-import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
@@ -30,7 +27,6 @@ public class AutenticacaoPhaseListener implements PhaseListener {
 		if (!ehPaginaAutenticacao) {
 
 			Usuario usuario = (Usuario) autenticacaoBean.getSession().getAttribute("usuario");
-			System.out.println("usuário cadastrado: " + usuario);
 
 			if (usuario == null) {
 				FacesUtil.adiconarMensagemErro("Usuário não autenticado. Faça o Login.");

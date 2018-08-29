@@ -28,7 +28,7 @@
 			header="Desenvolvido por Luciano Brito dos Santos">
 		</p:layoutUnit>
 
-		<p:layoutUnit position="west" size="250">
+		<p:layoutUnit position="west" size="200">
 			<h:form id="formMenu">
 				<p:panelMenu id="panelMenu">
 					<p:submenu label="Arquivo">
@@ -49,17 +49,18 @@
 
 					<p:submenu label="Relatórios">
 						<p:menuitem value="Atividades por inscrito"
-							outcome="/pages/relatorioBeneficio.xhtml" />
+							outcome="/pages/manutencao.xhtml" />
 						<p:menuitem value="Aniversariantes do mês"
 							outcome="/pages/relatorioAniversariantes.xhtml" />
 						<p:menuitem value="Inscrito por atividade"
-							outcome="/pages/relatorioAtividade.xhtml" />
+							outcome="/pages/manutencao.xhtml" />
 						<p:menuitem value="Inscritos"
 							outcome="/pages/relatorioInscrito.xhtml" />
 					</p:submenu>
 
 					<p:submenu label="Backup">
-						<p:menuitem value="Backup" outcome="/pages/gerarBackup.xhtml" />
+						<p:menuitem value="Gerar Backup" outcome="/pages/manutencao.xhtml" />
+						<p:menuitem value="Restaurar Backup" outcome="/pages/manutencao.xhtml" />
 					</p:submenu>
 
 					<p:submenu label="Informações">

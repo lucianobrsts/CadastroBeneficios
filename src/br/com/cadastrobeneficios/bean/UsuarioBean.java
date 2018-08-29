@@ -9,6 +9,7 @@ import br.com.cadastrobeneficios.dao.UsuarioDAO;
 import br.com.cadastrobeneficios.domain.Usuario;
 import br.com.cadastrobeneficios.util.FacesUtil;
 
+@SuppressWarnings("deprecation")
 @ManagedBean
 @ViewScoped
 public class UsuarioBean {
