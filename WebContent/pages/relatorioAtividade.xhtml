@@ -28,13 +28,13 @@
 
 			<p:separator />
 
-			<h:panelGrid columns="3" id="panelAniversariantes">
-				<p:outputLabel value="Nome da Atividade:" id="atividade" />
-				<p:inputText size="30" value="" />
+			<h:panelGrid columns="3" id="panelRelatorioInscritoPorAtividade">
+				<p:outputLabel id="nome" value="Nome da Atividade:" />
+				<p:inputText size="30" value="#{beneficioBean.nome}" />
 
 				<p:commandButton value="Gerar Relatório" icon="ui-icon-document"
-					action="#{inscritoBean.geraRelatorioAniversario()}" ajax="false"
-					onclick="this.form.target='_blank'" />
+					action="#{beneficioBean.geraRelatorioInscritoPorAtividade()}"
+					ajax="false" onclick="this.form.target='_blank'" />
 			</h:panelGrid>
 			<h:panelGrid columns="5">
 				<br />

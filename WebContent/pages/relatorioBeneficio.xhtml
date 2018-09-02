@@ -28,13 +28,12 @@
 
 			<p:separator />
 
-			<h:panelGrid columns="3" id="panelBeneficioCadastro">
-
+			<h:panelGrid columns="3" id="panelRelatorioBeneficioPorInscrito">
 				<p:outputLabel id="nome" value="Nome do Inscrito:" />
 				<p:inputText size="30" value="#{beneficioBean.nome}" />
 
 				<p:commandButton value="Gerar Relatório" icon="ui-icon-document"
-					action="#{beneficioBean.geraRelatorioAtividade()}" ajax="false"
+					action="#{beneficioBean.geraRelatorioAtividadePorInscrito()}" ajax="false"
 					onclick="this.form.target='_blank'" />
 			</h:panelGrid>
 			<br />

@@ -1,5 +1,6 @@
 package br.com.cadastrobeneficios.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -45,19 +46,40 @@ public class BeneficioDAO {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Beneficio> listarPorNome(String nome) {
+	public List<Beneficio> listarPorInscrito(String nome) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
-		List<Beneficio> beneficios = null;
-
+		List<Beneficio> beneficios = new ArrayList<>();
+		
 		try {
-			Query consulta = sessao.getNamedQuery("Beneficio.listarPorNome");
+			Query consulta = sessao.getNamedQuery("Beneficio.listarPorInscrito");
 			consulta.setString(0, nome);
 			beneficios = consulta.list();
+			
 		} catch (RuntimeException ex) {
 			throw ex;
 		} finally {
 			sessao.close();
 		}
+		
+		return beneficios;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Beneficio> listarPorAtividade(String nome) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		List<Beneficio> beneficios = new ArrayList<>();
+		
+		try {
+			Query consulta = sessao.getNamedQuery("Beneficio.listarPorAtividade");
+			consulta.setString(0, nome);
+			beneficios = consulta.list();
+			
+		} catch (RuntimeException ex) {
+			throw ex;
+		} finally {
+			sessao.close();
+		}
+		
 		return beneficios;
 	}
 

@@ -85,14 +85,38 @@ public class Relatorio {
 
 	public void getRelatorioInscrito(List<Beneficio> lista) {
 		stream = this.getClass().getResourceAsStream("/reports/beneficio.jasper");
-
 		Map<String, Object> params = new HashMap<String, Object>();
-
 		baos = new ByteArrayOutputStream();
+	
 		try {
 			JasperReport report = (JasperReport) JRLoader.loadObject(stream);
-			JasperPrint print = JasperFillManager.fillReport(report, params,
-					new JRBeanCollectionDataSource(lista, false));
+			JasperPrint print = JasperFillManager.fillReport(report, params, new JRBeanCollectionDataSource(lista, false));
+			JasperExportManager.exportReportToPdfStream(print, baos);
+
+			response.reset();
+			response.setContentType("application/pdf");
+			response.setContentLengthLong(baos.size());
+			response.setHeader("Content-disposition", "inline: filename=relatorio.pdf");
+			response.getOutputStream().write(baos.toByteArray());
+			response.getOutputStream().flush();
+			response.getOutputStream().close();
+
+			context.responseComplete();
+		} catch (JRException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void getRelatorioAtividade(List<Beneficio> lista) {
+		stream = this.getClass().getResourceAsStream("/reports/atividade.jasper");
+		Map<String, Object> params = new HashMap<String, Object>();
+		baos = new ByteArrayOutputStream();
+	
+		try {
+			JasperReport report = (JasperReport) JRLoader.loadObject(stream);
+			JasperPrint print = JasperFillManager.fillReport(report, params, new JRBeanCollectionDataSource(lista, false));
 			JasperExportManager.exportReportToPdfStream(print, baos);
 
 			response.reset();

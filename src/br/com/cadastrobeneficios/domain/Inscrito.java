@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 @Table(name = "inscrito")
 @NamedQueries({ @NamedQuery(name = "Inscrito.listar", query = "SELECT inscrito FROM Inscrito inscrito"),
 		@NamedQuery(name = "Inscrito.listarPorDataNiver", query = "SELECT inscrito FROM Inscrito inscrito WHERE inscrito.nascimento LIKE ?"),
-		@NamedQuery(name = "Inscrito.buscarPorCodigo", query = "SELECT inscrito FROM Inscrito inscrito WHERE inscrito.codigo = :codigo") })
+		@NamedQuery(name = "Inscrito.buscarPorCodigo", query = "SELECT inscrito FROM Inscrito inscrito WHERE inscrito.codigo = :codigo"), })
 public class Inscrito {
 
 	@Id
@@ -91,6 +91,7 @@ public class Inscrito {
 	@Column(name = "docresponsavel", length = 13, nullable = false)
 	private String documentoResponsavel;
 
+	@NotEmpty(message = "O campo Responsável Preenchimento é obrigatório.")
 	@Column(name = "respreenchimento", length = 50, nullable = false)
 	private String responsavelPreenchimento;
 

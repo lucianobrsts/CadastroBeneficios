@@ -23,8 +23,8 @@ import javax.validation.constraints.NotNull;
 @Table(name = "beneficio")
 @NamedQueries({ @NamedQuery(name = "Beneficio.listar", query = "SELECT beneficio FROM Beneficio beneficio"),
 		@NamedQuery(name = "Beneficio.buscarPorCodigo", query = "SELECT beneficio FROM Beneficio beneficio WHERE beneficio.codigo = :codigo"),
-		@NamedQuery(name = "Beneficio.listarPorNome", query = "SELECT b.dataInicio, b.diaDaSemana, b.horarioInicio, a.nome, i.nome "
-				+ "FROM Beneficio b join b.atividade a join b.inscrito i " + "WHERE i.nome = ?") })
+		@NamedQuery(name = "Beneficio.listarPorInscrito", query = "SELECT b FROM Beneficio b join b.atividade a join b.inscrito i WHERE i.nome = ?"),
+		@NamedQuery(name = "Beneficio.listarPorAtividade", query = "SELECT b FROM Beneficio b join b.atividade a join b.inscrito i WHERE a.nome = ?")})
 public class Beneficio {
 	@Id
 	@Column(name = "codigo")
@@ -101,7 +101,7 @@ public class Beneficio {
 	}
 
 	public void setDiaDaSemana(String diaDaSemana) {
-		this.diaDaSemana = diaDaSemana.toUpperCase();
+		this.diaDaSemana = diaDaSemana;
 	}
 
 	public String getHorarioInicio() {

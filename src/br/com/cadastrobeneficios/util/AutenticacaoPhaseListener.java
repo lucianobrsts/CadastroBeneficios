@@ -29,7 +29,7 @@ public class AutenticacaoPhaseListener implements PhaseListener {
 			Usuario usuario = (Usuario) autenticacaoBean.getSession().getAttribute("usuario");
 
 			if (usuario == null) {
-				FacesUtil.adiconarMensagemErro("Usuário não autenticado. Faça o Login.");
+				FacesUtil.adicionarMensagemInfo("Usuário não autenticado. Faça o Login.");
 
 				Application application = facesContext.getApplication();
 				NavigationHandler navigationHandler = application.getNavigationHandler();

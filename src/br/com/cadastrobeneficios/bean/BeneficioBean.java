@@ -161,12 +161,28 @@ public class BeneficioBean {
 		}
 	}
 
-	public void geraRelatorioAtividade() {
+	public void geraRelatorioAtividadePorInscrito() {
 		Relatorio relatorio = new Relatorio();
 		BeneficioDAO beneficioDAO = new BeneficioDAO();
-		lista = beneficioDAO.listarPorNome(getNome());
+		lista = beneficioDAO.listarPorInscrito(getNome());
 
-		relatorio.getRelatorioInscrito(lista);
+		if(!lista.isEmpty()) {
+			relatorio.getRelatorioInscrito(lista);
+		} else {
+			FacesUtil.adiconarMensagemErro("Não há informações para gerar o relatório.");
+		}
+	}
+	
+	public void geraRelatorioInscritoPorAtividade() {
+		Relatorio relatorio = new Relatorio();
+		BeneficioDAO beneficioDAO = new BeneficioDAO();
+		lista = beneficioDAO.listarPorAtividade(getNome());
+
+		if(!lista.isEmpty()) {
+			relatorio.getRelatorioAtividade(lista);
+		} else {
+			FacesUtil.adiconarMensagemErro("Não há informações para gerar o relatório.");
+		}
 	}
 
 }

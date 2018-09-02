@@ -24,6 +24,7 @@ public class InscritoBean {
 	private String acao;
 	private Long codigo;
 	private String dataNiver;
+	private String nome;
 
 	public Inscrito getInscritoCadastro() {
 		return inscritoCadastro;
@@ -79,6 +80,14 @@ public class InscritoBean {
 
 	public void setDataNiver(String dataNiver) {
 		this.dataNiver = dataNiver;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public void novo() {
@@ -181,13 +190,22 @@ public class InscritoBean {
 		InscritoDAO inscritoDao = new InscritoDAO();
 		lista = inscritoDao.listar();
 
-		relatorio.getRelatorio(lista);
+		if (!lista.isEmpty()) {
+			relatorio.getRelatorio(lista);
+		} else {
+			FacesUtil.adiconarMensagemErro("Não há informações para gerar o relatório.");
+		}
 	}
 
 	public void geraRelatorioAniversario() throws NoSuchFieldException {
 		Relatorio relatorio = new Relatorio();
 		InscritoDAO inscritoDao = new InscritoDAO();
 		lista = inscritoDao.listarPorDataNiver(getDataNiver());
-		relatorio.getRelatorioAniversariantes(lista);
+
+		if (!lista.isEmpty()) {
+			relatorio.getRelatorioAniversariantes(lista);
+		} else {
+			FacesUtil.adiconarMensagemErro("Não há informações para gerar o relatório.");
+		}
 	}
 }

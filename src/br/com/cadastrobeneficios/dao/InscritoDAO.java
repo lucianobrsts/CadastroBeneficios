@@ -51,7 +51,7 @@ public class InscritoDAO {
 
 		try {
 			Query consulta = sessao.getNamedQuery("Inscrito.listarPorDataNiver");
-			consulta.setString(0, "%"+dataNiver+"%");
+			consulta.setString(0, "%" + dataNiver + "%");
 			inscritos = consulta.list();
 		} catch (RuntimeException ex) {
 			throw ex;
