@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inscritos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b637beb1-ce60-40f6-af19-61921ba8c508">
-	<property name="com.jaspersoft.studio.data.sql.tables">
-		<![CDATA[Y2FkYXN0cm9iZW5lZmljaW9zLmluc2NyaXRvIEFTICw3Nyw1NSxkNmFjZDA5Ny1kMTlmLTRkOTQt
-YWIwMS0wMDJlMzNiM2ViNTQ7]]>
-	</property>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Beneficio adapter"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="228"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="767"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT cadastrobeneficios.inscrito.codigo,
 	cadastrobeneficios.inscrito.cs,
@@ -14,7 +13,7 @@ YWIwMS0wMDJlMzNiM2ViNTQ7]]>
 	cadastrobeneficios.inscrito.nome,
 	cadastrobeneficios.inscrito.pf
 FROM cadastrobeneficios.inscrito
-ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
+ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 	</queryString>
 	<field name="codigo" class="java.lang.Long">
 		<property name="com.jaspersoft.studio.field.label" value="codigo"/>

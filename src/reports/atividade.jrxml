@@ -20,7 +20,7 @@ FROM cadastrobeneficios.beneficio
 	INNER JOIN cadastrobeneficios.inscrito ON 
 	 cadastrobeneficios.beneficio.inscrito_codigo = cadastrobeneficios.inscrito.codigo 
 WHERE 
-	 cadastrobeneficios.atividade.nome = '$P!{nome}']]>
+	 cadastrobeneficios.atividade.nome = '$P!{nome}' ]]>
 	</queryString>
 	<field name="dataInicio" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="dataInicio"/>
@@ -80,7 +80,7 @@ WHERE
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="53" splitType="Stretch">
+		<band height="48" splitType="Stretch">
 			<staticText>
 				<reportElement x="250" y="26" width="80" height="20" uuid="3b04332a-6964-41db-a302-9adec07baec3">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="399761a0-1144-42b4-b3da-8da43ae74337"/>
@@ -164,7 +164,7 @@ WHERE
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="40" splitType="Stretch">
+		<band height="26" splitType="Stretch">
 			<textField>
 				<reportElement x="328" y="0" width="120" height="20" uuid="74370841-f12b-4088-9c9a-8e8bce3f280a">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9e786780-c4e0-4d8e-a2e0-75ed8f7115e0"/>
