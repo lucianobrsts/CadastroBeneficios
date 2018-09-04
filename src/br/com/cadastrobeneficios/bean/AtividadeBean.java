@@ -70,7 +70,7 @@ public class AtividadeBean {
 
 			atividadeCadastro = new Atividade();
 
-			FacesUtil.adicionarMensagemInfo("Atividade salva com sucesso!");
+			FacesUtil.adicionarMensagemInfo("Atividade salva com sucesso.");
 		} catch (RuntimeException ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar incluir uma Atividade: " + ex.getMessage());
 		}
@@ -104,7 +104,7 @@ public class AtividadeBean {
 			AtividadeDAO atividadeDAO = new AtividadeDAO();
 			atividadeDAO.excluir(atividadeCadastro);
 
-			FacesUtil.adicionarMensagemInfo("Atividade excluída com sucesso!");
+			FacesUtil.adicionarMensagemInfo("Atividade excluída com sucesso.");
 		} catch (RuntimeException ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar excluir a atividade: " + ex.getMessage());
 		}
@@ -116,7 +116,7 @@ public class AtividadeBean {
 
 			atividadeDAO.editar(atividadeCadastro);
 
-			FacesUtil.adicionarMensagemInfo("Atividade editada com sucesso!");
+			FacesUtil.adicionarMensagemInfo("Atividade editada com sucesso.");
 		} catch (RuntimeException ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar editar a atividade: " + ex.getMessage());
 		}

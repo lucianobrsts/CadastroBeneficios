@@ -40,7 +40,7 @@ WHERE
 	<pageHeader>
 		<band height="66">
 			<staticText>
-				<reportElement x="76" y="4" width="470" height="30" uuid="be706616-c8a7-417f-8945-7f9e97adee63"/>
+				<reportElement x="118" y="4" width="314" height="30" uuid="be706616-c8a7-417f-8945-7f9e97adee63"/>
 				<textElement textAlignment="Center">
 					<font size="16"/>
 				</textElement>
@@ -50,19 +50,19 @@ WHERE
 				<reportElement x="16" y="4" width="58" height="55" uuid="696c6ead-e3fd-4795-81dc-a37255d190d8"/>
 				<imageExpression><![CDATA["D:/Softwares Instalations/git/CadastroBeneficios/src/reports/logo.png"]]></imageExpression>
 			</image>
+			<textField pattern="dd/MMMM/yyyy">
+				<reportElement x="446" y="30" width="100" height="30" uuid="53a9de0b-49f9-4e1b-b239-69c33dd204de"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
 			<staticText>
-				<reportElement x="76" y="30" width="468" height="30" uuid="e61c39ef-893b-4479-a8f7-0416299a436e"/>
+				<reportElement x="160" y="32" width="210" height="30" uuid="e61c39ef-893b-4479-a8f7-0416299a436e"/>
 				<textElement textAlignment="Center">
 					<font size="16"/>
 				</textElement>
 				<text><![CDATA[Listagem de Atividades]]></text>
 			</staticText>
-			<textField pattern="dd/MMMM/yyyy">
-				<reportElement x="446" y="30" width="100" height="30" uuid="53a9de0b-49f9-4e1b-b239-69c33dd204de"/>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
 			<rectangle radius="14">
-				<reportElement mode="Transparent" x="1" y="2" width="549" height="59" uuid="af5d7aa4-e77c-49f2-b6f5-8f90cb60469f"/>
+				<reportElement mode="Transparent" x="3" y="1" width="549" height="59" uuid="af5d7aa4-e77c-49f2-b6f5-8f90cb60469f"/>
 				<graphicElement>
 					<pen lineStyle="Solid"/>
 				</graphicElement>
@@ -72,7 +72,7 @@ WHERE
 	<columnHeader>
 		<band height="55" splitType="Stretch">
 			<staticText>
-				<reportElement x="248" y="26" width="80" height="20" uuid="3b04332a-6964-41db-a302-9adec07baec3">
+				<reportElement x="250" y="26" width="68" height="20" uuid="3b04332a-6964-41db-a302-9adec07baec3">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="399761a0-1144-42b4-b3da-8da43ae74337"/>
 				</reportElement>
 				<box>
@@ -87,7 +87,7 @@ WHERE
 				<text><![CDATA[Data Início]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="448" y="26" width="100" height="20" uuid="675e4fb7-d6fd-413d-bf75-49403e50ba93">
+				<reportElement x="444" y="26" width="100" height="20" uuid="675e4fb7-d6fd-413d-bf75-49403e50ba93">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="db787299-32ca-469f-96f2-69be08b42dc0"/>
 				</reportElement>
 				<box>
@@ -131,7 +131,7 @@ WHERE
 				<textFieldExpression><![CDATA[$F{inscrito}.getNome()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="26" width="248" height="20" uuid="ae8dce7d-dbd8-44c0-a858-2f2ac9630882">
+				<reportElement x="80" y="26" width="100" height="20" uuid="ae8dce7d-dbd8-44c0-a858-2f2ac9630882">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0fccc1f8-ec6e-41d9-b087-eb19a1f63b23"/>
 				</reportElement>
 				<box>
@@ -193,7 +193,7 @@ WHERE
 				</box>
 				<textFieldExpression><![CDATA[$F{atividade}.getNome()]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField pattern="dd/MM/yyyy">
 				<reportElement stretchType="RelativeToBandHeight" x="248" y="0" width="82" height="20" uuid="c72cbbe1-b222-4572-b32e-dbfd8cf9b662">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0250ac8b-d1bc-4eaf-b76c-31f4176deb3f"/>
 				</reportElement>
@@ -218,9 +218,9 @@ WHERE
 				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement x="490" y="0" width="58" height="20" uuid="b617aca6-6ebe-407d-804e-48b47f19c162"/>
+				<reportElement x="465" y="0" width="58" height="20" uuid="b617aca6-6ebe-407d-804e-48b47f19c162"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[" de   " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>

@@ -10,6 +10,7 @@ import javax.faces.bean.ViewScoped;
 
 import br.com.cadastrobeneficios.dao.InscritoDAO;
 import br.com.cadastrobeneficios.domain.Inscrito;
+import br.com.cadastrobeneficios.domain.Usuario;
 import br.com.cadastrobeneficios.relatorio.Relatorio;
 import br.com.cadastrobeneficios.util.FacesUtil;
 
@@ -101,7 +102,7 @@ public class InscritoBean {
 
 			inscritoCadastro = new Inscrito();
 
-			FacesUtil.adicionarMensagemInfo("Inscrito salvo com sucesso!");
+			FacesUtil.adicionarMensagemInfo("Inscrito salvo com sucesso.");
 		} catch (RuntimeException ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar incluir um inscrito: " + ex.getMessage());
 		}
@@ -135,7 +136,7 @@ public class InscritoBean {
 			InscritoDAO inscritoDAO = new InscritoDAO();
 			inscritoDAO.excluir(inscritoCadastro);
 
-			FacesUtil.adicionarMensagemInfo("Inscrito excluído com sucesso!");
+			FacesUtil.adicionarMensagemInfo("Inscrito excluído com sucesso.");
 		} catch (RuntimeException ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar excluir o inscrito: " + ex.getMessage());
 		}
@@ -147,7 +148,7 @@ public class InscritoBean {
 
 			inscritoDAO.editar(inscritoCadastro);
 
-			FacesUtil.adicionarMensagemInfo("Inscrito editado com sucesso!");
+			FacesUtil.adicionarMensagemInfo("Inscrito editado com sucesso.");
 		} catch (RuntimeException ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar editar o inscrito: " + ex.getMessage());
 		}
@@ -185,6 +186,12 @@ public class InscritoBean {
 		return String.valueOf(idade);
 	}
 
+	public Usuario usuarioLogado() {
+		AutenticacaoBean autenticacaoBean = new AutenticacaoBean();
+		Usuario usuario = (Usuario) autenticacaoBean.getSession().getAttribute("usuario");
+		return usuario;
+	}
+
 	public void geraRelatorioInscrito() {
 		Relatorio relatorio = new Relatorio();
 		InscritoDAO inscritoDao = new InscritoDAO();
@@ -193,7 +200,7 @@ public class InscritoBean {
 		if (!lista.isEmpty()) {
 			relatorio.getRelatorio(lista);
 		} else {
-			FacesUtil.adiconarMensagemErro("Não há informações para gerar o relatório.");
+			FacesUtil.adicionarMensagemInfo("Não há informações para gerar o relatório.");
 		}
 	}
 
@@ -205,7 +212,7 @@ public class InscritoBean {
 		if (!lista.isEmpty()) {
 			relatorio.getRelatorioAniversariantes(lista);
 		} else {
-			FacesUtil.adiconarMensagemErro("Não há informações para gerar o relatório.");
+			FacesUtil.adicionarMensagemInfo("Não há informações para gerar o relatório.");
 		}
 	}
 }

@@ -103,7 +103,7 @@ public class BeneficioBean {
 
 			beneficioCadastro = new Beneficio();
 
-			FacesUtil.adicionarMensagemInfo("Beneficio salvo com sucesso!");
+			FacesUtil.adicionarMensagemInfo("Beneficio salvo com sucesso.");
 		} catch (RuntimeException ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar incluir um Beneficio: " + ex.getMessage());
 		}
@@ -143,7 +143,7 @@ public class BeneficioBean {
 			BeneficioDAO beneficioDAO = new BeneficioDAO();
 			beneficioDAO.excluir(beneficioCadastro);
 
-			FacesUtil.adicionarMensagemInfo("Benefício excluído com sucesso!");
+			FacesUtil.adicionarMensagemInfo("Benefício excluído com sucesso.");
 		} catch (RuntimeException ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar excluir o Benefício: " + ex.getMessage());
 		}
@@ -155,7 +155,7 @@ public class BeneficioBean {
 
 			beneficioDAO.editar(beneficioCadastro);
 
-			FacesUtil.adicionarMensagemInfo("Benefício editado com sucesso!");
+			FacesUtil.adicionarMensagemInfo("Benefício editado com sucesso.");
 		} catch (RuntimeException ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar editar o Benefício: " + ex.getMessage());
 		}
@@ -166,22 +166,22 @@ public class BeneficioBean {
 		BeneficioDAO beneficioDAO = new BeneficioDAO();
 		lista = beneficioDAO.listarPorInscrito(getNome());
 
-		if(!lista.isEmpty()) {
+		if (!lista.isEmpty()) {
 			relatorio.getRelatorioInscrito(lista);
 		} else {
-			FacesUtil.adiconarMensagemErro("Não há informações para gerar o relatório.");
+			FacesUtil.adicionarMensagemInfo("Não há informações para gerar o relatório.");
 		}
 	}
-	
+
 	public void geraRelatorioInscritoPorAtividade() {
 		Relatorio relatorio = new Relatorio();
 		BeneficioDAO beneficioDAO = new BeneficioDAO();
 		lista = beneficioDAO.listarPorAtividade(getNome());
 
-		if(!lista.isEmpty()) {
+		if (!lista.isEmpty()) {
 			relatorio.getRelatorioAtividade(lista);
 		} else {
-			FacesUtil.adiconarMensagemErro("Não há informações para gerar o relatório.");
+			FacesUtil.adicionarMensagemInfo("Não há informações para gerar o relatório.");
 		}
 	}
 

@@ -71,6 +71,9 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 	</pageHeader>
 	<columnHeader>
 		<band height="32" splitType="Stretch">
+			<rectangle>
+				<reportElement x="50" y="1" width="160" height="20" forecolor="rgba(0, 0, 0, 0.0)" backcolor="#000000" uuid="1b13e8ec-da1a-4986-9223-16b71da5d487"/>
+			</rectangle>
 			<staticText>
 				<reportElement positionType="Float" mode="Opaque" x="1" y="1" width="49" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="2d1890d7-2824-411c-9526-e5ab4adb54ee">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d8d6555e-e855-43d3-b2e2-a3c98e97e901"/>
@@ -81,7 +84,7 @@ ORDER BY cadastrobeneficios.inscrito.codigo ASC]]>
 				<text><![CDATA[Código]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" mode="Opaque" x="50" y="1" width="160" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="5fafcef5-040e-4cc6-997d-f33738a5e08b">
+				<reportElement positionType="Float" mode="Opaque" x="110" y="1" width="46" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="5fafcef5-040e-4cc6-997d-f33738a5e08b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="23523af6-1e42-44f5-84ec-13376b6f3c9b"/>
 				</reportElement>
 				<textElement textAlignment="Center">

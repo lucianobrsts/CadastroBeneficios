@@ -23,7 +23,7 @@ public class Inscrito {
 	@Column(name = "codigo")
 	private Long codigo;
 
-	@NotEmpty(message = "Digite o nome de uma crinça que seja inscrita no Projeto.")
+	@NotEmpty(message = "O campo criança inscrita é obrigatório.")
 	@Size(min = 5, max = 50, message = "Tamanho inválido para o campo Criança Inscrita(5 - 50 dígitos)")
 	@Column(name = "crianca_inscrita", length = 50, nullable = false)
 	private String criancaInscrita;

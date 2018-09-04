@@ -78,6 +78,9 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 	</pageHeader>
 	<columnHeader>
 		<band height="33" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="551" height="21" backcolor="#000000" uuid="6f82040c-b32a-4f06-8f45-520b4d4fc4b8"/>
+			</rectangle>
 			<staticText>
 				<reportElement mode="Opaque" x="0" y="1" width="40" height="18" forecolor="#FFFFFF" backcolor="#000000" uuid="a3012a5f-9ad2-4c1d-90e9-eb67aee1166f">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="68f46e5e-ff0b-42fc-ad06-c559c18a6ecd"/>
@@ -94,7 +97,7 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 				<text><![CDATA[Código]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="40" y="1" width="202" height="18" forecolor="#FFFFFF" backcolor="#000000" uuid="193ae6ea-cf7f-4ff7-bc1f-f500b06cc325">
+				<reportElement mode="Opaque" x="120" y="1" width="50" height="18" forecolor="#FFFFFF" backcolor="#000000" uuid="193ae6ea-cf7f-4ff7-bc1f-f500b06cc325">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ad28e78e-bde3-43d3-9c0e-a32dfb9b7916"/>
 				</reportElement>
 				<box>
@@ -109,7 +112,7 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 				<text><![CDATA[Nome]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="242" y="1" width="178" height="18" forecolor="#FFFFFF" backcolor="#000000" uuid="e9be3cb4-04db-4062-a92b-d024cd938ded">
+				<reportElement mode="Opaque" x="280" y="1" width="70" height="18" forecolor="#FFFFFF" backcolor="#000000" uuid="e9be3cb4-04db-4062-a92b-d024cd938ded">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f9e80032-9a3e-4b7f-99eb-b0a4e370ada4"/>
 				</reportElement>
 				<box>
@@ -173,7 +176,7 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 	<detail>
 		<band height="26" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="30" height="20" uuid="19394057-b0bb-4876-a599-e4e94f9613e6">
+				<reportElement x="6" y="0" width="30" height="20" uuid="19394057-b0bb-4876-a599-e4e94f9613e6">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="68f46e5e-ff0b-42fc-ad06-c559c18a6ecd"/>
 				</reportElement>
 				<textElement textAlignment="Center"/>
@@ -228,7 +231,7 @@ ORDER BY cadastrobeneficios.inscrito.nome ASC]]>
 			<textField evaluationTime="Report">
 				<reportElement x="519" y="0" width="32" height="20" uuid="b617aca6-6ebe-407d-804e-48b47f19c162"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[" de   " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement x="0" y="0" width="551" height="1" uuid="01f7dba2-ed35-4d8c-9fe1-916b8d4d13a7"/>

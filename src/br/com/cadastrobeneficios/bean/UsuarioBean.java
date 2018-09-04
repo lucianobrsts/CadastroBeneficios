@@ -73,7 +73,7 @@ public class UsuarioBean {
 
 			usuarioCadastro = new Usuario();
 
-			FacesUtil.adicionarMensagemInfo("Usuário salvo com sucesso!");
+			FacesUtil.adicionarMensagemInfo("Usuário salvo com sucesso.");
 		} catch (RuntimeException ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar salvar um Usuário: " + ex.getMessage());
 		}
@@ -107,7 +107,7 @@ public class UsuarioBean {
 			UsuarioDAO usuarioDAO = new UsuarioDAO();
 			usuarioDAO.excluir(usuarioCadastro);
 
-			FacesUtil.adicionarMensagemInfo("Usuário excluído com sucesso!");
+			FacesUtil.adicionarMensagemInfo("Usuário excluído com sucesso.");
 		} catch (RuntimeException ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar excluir o Usuário: " + ex.getMessage());
 		}
@@ -119,7 +119,7 @@ public class UsuarioBean {
 
 			usuarioDAO.editar(usuarioCadastro);
 
-			FacesUtil.adicionarMensagemInfo("Usuário editado com sucesso!");
+			FacesUtil.adicionarMensagemInfo("Usuário editado com sucesso.");
 		} catch (RuntimeException ex) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar editar o Usuário: " + ex.getMessage());
 		}
