@@ -189,6 +189,7 @@ public class InscritoBean {
 	public Usuario usuarioLogado() {
 		AutenticacaoBean autenticacaoBean = new AutenticacaoBean();
 		Usuario usuario = (Usuario) autenticacaoBean.getSession().getAttribute("usuario");
+		inscritoCadastro.setResponsavelPreenchimento(usuario.getNome());
 		return usuario;
 	}
 

@@ -206,10 +206,9 @@
 				</p:inputText>
 
 				<p:outputLabel value="Responsável Preenchimento:" />
-				<p:inputText maxlength="50" size="40"
-					readonly="#{inscritoBean.acao == 'Excluir'}"
+				<p:inputText maxlength="50" size="40" readonly="true"
 					style="text-transform: uppercase"
-					value="#{inscritoBean.inscritoCadastro.responsavelPreenchimento}">
+					value="#{inscritoBean.usuarioLogado().nome}">
 					<f:validateBean />
 				</p:inputText>
 			</h:panelGrid>
