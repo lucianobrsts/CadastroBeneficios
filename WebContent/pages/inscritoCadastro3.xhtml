@@ -32,16 +32,16 @@
 
 				<p:outputLabel value="Criança Inscrita:" />
 				<p:inputText maxlength="50" size="40" id="criancaInscrita"
-					 readonly="#{inscritoBean.acao == 'Exibir'}"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					style="text-transform: uppercase;"
 					value="#{inscritoBean.inscritoCadastro.criancaInscrita}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="Nome Completo:" />
-				<p:inputText maxlength="50" size="40" id="fullName" 
+				<p:inputText maxlength="50" size="40" id="fullName"
 					onblur="calculaIdade()"
-					readonly="#{inscritoBean.acao == 'Exibir'}"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					style="text-transform: uppercase;"
 					value="#{inscritoBean.inscritoCadastro.nome}">
 					<f:validateBean />
@@ -49,17 +49,12 @@
 
 				<p:outputLabel value="Data Nascimento:" />
 				<p:inputMask value="#{inscritoBean.inscritoCadastro.nascimento}"
-					 id="dataNascimento"
-					readonly="#{inscritoBean.acao == 'Exibir'}" size="15"
-					mask="99/99/9999" required="true"
+					id="dataNascimento" readonly="#{inscritoBean.acao == 'Excluir'}"
+					size="15" mask="99/99/9999" required="true"
 					requiredMessage="O campo Data de Nascimento é obrigatório." />
 
-				<p:outputLabel value="Idade:" />
-				<p:inputText style="text-transform: uppercase;" size="15"
-					readonly="#{inscritoBean.acao == 'Exibir'}" value="#{inscritoBean.calculaIdade()} ANOS" />
-
 				<p:outputLabel for="sexo" value="Sexo:" />
-				<p:selectOneRadio id="sexo" readonly="#{inscritoBean.acao == 'Exibir'}"
+				<p:selectOneRadio id="sexo"
 					value="#{inscritoBean.inscritoCadastro.sexo}">
 					<f:selectItem itemLabel="MASCULINO" itemValue="MASCULINO" />
 					<f:selectItem itemLabel="FEMININO" itemValue="FEMININO" />
@@ -67,42 +62,42 @@
 
 				<p:outputLabel value="Registro/RG:" />
 				<p:inputText maxlength="13" size="15"
-					readonly="#{inscritoBean.acao == 'Exibir'}"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.inscritoCadastro.registroRg}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="Child Number:" />
-				<p:inputText maxlength="10" size="15" 
-					readonly="#{inscritoBean.acao == 'Exibir'}"
+				<p:inputText maxlength="10" size="15"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.inscritoCadastro.childNumber}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="PF:" />
-				<p:inputText maxlength="10" size="15" 
-					readonly="#{inscritoBean.acao == 'Exibir'}"
+				<p:inputText maxlength="10" size="15"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.inscritoCadastro.pf}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="CS:" />
-				<p:inputText maxlength="10" size="15" 
-					readonly="#{inscritoBean.acao == 'Exibir'}"
+				<p:inputText maxlength="10" size="15"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.inscritoCadastro.cs}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="NIS:" />
-				<p:inputText maxlength="10" size="15" 
-					readonly="#{inscritoBean.acao == 'Exibir'}"
+				<p:inputText maxlength="10" size="15"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.inscritoCadastro.nis}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="Endereço:" />
-				<p:inputText maxlength="50" size="40" 
-					readonly="#{inscritoBean.acao == 'Exibir'}"
+				<p:inputText maxlength="50" size="40"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					style="text-transform: uppercase"
 					value="#{inscritoBean.inscritoCadastro.endereco}">
 					<f:validateBean />
@@ -110,42 +105,44 @@
 
 				<p:outputLabel value="Telefone Residencial:" />
 				<p:inputMask value="#{inscritoBean.inscritoCadastro.fone}"
-					 readonly="#{inscritoBean.acao == 'Exibir'}"
-					mask="(99) 9999-9999" />
+					readonly="#{inscritoBean.acao == 'Excluir'}" mask="(99) 9999-9999" />
 
 				<p:outputLabel value="Celular 1:" />
 				<p:inputMask value="#{inscritoBean.inscritoCadastro.celular}"
-					 readonly="#{inscritoBean.acao == 'Exibir'}"
-					mask="(99) 99999-9999" />
-					
-					<p:outputLabel value="Celular 2:" />
+					readonly="#{inscritoBean.acao == 'Excluir'}" mask="(99) 99999-9999" />
+
+				<p:outputLabel value="Celular 2:" />
 				<p:inputMask value="#{inscritoBean.inscritoCadastro.celular2}"
-					 readonly="#{inscritoBean.acao == 'Exibir'}"
-					mask="(99) 99999-9999" />
+					readonly="#{inscritoBean.acao == 'Excluir'}" mask="(99) 99999-9999" />
 
 				<p:outputLabel value="Escola em que estuda:" />
-				<p:inputText maxlength="50" size="40" 
-					readonly="#{inscritoBean.acao == 'Exibir'}"
+				<p:inputText maxlength="50" size="40"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					style="text-transform: uppercase"
 					value="#{inscritoBean.inscritoCadastro.escola}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel for="horario_estudo" value="Horário que estuda:" />
-				<p:selectOneRadio id="horario_estudo" readonly="#{inscritoBean.acao == 'Exibir'}"
+				<p:selectOneRadio id="horario_estudo"
 					value="#{inscritoBean.inscritoCadastro.horario}">
 					<f:selectItem itemLabel="MANHÃ" itemValue="MANHÃ" />
 					<f:selectItem itemLabel="TARDE" itemValue="TARDE" />
 					<f:selectItem itemLabel="NOITE" itemValue="NOITE" />
+					<f:selectItem itemLabel="PERÍODO INTEGRAL"
+						itemValue="PERÍODO INTEGRAL" />
 				</p:selectOneRadio>
 
 				<p:outputLabel for="serie" value="Série:" />
-				<p:selectOneMenu id="serie" readonly="#{inscritoBean.acao == 'Exibir'}"
+				<p:selectOneMenu id="serie"
 					value="#{inscritoBean.inscritoCadastro.serie}">
 					<f:selectItem itemLabel="Selecione uma série" itemValue="" />
+					<f:selectItem itemLabel="CRECHE" itemValue="CRECHE" />
 					<f:selectItem itemLabel="INFANTIL I" itemValue="INFANTIL I" />
 					<f:selectItem itemLabel="INFANTIL II" itemValue="INFANTIL II" />
 					<f:selectItem itemLabel="INFANTIL III" itemValue="INFANTIL III" />
+					<f:selectItem itemLabel="INFANTIL IV" itemValue="INFANTIL IV" />
+					<f:selectItem itemLabel="INFANTIL V" itemValue="INFANTIL V" />
 					<f:selectItem itemLabel="1º ANO" itemValue="1º ANO" />
 					<f:selectItem itemLabel="2º ANO" itemValue="2º ANO" />
 					<f:selectItem itemLabel="3º ANO" itemValue="3º ANO" />
@@ -173,15 +170,15 @@
 				</p:selectOneMenu>
 
 				<p:outputLabel value="Responsável:" />
-				<p:inputText maxlength="50" size="40" 
-					readonly="#{inscritoBean.acao == 'Exibir'}"
+				<p:inputText maxlength="50" size="40"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					style="text-transform: uppercase"
 					value="#{inscritoBean.inscritoCadastro.responsavel}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel for="parentesco" value="Parentesco:" />
-				<p:selectOneMenu id="parentesco" readonly="#{inscritoBean.acao == 'Exibir'}"
+				<p:selectOneMenu id="parentesco"
 					value="#{inscritoBean.inscritoCadastro.parentesco}">
 					<f:selectItem itemLabel="Selecione um parentesco" itemValue="" />
 					<f:selectItem itemLabel="O(A) PRÓPRIO(A)"
@@ -202,15 +199,14 @@
 				</p:selectOneMenu>
 
 				<p:outputLabel value="RG ou CPF responsável:" />
-				<p:inputText maxlength="13" size="30" 
-					readonly="#{inscritoBean.acao == 'Exibir'}"
+				<p:inputText maxlength="13" size="30"
+					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.inscritoCadastro.documentoResponsavel}">
 					<f:validateBean />
 				</p:inputText>
 
 				<p:outputLabel value="Responsável Preenchimento:" />
-				<p:inputText maxlength="50" size="40" 
-					readonly="#{inscritoBean.acao == 'Exibir'}"
+				<p:inputText maxlength="50" size="40" readonly="true"
 					style="text-transform: uppercase"
 					value="#{inscritoBean.inscritoCadastro.responsavelPreenchimento}">
 					<f:validateBean />
@@ -218,6 +214,23 @@
 			</h:panelGrid>
 
 			<h:panelGrid columns="5">
+				<p:commandButton value="Novo" actionListener="#{inscritoBean.novo}"
+					update=":formInscritoCadastro:panelInscritoCadastro"
+					rendered="#{inscritoBean.acao == 'Novo'}" />
+
+				<p:commandButton value="Salvar"
+					actionListener="#{inscritoBean.salvar}"
+					update=":mensagemGlobal :formInscritoCadastro:panelInscritoCadastro"
+					rendered="#{inscritoBean.acao == 'Novo'}" />
+
+				<p:commandButton value="Excluir" icon="ui-icon-trash"
+					actionListener="#{inscritoBean.excluir}" update=":mensagemGlobal"
+					rendered="#{inscritoBean.acao == 'Excluir'}" />
+
+				<p:commandButton value="Editar" icon="ui-icon-pencil"
+					actionListener="#{inscritoBean.editar}" update=":mensagemGlobal"
+					rendered="#{inscritoBean.acao == 'Editar'}" />
+
 				<p:button value="Voltar"
 					outcome="/pages/inscritoPesquisa.xhtml?faces-redirect=true" />
 			</h:panelGrid>

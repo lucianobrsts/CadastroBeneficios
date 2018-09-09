@@ -61,7 +61,7 @@
 				</p:selectOneRadio>
 
 				<p:outputLabel value="Registro/RG:" />
-				<p:inputText maxlength="11" size="15"
+				<p:inputText maxlength="13" size="15"
 					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.inscritoCadastro.registroRg}">
 					<f:validateBean />
@@ -199,7 +199,7 @@
 				</p:selectOneMenu>
 
 				<p:outputLabel value="RG ou CPF responsável:" />
-				<p:inputText maxlength="11" size="30"
+				<p:inputText maxlength="13" size="30"
 					readonly="#{inscritoBean.acao == 'Excluir'}"
 					value="#{inscritoBean.inscritoCadastro.documentoResponsavel}">
 					<f:validateBean />
