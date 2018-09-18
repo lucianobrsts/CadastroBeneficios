@@ -1,12 +1,8 @@
 package br.com.cadastrobeneficios.backup;
 
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 public class MysqlBackup2 {
 
-	private static String dump;
+	// private static String dump;
 
 	/**
 	 * Classe que realiza de banco de dados MySql

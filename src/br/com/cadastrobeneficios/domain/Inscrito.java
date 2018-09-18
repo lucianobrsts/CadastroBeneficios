@@ -56,7 +56,7 @@ public class Inscrito {
 
 	@NotEmpty(message = "O campo Registro/RG é obrigatório.")
 	@Size(min = 3, max = 13, message = "Tamanho inválido para o campo Registro/RG (3 - 13 dígitos.")
-	@Column(name = "registrorg", length = 11, nullable = false)
+	@Column(name = "registrorg", length = 13, nullable = false)
 	private String registroRg;
 
 	@NotEmpty(message = "O campo Endereço é obrigatório.")
