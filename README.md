@@ -16,7 +16,7 @@
 - JavaScript
 - Ajax
 - Git
-- Junit
+- Junit (Testes Unitários)
 - Primefaces
 - Jasper Report
 - Commons Codec MD5 - Criptografia de senha
